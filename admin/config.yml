@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: alronka/my-webpage # Vaihda tähän oikea repo-polkusi myöhemmin
+  repo: alronka/smokybay
   branch: main
 
 media_folder: "img/uploads"
