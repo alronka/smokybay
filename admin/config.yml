@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: alronka/my-webpage # Vaihda tähän oikea repo-polkusi myöhemmin
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "img/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blogi"
+    folder: "blogi" # Tänne tallennetaan postaukset Markdown-tiedostoina
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Otsikko", name: "title", widget: "string"}
+      - {label: "Julkaisupäivä", name: "date", widget: "datetime"}
+      - {label: "Kuva", name: "image", widget: "image"}
+      - {label: "Kategoria", name: "category", widget: "select", options: ["Design", "SEO", "Web-kehitys"]}
+      - {label: "Esittelyteksti", name: "description", widget: "text"}
+      - {label: "Sisältö", name: "body", widget: "markdown"}
