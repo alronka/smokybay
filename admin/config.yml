@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: alronka/smokybay
-  branch: main
+  name: git-gateway
+  branch: main # Varmista että tämä vastaa repon päähaaraa
 
 media_folder: "img/uploads"
 public_folder: "img/uploads"

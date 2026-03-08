@@ -81,6 +81,7 @@
         });
         gtag('config', 'G-MZZTLKDN25');
     </script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -432,6 +433,17 @@
         </div>
     </div>
 
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
     <script src="main.js"></script>
 </body>
 
