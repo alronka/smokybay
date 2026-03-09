@@ -228,3 +228,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 })();
 
+// ---- FORMSPREE AJAX SUBMISSION ----
+(function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    if (!form || !status) return;
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Lähetetään...';
+
+        try {
+            const response = await fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                status.textContent = "Kiitos! Viestisi on lähetetty onnistuneesti. Palaamme asiaan pian.";
+                status.className = "form-status success";
+                form.reset();
+            } else {
+                const result = await response.json();
+                status.textContent = result.errors ? result.errors.map(error => error.message).join(", ") : "Hups! Viestin lähetyksessä tapahtui virhe. Yritä uudelleen myöhemmin.";
+                status.className = "form-status error";
+            }
+        } catch (error) {
+            status.textContent = "Hups! Viestin lähetyksessä tapahtui virhe. Tarkista nettiyhteytesi.";
+            status.className = "form-status error";
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+
+            // Auto-hide status after 8 seconds if it was successful
+            if (status.classList.contains('success')) {
+                setTimeout(() => {
+                    status.style.display = 'none';
+                    status.classList.remove('success');
+                }, 8000);
+            }
+        }
+    }
+
+    form.addEventListener("submit", handleSubmit);
+})();

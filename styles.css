@@ -814,61 +814,231 @@ h1 {
 /* ============================
    CTA SECTION
    ============================ */
-.cta-section {
+/* ============================
+   CONTACT SECTION
+   ============================ */
+.contact-section {
+    position: relative;
     overflow: hidden;
 }
 
-.cta-glow {
-    position: absolute;
+.contact-container {
+    max-width: 1100px;
+    margin: 48px auto 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.contact-form-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.select-wrapper {
+    position: relative;
     width: 100%;
-    max-width: 800px;
-    height: 600px;
-    background: radial-gradient(ellipse, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+
+.select-wrapper select {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    padding-right: 40px;
+    /* Space for arrow */
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    transition: var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+/* Dropdown arrow icon using CSS */
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    bottom: 18px;
+    /* Center with the select input */
+    width: 10px;
+    height: 6px;
+    background-color: var(--text-muted);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     pointer-events: none;
 }
 
-.cta-card {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), var(--glass));
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    border-radius: var(--radius);
-    padding: 64px 48px;
+/* Explicit styling for dropdown options to fix visibility issues */
+.form-group select option {
+    background-color: #111;
+    color: var(--text);
 }
 
-.cta-card h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 16px;
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
-.cta-card>p {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 32px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-actions {
+.contact-info {
     display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 20px;
 }
 
-.cta-note {
-    color: var(--text-dim) !important;
-    font-size: 0.82rem !important;
-    margin-bottom: 0 !important;
+.info-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-glow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.info-item p,
+.info-item a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.info-item a:hover {
+    color: var(--accent);
+}
+
+.social-link-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.social-link-btn:hover {
+    border-color: var(--accent);
+    background: var(--accent-glow);
+}
+
+.form-status {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.form-status.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Bot protection field (honeypot) */
+.form-gotcha {
+    display: none !important;
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
 }
 
 /* ============================

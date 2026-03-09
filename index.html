@@ -382,23 +382,85 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section id="yhteystiedot" class="section cta-section">
-        <div class="cta-glow"></div>
-        <div class="cta-card" data-animate>
-            <h2>Valmiina digiloikkaan?</h2>
-            <p>Aloitetaan projektisi tänään. Suunnittelemme näyttävän ja modernin verkkosivuston, joka nostaa yrityksesi
-                uudelle tasolle.</p>
-            <div class="cta-actions">
-                <a href="mailto:aleksanteri@valoverstas.fi" class="btn btn-primary btn-lg">
-                    aleksanteri@valoverstas.fi
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
-                <a href="#yhteystiedot" class="btn btn-ghost btn-lg">Varaa etätapaaminen</a>
+    <!-- CONTACT SECTION -->
+    <section id="yhteystiedot" class="section contact-section">
+        <div class="section-header">
+            <span class="section-tag">Yhteystiedot</span>
+            <h2>Aloita matkasi<br><span class="gradient-text">loistaviin tuloksiin.</span></h2>
+            <p class="section-desc">Kerro meille projektistasi, niin palaamme asiaan 24 tunnin sisällä ilmaisella
+                arviolla.
+            </p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-form-card" data-animate>
+                <form action="https://formspree.io/p/2953948584292121908/f/contact" method="POST" id="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Nimi</label>
+                            <input type="text" id="name" name="name" placeholder="Oma nimesi" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Sähköposti</label>
+                            <input type="email" id="email" name="email" placeholder="esimerkki@yritys.fi" required>
+                        </div>
+                        <div class="form-group full-width select-wrapper">
+                            <label for="package">Valitse paketti</label>
+                            <select id="package" name="package">
+                                <option value="pikkutuikku">Pikkutuikku</option>
+                                <option value="loiste" selected>Loiste (Suosituin)</option>
+                                <option value="majakka">Majakka</option>
+                                <option value="muu">Muu tarve</option>
+                            </select>
+                        </div>
+                        <!-- Bot anti-spam (honeypot) -->
+                        <input type="text" name="_gotcha" class="form-gotcha">
+                        <div class="form-group full-width">
+                            <label for="message">Viesti</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Kerro lyhyesti projektistasi..."
+                                required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg full-width">
+                        Lähetä viesti
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
             </div>
-            <p class="cta-note">Maksuton alkukartoitus · Ei sitoumuksia · Vastaus 24h sisällä</p>
+
+            <div class="contact-info" data-animate>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Sähköposti</h4>
+                        <p><a href="mailto:aleksanteri@valoverstas.fi">aleksanteri@valoverstas.fi</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4>Toimipiste</h4>
+                        <p>Jyväskylä, Finland</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -419,9 +481,9 @@
             <div class="footer-col">
                 <h4>Palvelut</h4>
                 <ul>
-                    <li><a href="#palvelut">Prosessien automatisointi</a></li>
-                    <li><a href="#palvelut">Dedikoitu tekoäly</a></li>
-                    <li><a href="#palvelut">Data & konsultointi</a></li>
+                    <li><a href="#palvelut">Pikkutuikku</a></li>
+                    <li><a href="#palvelut">Loiste</a></li>
+                    <li><a href="#palvelut">Majakka</a></li>
                 </ul>
             </div>
             <div class="footer-col">

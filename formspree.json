@@ -1,0 +1,14 @@
+{
+    "project": "2953948584292121908",
+    "forms": {
+        "contact": {
+            "name": "Yhteydenotto",
+            "actions": [
+                {
+                    "type": "email",
+                    "to": "aleksanteri@valoverstas.fi"
+                }
+            ]
+        }
+    }
+}
