@@ -902,8 +902,8 @@ h1 {
     content: '';
     position: absolute;
     right: 16px;
-    bottom: 18px;
-    /* Center with the select input */
+    top: 42px;
+    /* Adjusted to be centered vertically with the select input (accounting for label) */
     width: 10px;
     height: 6px;
     background-color: var(--text-muted);
@@ -1028,8 +1028,13 @@ h1 {
 }
 
 @media (max-width: 640px) {
+    .contact-form-card {
+        padding: 24px 20px;
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .form-group.full-width {
@@ -1038,6 +1043,7 @@ h1 {
 
     .contact-info {
         flex-direction: column;
+        gap: 32px;
     }
 }
 
