@@ -99,19 +99,26 @@ nav.scrolled {
     letter-spacing: -0.5px;
     color: var(--text);
     text-decoration: none;
-}
-
-.logo-dot {
-    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .logo-img {
-    height: 80px;
+    height: 40px;
     width: auto;
-    margin: -24px -10px -24px -16px;
-    vertical-align: middle;
-    filter: brightness(1.8) contrast(1.1);
     transition: var(--transition);
+}
+
+.logo-text {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--text), var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .logo:hover .logo-img {
@@ -120,9 +127,8 @@ nav.scrolled {
 }
 
 .logo-img-footer {
-    height: 100px;
-    margin: -28px -12px -28px -20px;
-    filter: brightness(1.6) contrast(1.05);
+    height: 48px;
+    filter: brightness(1.2) contrast(1.1) saturate(0.2);
 }
 
 .nav-links {
@@ -429,9 +435,24 @@ h1 {
 }
 
 .service-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.service-price small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 4px;
 }
 
 .service-card>p {
@@ -871,7 +892,7 @@ footer {
 .footer-brand p {
     color: var(--text-dim);
     font-size: 0.9rem;
-    margin-top: 16px;
+    margin-top: 24px;
     line-height: 1.6;
 }
 
