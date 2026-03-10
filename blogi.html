@@ -114,16 +114,21 @@
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+
         // Default to denied for GDPR compliance
         gtag('consent', 'default', {
-            'analytics_storage': 'denied'
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
         });
+
         gtag('config', 'G-MZZTLKDN25');
         gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
     </script>
 </head>
 
@@ -247,6 +252,17 @@
             &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
         </div>
     </footer>
+
+    <!-- PRIVACY BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Ymmärrän</button>
+            <a href="#" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>

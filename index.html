@@ -71,16 +71,21 @@
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+
         // Default to denied for GDPR compliance
         gtag('consent', 'default', {
-            'analytics_storage': 'denied'
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
         });
+
         gtag('config', 'G-MZZTLKDN25');
         gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
     </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>

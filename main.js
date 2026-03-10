@@ -205,7 +205,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     function activateTracking() {
         if (typeof gtag === 'function') {
             gtag('consent', 'update', {
-                'analytics_storage': 'granted'
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
             });
         }
     }
