@@ -1100,7 +1100,8 @@ h1 {
 
 @media (max-width: 640px) {
     .contact-form-card {
-        padding: 24px 20px;
+        padding: 24px 16px;
+        /* Slightly less padding to gain space */
     }
 
     .form-grid {
@@ -1110,6 +1111,16 @@ h1 {
 
     .form-group.full-width {
         grid-column: span 1;
+    }
+
+    .features-group {
+        padding: 16px;
+        /* Less padding on small screens */
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        /* Stack options on mobile */
     }
 
     .contact-info {
