@@ -228,6 +228,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 })();
 
+// ---- CONTACT FORM DYNAMIC FEATURES ----
+(function initFormDynamics() {
+    const packageSelect = document.getElementById('package');
+    const extraFeatures = document.getElementById('extra-features');
+    if (!packageSelect || !extraFeatures) return;
+
+    function toggleFeatures() {
+        // Show features for defined packages (Tuikku, Lamppu, Majakka)
+        // Hide only for "Muu tarve"
+        if (packageSelect.value === 'muu') {
+            extraFeatures.classList.add('hidden');
+            extraFeatures.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        } else {
+            extraFeatures.classList.remove('hidden');
+        }
+    }
+
+    packageSelect.addEventListener('change', toggleFeatures);
+    toggleFeatures(); // Run once on init
+})();
+
 // ---- FORMSPREE AJAX SUBMISSION ----
 (function initContactForm() {
     const form = document.getElementById('contact-form');
