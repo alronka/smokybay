@@ -69,20 +69,23 @@
     }
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <!-- Google Consent Mode v2 & Google tags -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        // Default to denied for GDPR compliance
+        // Default consent levels for GDPR compliance (Consent Mode v2)
         gtag('consent', 'default', {
             'analytics_storage': 'denied',
-            'ad_storage': 'denied'
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
         });
-
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
         gtag('config', 'G-MZZTLKDN25');
         gtag('config', 'GT-KT922FNZ');
         gtag('config', 'AW-18004526990');
