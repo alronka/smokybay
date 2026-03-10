@@ -1033,7 +1033,7 @@ h1 {
     display: none;
 }
 
-.features-group label:first-child {
+.features-group>label {
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--accent);
