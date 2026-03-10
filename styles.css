@@ -1044,7 +1044,7 @@ h1 {
 
 .features-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 12px;
 }
 
@@ -1119,8 +1119,9 @@ h1 {
     }
 
     .features-grid {
-        grid-template-columns: 1fr;
-        /* Stack options on mobile */
+        grid-template-columns: 1fr !important;
+        /* Force stack on mobile */
+        max-width: 100%;
     }
 
     .contact-info {
