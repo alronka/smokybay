@@ -305,3 +305,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     form.addEventListener("submit", handleSubmit);
 })();
+
+// ---- FAQ ACCORDION ----
+(function initFaq() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems.length) return;
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all
+            faqItems.forEach(faq => {
+                faq.classList.remove('active');
+                const answer = faq.querySelector('.faq-answer');
+                if (answer) answer.style.maxHeight = null;
+            });
+
+            // Open clicked if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                const answer = item.querySelector('.faq-answer');
+                if (answer) answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+})();
