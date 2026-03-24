@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://valoverstas.fi/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://valoverstas.fi/blogi.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://valoverstas.fi/miksi-verkkosivupaketti-on-pk-yrittajan-paras-ystava.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://valoverstas.fi/viisi-merkkia-etta-yrityksesi-kaipaa-verkkosivu-uudistusta.html</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://valoverstas.fi/miksi-kukaan-ei-loyda-sivuillesi.html</loc>
+    <lastmod>2026-03-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

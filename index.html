@@ -13,6 +13,12 @@
     <link rel="icon" type="image/png" href="img/valoverstas.png">
     <link rel="apple-touch-icon" href="img/valoverstas.png">
     <link rel="canonical" href="https://valoverstas.fi/">
+    <script>
+        // Redirect users and bots from /index.html to the root /
+        if (window.location.pathname.endsWith('/index.html')) {
+            window.location.replace(window.location.href.replace('/index.html', '/'));
+        }
+    </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
