@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://valoverstas.fi/blogi.html</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://valoverstas.fi/konversio-on-tarkeampi-kuin-kavijamaara.html</loc>
+    <lastmod>2026-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://valoverstas.fi/miksi-verkkosivupaketti-on-pk-yrittajan-paras-ystava.html</loc>

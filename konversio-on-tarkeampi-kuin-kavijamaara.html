@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversio on tärkeämpi kuin kävijämäärä – Näin teet sivuistasi myyntikoneen – Valoverstas</title>
+    <meta name="description"
+        content="Monet yritykset tuijottavat vain verkkosivujensa kävijämääriä, vaikka tärkeintä on konversio. Lue miten optimoit sivuistasi aidon myyntityökalun.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="https://valoverstas.fi/img/valoverstas.png">
+    <link rel="apple-touch-icon" href="https://valoverstas.fi/img/valoverstas.png">
+    <link rel="canonical" href="https://valoverstas.fi/konversio-on-tarkeampi-kuin-kavijamaara.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/698.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/konversio-on-tarkeampi-kuin-kavijamaara.html">
+    <meta name="twitter:title" content="Konversio on tärkeämpi kuin kävijämäärä – Näin teet sivuistasi myyntikoneen">
+    <meta name="twitter:description" content="Lue miten käännät verkkosivusi kävijät asiakkaiksi.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/698.jpg">
+
+    <style>
+        .article-header {
+            padding: 160px 24px 60px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="img/valoverstas.png" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Liiketoiminta • 6 min luku</div>
+            <h1>Konversio on tärkeämpi kuin <span class="gradient-text">kävijämäärä</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Näin teet sivuistasi aidon myyntityökalun, etkä vain digitaalista käyntikorttia</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/698.jpg"
+                alt="Konversio-optimointi ja myynti - Valoverstas">
+        </div>
+
+        <div class="article-content">
+            <p>Monet PK-yrittäjät kysyvät meiltä ekana: "Miten me saadaan lisää kävijöitä nettisivuille?" Se on hyvä kysymys, mut usein väärä. Jos sun verkkosivu on kuin vuotava ämpäri, veden kaataminen sisään ei oikein auta. Tärkeämpää ois kysyä: "Miten me saadaan ne ihmiset, jotka jo on siellä, oikeasti ottamaan meihin yhteyttä?"</p>
+
+            <p>Tervetuloa <strong>konversio-optimoinnin</strong> maailmaan. Se kuulostaa hienolta, mut oikeesti se tarkoittaa vaan sitä, että tehdään sun sivuista niin vakuuttavat ja helpot käyttää, että kävijät muuttuvat asiakkaiksi.</p>
+
+            <h2>Mitä se konversio ees tarkoittaa?</h2>
+            <p>Konversio on se juttu, jonka sä haluat sun kävijän tekevän. Se voi olla:</p>
+            <ul>
+                <li>Yhteydenottolomakkeen täyttäminen (se yleisin)</li>
+                <li>Suora soitto sulle napin painalluksella</li>
+                <li>Sähköpostilistalle liittyminen</li>
+                <li>Tarjouspyynnön jättäminen</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Simppeli esimerkki:</strong> Jos sulla käy 1000 ihmistä ja 1 ottaa yhteyttä, sun konversio on 0,1 %. Jos me tuunataan sivuja niin, että 10 ottaakin yhteyttä samalla porukalla, sä olet kymmenkertaistanut sun tulokset – ilman, että sun piti ostaa yhtään enempää mainontaa.
+            </div>
+
+            <h2>3 vinkkiä, joilla teet sivuista myyntikoneen</h2>
+            
+            <h3>1. Lopeta asiakkaan arvuuttelu (CTA)</h3>
+            <p>Älä pakota asiakasta etsimään, mitä sen pitäis tehdä seuraavaksi. "Ota yhteyttä", "Varaa aika" tai "Pyydä tarjous" -nappien pitää hypätä silmille (hyvällä tavalla). Nyrkkisääntö: Kävijän pitäis nähdä sun tärkein nappi heti kun se avaa sivun, ilman että se kelaa alaspäin.</p>
+
+            <h3>2. Rakenna luottamusta (Social Proof)</h3>
+            <p>Me ihmiset ollaan vähän laumaeläimiä. Me ostetaan helpommin niiltä, joilta muutkin on ostaneet. Laita sivuille sun tyytyväisten asiakkaiden kokemuksia, logoja tai vaikka lukuja tehdyistä projekteista. Näytä, että sä oikeasti tiedät mitä teet.</p>
+
+            <h3>3. Poista kitka ja turha säätö</h3>
+            <p>Jokainen turha kysymys lomakkeessa tai jokainen ylimääräinen klikkaus ostopolulla on riski, että asiakas kyllästyy ja lähtee. Tee yhteydenotosta naurettavan helppoa. Jos asiakas joutuu miettimään sekunniksikaan missä lomake on, sä olet ehkä jo hävinnyt pelin.</p>
+
+            <h2>Yhteenveto</h2>
+            <p>Kävijämäärä on vaan numero taulukossa – konversio on se, mikä näkyy pankkitilillä. Panostamalla sun verkkosivujen laatuun ja siihen, miltä se tuntuu käyttää, sä varmistat että jokainen markkinointiin laitettu euro kantaa hedelmää.</p>
+
+            <div class="article-cta">
+                <h3>Kaipaavatko yrityksesi sivut myyntiruisketta?</h3>
+                <p>Me Valoverstaalla rakennamme sivut, joissa konversio on aina suunnittelun ytimessä. Tehdään yrityksestäsi netin kirkkain tähti.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img src="img/valoverstas.png" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col">
+                    <h4>Palvelut</h4>
+                    <ul>
+                        <li><a href="/#palvelut">Tuikku</a></li>
+                        <li><a href="/#palvelut">Lamppu</a></li>
+                        <li><a href="/#palvelut">Majakka</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
