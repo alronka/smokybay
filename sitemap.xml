@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://valoverstas.fi/blogi.html</loc>
-    <lastmod>2026-03-31</lastmod>
+    <lastmod>2026-04-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://valoverstas.fi/miksi-nopeus-vaikuttaa-suoraan-myyntiin.html</loc>
+    <lastmod>2026-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://valoverstas.fi/konversio-on-tarkeampi-kuin-kavijamaara.html</loc>
