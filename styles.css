@@ -50,6 +50,17 @@ body {
     line-height: 1.6;
 }
 
+a {
+    color: #58a6ff;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-light);
+    text-decoration: underline;
+}
+
 /* ============================
    PARTICLES CANVAS
    ============================ */
