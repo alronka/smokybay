@@ -37,7 +37,8 @@
 
     <style>
         .article-header {
-            padding: 160px 24px 60px;
+            min-height: auto !important;
+            padding: 160px 24px 0;
             text-align: center;
             background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
             max-width: 900px;
@@ -62,7 +63,9 @@
         .article-image {
             width: 100%;
             max-width: 1000px;
-            margin: 0 auto 60px;
+            margin: -20px auto 60px;
+            position: relative;
+            z-index: 5;
             border-radius: var(--radius);
             overflow: hidden;
             display: flex;
@@ -177,33 +180,52 @@
             <p class="hero-sub" style="margin: 0 auto;">Lue miksi sivuston hitaus maksaa yrityksellesi asiakkaita, ja miten ratkaiset sen kerralla.</p>
         </header>
 
-        <div class="article-image" data-animate>
+        <div class="article-image" data-animate style="margin-top: 40px;">
             <img srcset="img/verkkosivujen-latausnopeus-yrityksen-menestys-mobile.webp 800w, img/verkkosivujen-latausnopeus-yrityksen-menestys.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/verkkosivujen-latausnopeus-yrityksen-menestys.webp"
                 alt="Verkkosivujen salamannopea latausaika on ratkaisevaa hyvän hakukonenäkyvyyden (SEO) vuoksi">
         </div>
 
         <div class="article-content">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; margin-bottom: 40px;">
+                <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.2rem;">Sisällysluettelo</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><a href="#keskittymiskyky" style="color: #58a6ff; text-decoration: none;">1. Kultakalamainen keskittymiskyky ja myynnin lasku</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#google" style="color: #58a6ff; text-decoration: none;">2. Google rankaisee hitaista sivuista – armotta</a></li>
+                    <li style="margin-bottom: 8px;"><a href="#jamstack" style="color: #58a6ff; text-decoration: none;">3. Unohda raskaat valmisteemat, valitse Jamstack</a></li>
+                    <li><a href="#yhteenveto" style="color: #58a6ff; text-decoration: none;">Yhteenveto ja lähteet</a></li>
+                </ul>
+            </div>
+
             <p>Hitaasti latautuva verkkosivu ei ole vain ärsyttävä – se on suora tulonsiirto kilpailijallesi. Vuonna 2026 käyttäjien odotukset digitaalisista kokemuksista ovat korkeammalla kuin koskaan. Jos yrityksesi sivusto ei ole välittömästi reagoiva, asiakas klikkaa itsensä takaisin hakutuloksiin silmänräpäyksessä.</p>
 
             <div class="highlight-box">
-                Tutkimusten mukaan jopa <strong>yli 50 % mobiilikäyttäjistä hylkää sivuston</strong>, jos sen latautuminen kestää yli kolme sekuntia. Kysy itseltäsi: kuinka monta asiakasta sinulla on varaa menettää päivittäin huonon tekniikan takia?
+                Tutkimusten mukaan jopa <strong>53 % mobiilikäyttäjistä hylkää sivuston</strong>, jos sen latautuminen kestää yli kolme sekuntia. Kysy itseltäsi: kuinka monta asiakasta sinulla on varaa menettää päivittäin huonon tekniikan takia?
             </div>
 
-            <h2>1. Kultakalamainen keskittymiskyky ja ensivaikutelma</h2>
+            <h2 id="keskittymiskyky">1. Kultakalamainen keskittymiskyky ja myynnin lasku</h2>
             <p>Ensivaikutelma muodostuu millisekunneissa. Kun sivu aukeaa salamannopeasti, se herättää alitajuisesti luottamusta: <em>tämä yritys on ammattimainen ja panostaa asioiden laatuun</em>.</p>
-            <p>Kun taas logot tökkivät ja kuvat latautuvat raitoina, asiakas yhdistää tämän laadunpuutteen suoraan yrityksesi tarjoamiin palveluihin. Nopeus on nykypäivän digitaalista asiakaspalvelua, josta moni suomalainen yritys vielä laistaa.</p>
+            <p>Portentin laaja B2B-konversiotutkimus osoitti, että verkkosivu, joka latautuu yhdessä sekunnissa, muuntaa kävijöitä asiakkaiksi lähes <strong>kolme kertaa todennäköisemmin</strong> kuin sivu, jonka latautuminen kestää viisi sekuntia. Nopeus on suoraan sidoksissa viivan alle jäävään tulokseen.</p>
 
-            <h2>2. Google rankaisee hitaista sivuista – armotta</h2>
-            <p>Google on tehnyt selväksi, että sivuston nopeus (Core Web Vitals) on keskeinen osa hakukonesijoituksia. Hakukoneen tehtävä on tarjota käyttäjälle paras mahdollinen lopputulos ilman hukka-aikaa. Vaikka tekstisi olisi kuinka nerokasta, Google ei tarjoa ykkössijaa sivustolle, jonka aukeamista mobiilikäyttäjä joutuu odottamaan.</p>
-            <p>Panostaminen sivuston nopeuteen ja äärimmäiseen keveyteen on siten yksi kustannustehokkaimmista tavoista parantaa SEO-näkyvyyttä (hakukoneoptimointia) välittömästi.</p>
+            <h2 id="google">2. Google rankaisee hitaista sivuista – armotta</h2>
+            <p>Google on tehnyt selväksi, että sivuston nopeus (Core Web Vitals) on keskeinen osa hakukonesijoituksia. Hakukoneen virallinen missio on tarjota käyttäjälle paras mahdollinen lopputulos – ja se sisältää nopeuden. Vaikka tekstisi olisi kuinka nerokasta, Google ei tarjoa ykkössijaa sivustolle, jonka aukeamista mobiilikäyttäjä joutuu odottamaan.</p>
+            <p>Panostaminen sivuston nopeuteen ja äärimmäiseen keveyteen on siten yksi kustannustehokkaimmista tavoista parantaa SEO-näkyvyyttä (hakukoneoptimointia) ja napata ilmaista liikennettä kilpailijoilta.</p>
 
-            <h2>3. Unohda raskaat valmisteemat, valitse Jamstack</h2>
-            <p>Yksi yleisimmistä syistä hitaille sivuille on vanhentunut web-tekniikka. Useat yritykset käyttävät edelleen vuosikymmenen takaista ajatusmallia: asennetaan raskas julkaisujärjestelmä kuten perinteinen WordPress page builderilla, ladataan palvelimelle pakkaamattomia megatavujen kuvia, ja sullotaan kymmeniä lisäosia hidastamaan koodia.</p>
+            <h2 id="jamstack">3. Unohda raskaat valmisteemat, valitse Jamstack</h2>
+            <p>Yksi yleisimmistä syistä hitaille sivuille on vanhentunut web-tekniikka. Useat yritykset käyttävät edelleen vuosikymmenen takaista ajatusmallia: asennetaan raskas julkaisujärjestelmä (kuten perinteinen WordPress), ladataan palvelimelle pakkaamattomia megatavujen kuvia, ja sullotaan kymmeniä lisäosia hidastamaan koodia.</p>
 
-            <p><strong>Valoverstas luottaa moderniin Jamstack-arkkitehtuuriin.</strong> Sivu piirretään valmiiksi huippunopealla koodauskehyksellä, ja kun asiakas saapuu sivuilleni, hänelle tarjoillaan valmiiksi optimoitu paketti suoraan maailmanlaajuisesta jakeluverkosta (CDN). Sivut myös hakevat kuvista automaattisesti kevyemmät mobiiliversiot (WebP-muodossa), mikä näkyy erinomaisina Lighthouse-pisteinä Googlen testeissä.</p>
+            <p><strong>Valoverstas luottaa moderniin Jamstack-arkkitehtuuriin.</strong> Sivu piirretään valmiiksi huippunopealla koodauskehyksellä, ja kun asiakas saapuu sivuillesi, hänelle tarjoillaan valmiiksi optimoitu paketti suoraan maailmanlaajuisesta jakeluverkosta (CDN). Sivut hakevat automaattisesti kevyemmät mobiiliversiot (kuten käyttämällä uutta WebP-muotoa), mikä takaa erinomaiset nopeuslukemat Googlen testeissä.</p>
 
-            <h2>Yhteenveto</h2>
-            <p>Nopeat sivut tuovat myyntiä. Ne maksavat itsensä takaisin parempana löydettävyytenä hakukoneissa, pidempinä vierailuina ja suurempana määränä tarjouspyyntöjä. Sivustouudistuksessa nopeuden pitäisi olla kaiken muotoilun keskiössä jo oletusarvona.</p>
+            <h2 id="yhteenveto">Yhteenveto</h2>
+            <p>Nopeat sivut tuovat tutkimusten varjossa reaalimyymistä. Ne maksavat itsensä takaisin parempana löydettävyytenä hakukoneissa, pidempinä vierailuina ja suurempana määränä tarjouspyyntöjä. Sivustouudistuksessa nopeuden pitäisi olla kaiken muotoilun keskiössä jo oletusarvona.</p>
+
+            <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 12px;">Lähteitä ja lisälukemista:</h4>
+                <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-muted); font-size: 0.95rem;">
+                    <li style="margin-bottom: 8px;"><strong>Google Developers:</strong> <a href="https://web.dev/articles/why-speed-matters" target="_blank" rel="noopener noreferrer">Mobiilisivustojen hitaus leikkaa konversiota ja sitoutumista välittömästi</a>.</li>
+                    <li style="margin-bottom: 8px;"><strong>Portent:</strong> <a href="https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank" rel="noopener noreferrer">Latausnopeuden ja konversioasteen välinen suora suhde (2022 laaja tutkimus)</a>.</li>
+                    <li style="margin-bottom: 8px;"><strong>Google Data:</strong> <a href="https://developers.google.com/search/docs/appearance/core-web-vitals" target="_blank" rel="noopener noreferrer">Core Web Vitals -mittarit ja hakukonesijoitukset</a>.</li>
+                </ul>
+            </div>
 
             <div class="article-cta">
                 <h3>Vaihda verkkosivusi nykyaikaan</h3>
