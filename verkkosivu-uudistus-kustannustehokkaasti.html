@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivut uusiksi: Milloin on oikea aika muutokselle? – Valoverstas</title>
+    <meta name="description"
+        content="Milloin yritys tarvitsee verkkosivu-uudistuksen? Lue kuinka teet päivityksen helposti ja kustannustehokkaasti ilman raskaita projekteja.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+    
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivu-uudistus-kustannustehokkaasti.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivu-uudistus-hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivu-uudistus-kustannustehokkaasti.html">
+    <meta name="twitter:title" content="Verkkosivut uusiksi: Milloin on oikea aika muutokselle?">
+    <meta name="twitter:description" content="Milloin yritys tarvitsee verkkosivu-uudistuksen? Lue kuinka teet päivityksen helposti ja kustannustehokkaasti.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivu-uudistus-hero.png">
+
+    <!-- Mermaid for graphs -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#00d2ff',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#00d2ff',
+                lineColor: '#00d2ff',
+                secondaryColor: '#0066ff',
+                tertiaryColor: '#1a1a2e',
+                fontSize: '16px'
+            },
+            securityLevel: 'loose',
+            fontFamily: 'Plus Jakarta Sans'
+        });
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .mermaid {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Opas • 4 min luku</div>
+            <h1>Verkkosivut uusiksi: Milloin on <span class="gradient-text">oikea aika muutokselle?</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Näin toteutat uudistuksen kustannustehokkaasti ilman raskaita IT-projekteja.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivu-uudistus-hero.png" alt="Verkkosivujen suunnittelu ja uudistus modernilla tekniikalla">
+        </div>
+
+        <div class="article-content">
+            <p>Monelle PK-yrittäjälle verkkosivu-uudistus on sanana sellainen, joka herättää enemmän ahdistusta kuin innostusta. Mielessä pyörivät kuukausien mittaiset raskaat projektit, tekninen jargoni ja laskut, jotka alkavat usein viisinumeroisilla luvuilla.</p>
+
+            <p>Todellisuudessa nykyaikainen verkkosivu-uudistus on kuitenkin mahdollista tehdä joustavasti, täysin ilman päänvaivaa ja huomattavasti kustannustehokkaammin. Mutta mistä tiedät, onko yrityksesi ylipäätään uudistuksen tarpeessa? Ja miksi hitaat ja vanhanaikaiset sivut tulevat kalliimmaksi kuin uudet?</p>
+
+            <h2>75 % kävijöistä tuomitsee luotettavuuden pelkän ulkoasun perusteella</h2>
+            <p>Verkkosivustosi on usein asiakkaan ensimmäinen kosketus yritykseesi. Jos sivuston ilme ja tekniikka ovat jämähtäneet menneisyyteen, asiakas tekee välittömän oletuksen myös palvelusi laadusta.</p>
+
+            <p>Useissa laajoissa <a href="https://www.sweor.com/firstimpressions" target="_blank">käyttäytymistutkimuksissa</a> on osoitettu kylmä fakta: <strong>Kävijät muodostavat mielipiteensä verkkosivustosta vain 0,05 sekunnissa</strong>. Jopa 75 % ihmisistä myöntää arvioivansa yrityksen uskottavuutta suoraan sen verkkosivujen designin perusteella. Jos sivusto näyttää epäammattimaiselta tai vanhalta, asiakas siirtyy sekunnissa kilpailijan uudemmille ja selkeämmille sivuille.</p>
+
+            <p>Tyylikäs, nykyaikainen ja nopea sivusto on siis suora investointi yrityksesi luotettavuuteen.</p>
+
+            <h2>Latausnopeus ja mobiiliystävällisyys ratkaisevat myynnin</h2>
+            <p>Ehkä sivustosi näyttää "ihan ok:lta" tietokoneen ruudulla, mutta oletko kokeillut käyttää sitä puhelimella huonossa verkossa?</p>
+
+            <p>Nykyisin yli 60 % verkkoliikenteestä tapahtuu mobiililaitteilla. Jos sivustosi ei skaalaudu täydellisesti puhelimelle, menetät yli puolet potentiaalisista asiakkaistasi saman tien.</p>
+
+            <p>Toinen kriittinen tekijä on latausnopeus. <a href="https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm" target="_blank">Tutkimukset osoittavat</a>, että jo pelkästään yhden sekunnin viive sivun latausajassa aiheuttaa vakavia ongelmia:</p>
+            <ul>
+                <li>Vähentää sivuston katselukertoja 11 %</li>
+                <li>Laskee asiakastyytyväisyyttä 16 %</li>
+                <li><strong>Pudottaa konversiota (esim. yhteydenottoja tai ostoja) peräti 7 %</strong></li>
+            </ul>
+
+            <div class="mermaid">
+                graph LR
+                    A[Hidas latausaika] -->|Turhautuminen| B(Käyttäjä poistuu 3 sekunnissa)
+                    B -->|Menetetty liidi| C[Kilpailija tekee kaupat]
+                    
+                    style A fill:#1a1a2e,stroke:#ff8c00,color:#fff
+                    style C fill:#1a1a2e,stroke:#ff4d4d,color:#fff
+                    style B fill:#1a1a2e,stroke:#00d2ff,color:#fff
+            </div>
+
+            <p>Jos yrityksesi ohjaa sivuille liikennettä esimerkiksi maksetulla mainonnalla, mutta sivu latautuu hitaasti, maksat käytännössä siitä, että asiakkaat käyvät turhautumassa ovellasi ja kääntyvät ovelta takaisin.</p>
+
+            <h2>Täytyykö uudistuksen maksaa kymppitonneja?</h2>
+            <p>Lyhyt vastaus: <strong>Ei todellakaan.</strong></p>
+
+            <p>Monesti yrityksille myydään raskaita julkaisujärjestelmiä (kuten monimutkaisia WordPress-asennuksia laajoilla teemoilla ja kymmenillä lisäosilla), vaikka tarve olisi vain selkeälle, nopealle ja myyvälle asiantuntijasivustolle. Raskas järjestelmä tarkoittaa usein hitaita latausaikoja, jatkuvaa päivitystarvetta, kalliita palvelinmaksuja ja ikäviä tietoturvariskejä.</p>
+
+            <div class="highlight-box">
+                <strong>Valoverstaan ratkaisu:</strong> Kustannustehokas, huippuunsa hiottu räätälöity staattinen sivusto. Saat huippuluokan suorituskyvyn ilman raskasta taustateknologiaa.
+            </div>
+
+            <h3>Mitä tämä tarkoittaa käytännössä?</h3>
+            <ol>
+                <li><strong>Verraton nopeus:</strong> Ilman raskasta taustajärjestelmää (tietokantaa) sivusto latautuu silmänräpäyksessä. Tämä miellyttää sekä asiakasta että hakukoneita (SEO).</li>
+                <li><strong>Täysi tietoturva:</strong> Ei kymmeniä päivitettäviä lisäosia, jotka voisivat hakkeroitua. Staattinen sivu on käytännössä murtovarma.</li>
+                <li><strong>Ei piilokuluja:</strong> Maksat vain asiantuntijatyöstä etkä jatkuvista ylläpitomaksuista raskaista lisensseistä.</li>
+                <li><strong>Ei sähläämistä:</strong> Avaimet käteen -ratkaisulla sinun tarvitsee vain kertoa meille, mitä yrityksesi tekee. Me hoidamme suunnittelun, toteutuksen, copyvaiheet ja julkaisun.</li>
+            </ol>
+
+            <h2>Mistä liikkeelle?</h2>
+            <p>Jos sivustosi latautuu hitaasti, näyttää vanhalta tai ei tuota sinulle yhteydenottoja, on aika toimia. Verkkosivujen kuuluu olla liiketoiminnan veturi, ei riippakivi.</p>
+
+            <div class="article-cta">
+                <h3>Kaipaatko luotettavaa kumppania verkkosivu-uudistukseen?</h3>
+                <p>Ota yhteyttä, niin katsotaan yhdessä, miten saisimme yrityksellesi nykyaikaisen ja nopean digitaalisen julkisivun – täysin avaimet käteen -periaatteella ja budjettiisi sopivasti.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Pyydä maksuton hinta-arvio</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
