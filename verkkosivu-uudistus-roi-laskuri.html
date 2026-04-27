@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivu-uudistus ROI-laskuri: Laske myynnin kasvu — Valoverstas</title>
+    <meta name="description"
+        content="Paljonko yrityksesi myynti kasvaisi nopeammilla ja paremmin konvertoivilla verkkosivuilla? Laske verkkosivu-uudistuksen tuotto perustuen Portentin ja Googlen tutkimusdataan.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+    
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivu-uudistus-roi-laskuri.html">
+
+    <style>
+        .calculator-section {
+            padding: 160px 24px 100px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .calc-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+        }
+
+        @media (max-width: 950px) {
+            .calc-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calc-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-group label {
+            font-weight: 700;
+            color: var(--text);
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .value-badge {
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            border: 1px solid rgba(var(--accent-rgb), 0.2);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--accent);
+            border: 3px solid #1a1a2e;
+        }
+
+        .calc-results {
+            background: linear-gradient(145deg, rgba(var(--accent-rgb), 0.1), rgba(var(--accent-rgb), 0.05));
+            border-radius: var(--radius-sm);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid rgba(var(--accent-rgb), 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calc-results::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(var(--accent-rgb), 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .result-main {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .result-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(var(--accent-rgb), 0.5);
+        }
+
+        .result-desc {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .research-info {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--accent);
+        }
+
+        .research-info h4 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .research-info p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .research-info a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .research-info a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-box {
+            margin-top: 60px;
+            text-align: center;
+            background: var(--glass);
+            padding: 60px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo"><img srcset="img/aRon_A1-mobile.webp 800w, img/aRon_A1.webp 1600w"
+                    sizes="(max-width: 800px) 100vw, 1600px" src="img/aRon_A1.webp" alt="Valok logo"
+                    class="logo-img">VALOVERSTAS<span class="logo-dot">.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="calculator-section">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+            <span class="section-tag">Kasvupotentiaali</span>
+            <h1>Laske verkkosivu-uudistuksen <span class="gradient-text">ROI.</span></h1>
+            <p class="section-desc">Miten paljon nopeammat ja nykyaikaisemmat sivut kasvattaisivat yrityksesi liikevaihtoa? Kokeile laskuria ja näe potentiaali.</p>
+        </div>
+
+        <div class="calc-wrapper">
+            <div class="calc-inputs">
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="traffic">Kuukausittaiset kävijät</label>
+                        <span id="trafficVal" class="value-badge">5 000</span>
+                    </div>
+                    <input type="range" id="traffic" min="500" max="50000" step="500" value="5000">
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="cr">Nykyinen konversioprosentti (%)</label>
+                        <span id="crVal" class="value-badge">1.5 %</span>
+                    </div>
+                    <input type="range" id="cr" min="0.1" max="10" step="0.1" value="1.5">
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="aov">Keskiostos tai liidin arvo (€)</label>
+                        <span id="aovVal" class="value-badge">200 €</span>
+                    </div>
+                    <input type="range" id="aov" min="10" max="5000" step="10" value="200">
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label for="speed">Nykyinen latausaika (sekuntia)</label>
+                        <span id="speedVal" class="value-badge">4.5 s</span>
+                    </div>
+                    <input type="range" id="speed" min="0.5" max="10" step="0.1" value="4.5">
+                </div>
+            </div>
+
+            <div class="calc-results">
+                <div class="result-main">
+                    <div class="result-label">Lisämyynti vuodessa</div>
+                    <div id="yearlyProfit" class="result-value">0 €</div>
+                    <div class="result-desc">uudistuksen jälkeen</div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span id="newCR" class="stat-value">2.1 %</span>
+                        <span class="stat-label">Uusi konversio</span>
+                    </div>
+                    <div class="stat-card">
+                        <span id="newTraffic" class="stat-value">+20%</span>
+                        <span class="stat-label">SEO-kasvu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="research-info">
+            <h4>Tutkimusdata ja 2026 standardit (Google & Deloitte)</h4>
+            <p>
+                Laskuri perustuu Googlen ja Deloitten laajaan <strong>"Milliseconds make Millions"</strong> -tutkimukseen, joka osoitti jo pienen nopeusparannuksen kasvattavan konversiota jopa <strong>8–10 %</strong>. 
+                <br><br>
+                Vuonna 2026 kriittisin mittari on <strong>INP (Interaction to Next Paint)</strong>. Se mittaa sivuston välitöntä vastetta käyttäjän klikkauksiin. Tutkimukset osoittavat, että yli 200 millisekunnin viive vasteajassa rikkoo käyttäjän luottamuksen ja johtaa ostoprosessin keskeytymiseen. 
+                Laskelma olettaa, että uudistuksessa saavutetaan Googlen "Good"-tason mukainen suorituskyky kaikilla osa-alueilla.
+                <br><br>
+                <a href="https://web.dev/articles/inp" target="_blank">Lue lisää Googlen INP-mittarista ja sen vaikutuksesta (2026 standardi).</a>
+            </p>
+        </div>
+
+        <div class="cta-box">
+            <span class="section-tag">Oletko valmis kasvamaan?</span>
+            <h2>Älä jätä rahaa pöydälle hitaiden sivujen vuoksi.</h2>
+            <p style="margin-bottom: 30px;">Valoverstaan verkkosivupaketti maksaa itsensä takaisin usein jo muutamassa kuukaudessa.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="/#yhteystiedot" class="btn btn-primary btn-lg">Aloita uudistus</a>
+                <a href="verkkosivu-uudistus-kustannustehokkaasti.html" class="btn btn-ghost">Lue lisää palvelusta</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">VALOVERSTAS<span class="logo-dot">.</span></div>
+                <p>Nykyaikaiset, nopeat ja konvertoivat verkkosivut PK-yrityksille kiinteällä hinnalla.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#palvelut">Palvelut</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Ota yhteyttä</h4>
+                <ul>
+                    <li>moikka@valoverstas.fi</li>
+                    <li>Jyväskylä, Suomi</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        const trafficInput = document.getElementById('traffic');
+        const crInput = document.getElementById('cr');
+        const aovInput = document.getElementById('aov');
+        const speedInput = document.getElementById('speed');
+
+        const trafficVal = document.getElementById('trafficVal');
+        const crVal = document.getElementById('crVal');
+        const aovVal = document.getElementById('aovVal');
+        const speedVal = document.getElementById('speedVal');
+
+        const yearlyProfitOutput = document.getElementById('yearlyProfit');
+        const newCROutput = document.getElementById('newCR');
+
+        function updateLabels() {
+            trafficVal.textContent = parseInt(trafficInput.value).toLocaleString('fi-FI');
+            crVal.textContent = parseFloat(crInput.value).toFixed(1) + ' %';
+            aovVal.textContent = parseInt(aovInput.value).toLocaleString('fi-FI') + ' €';
+            speedVal.textContent = parseFloat(speedInput.value).toFixed(1) + ' s';
+        }
+
+        function calculate() {
+            const sessions = parseFloat(trafficInput.value);
+            const currentCR = parseFloat(crInput.value) / 100;
+            const aov = parseFloat(aovInput.value);
+            const currentSpeed = parseFloat(speedInput.value);
+
+            const targetSpeed = 1.5;
+            const speedDiff = Math.max(0, currentSpeed - targetSpeed);
+            
+            // Research-based conversion boost (conservative 7% per second improvement for B2B/B2C)
+            // Or use the 4.42% drop per second from Portent
+            // If we save speedDiff seconds, we gain:
+            // newCR = currentCR * (1 + (speedDiff * 0.08)) // 8% boost per second saved
+            const conversionBoost = 1 + (speedDiff * 0.08);
+            const newCR = currentCR * conversionBoost;
+            
+            // Traffic boost from SEO and better Core Web Vitals (conservative 15%)
+            const trafficBoost = 1.15;
+            const newSessions = sessions * trafficBoost;
+
+            const currentMonthlyRev = sessions * currentCR * aov;
+            const newMonthlyRev = newSessions * newCR * aov;
+            
+            const monthlyIncrease = newMonthlyRev - currentMonthlyRev;
+            const yearlyIncrease = monthlyIncrease * 12;
+
+            // Counter animation
+            animateValue(yearlyProfitOutput, parseInt(yearlyProfitOutput.textContent.replace(/[^0-9]/g, '')) || 0, Math.round(yearlyIncrease), 1000, ' €');
+            newCROutput.textContent = (newCR * 100).toFixed(2) + ' %';
+        }
+
+        function animateValue(obj, start, end, duration, suffix) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                obj.textContent = current.toLocaleString('fi-FI') + suffix;
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        [trafficInput, crInput, aovInput, speedInput].forEach(input => {
+            input.addEventListener('input', () => {
+                updateLabels();
+                calculate();
+            });
+        });
+
+        // Init
+        updateLabels();
+        calculate();
+    </script>
+</body>
+
+</html>

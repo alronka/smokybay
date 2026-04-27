@@ -1506,3 +1506,102 @@ footer {
 .faq-answer strong {
     color: var(--text);
 }
+
+/* ROI CALCULATOR HIGHLIGHT */
+.calc-highlight-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 950px) {
+    .calc-highlight-container {
+        grid-template-columns: 1fr;
+        padding: 40px;
+        gap: 40px;
+    }
+}
+
+.calc-highlight-content h2 {
+    margin-bottom: 24px;
+}
+
+.calc-highlight-content p {
+    color: var(--text-dim);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.calc-cta-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.calc-highlight-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-card {
+    background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(var(--accent-rgb), 0.05));
+    border: 2px solid var(--accent);
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(var(--accent-rgb), 0.3);
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.visual-header {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.visual-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.visual-label {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.visual-value {
+    font-size: 5rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.visual-footer {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
