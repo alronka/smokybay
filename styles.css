@@ -1519,6 +1519,8 @@ footer {
     padding: 80px;
     position: relative;
     overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 @media (max-width: 950px) {
@@ -1526,6 +1528,11 @@ footer {
         grid-template-columns: 1fr;
         padding: 40px;
         gap: 40px;
+        text-align: center;
+    }
+
+    .calc-cta-group {
+        justify-content: center;
     }
 }
 
@@ -1558,11 +1565,12 @@ footer {
     border-radius: 24px;
     padding: 40px;
     width: 100%;
-    max-width: 350px;
+    max-width: 320px;
     text-align: center;
-    box-shadow: 0 30px 60px rgba(var(--accent-rgb), 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     position: relative;
     animation: float 6s ease-in-out infinite;
+    backdrop-filter: blur(10px);
 }
 
 .visual-header {
