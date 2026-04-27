@@ -297,12 +297,18 @@ h1 {
     gap: 8px;
     padding: 14px 32px;
     border-radius: var(--radius-sm);
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 600;
     font-size: 0.95rem;
     transition: var(--transition);
     cursor: pointer;
     border: none;
+    color: white;
+}
+
+.btn:hover {
+    text-decoration: none !important;
+    color: white !important;
 }
 
 .btn-primary {
@@ -1523,10 +1529,10 @@ footer {
     background: var(--glass);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 80px;
+    padding: 60px 80px;
     position: relative;
     overflow: hidden;
-    max-width: 1200px;
+    max-width: 1100px;
     width: 100%;
     margin: 0 auto;
 }
