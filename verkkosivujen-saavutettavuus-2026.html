@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miksi verkkosivujen saavutettavuus on kriittistä vuonna 2026? – Valoverstas</title>
+    <meta name="description"
+        content="Verkkosivujen saavutettavuus ei ole vain laki, se on kilpailuetu. Lue miksi saavutettavat sivut ja moderni design ovat yrityksesi menestyksen avain vuonna 2026.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+    
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivujen-saavutettavuus-2026.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/valoverstas_accessibility_hedgehog.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivujen-saavutettavuus-2026.html">
+    <meta name="twitter:title" content="Verkkosivujen saavutettavuus: Laatustandardi 2026">
+    <meta name="twitter:description" content="Miksi saavutettavuus on yrityksesi tärkein laatustandardi? Lue asiantuntijan vinkit.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/valoverstas_accessibility_hedgehog.png">
+
+    <!-- Mermaid for graphs -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#1a1a2e',
+                primaryTextColor: '#FFFFFF',
+                primaryBorderColor: '#89CFF0',
+                lineColor: '#89CFF0',
+                secondaryColor: '#1a1a2e',
+                tertiaryColor: '#1a1a2e',
+                fontSize: '16px',
+                textColor: '#FFFFFF',
+                mainBkg: '#1a1a2e',
+                nodeBorder: '#89CFF0',
+                nodeTextColor: '#FFFFFF'
+            },
+            securityLevel: 'loose',
+            fontFamily: 'Plus Jakarta Sans'
+        });
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        .mermaid {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#palvelut">Palvelut</a>
+                <a href="index.html#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="index.html#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Opas • 6 min luku</div>
+            <h1>Saavutettavuus on verkkosivujen <span class="gradient-text">uusi laatustandardi</span> vuonna 2026</h1>
+            <p class="hero-sub" style="margin: 0 auto;">Digitaalinen esteettömyys ei ole vain laki, se on merkki välittävästä brändistä ja ensiluokkaisesta tekniikasta.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/valoverstas_accessibility_hedgehog.png" alt="Verkkosivujen saavutettavuus ja esteettömyys - Valoverstas">
+        </div>
+
+        <div class="article-content">
+            <p>Verkkosivujen saavutettavuus (accessibility) on usein virheellisesti mielletty vain pienen erityisryhmän tarpeeksi. Todellisuudessa saavutettavuus on verkkosivujen yleinen laatustandardi, joka parantaa käyttökokemusta meidän jokaisen kohdalla — riippumatta siitä, käytämmekö sivustoa kirkkaassa auringonpaisteessa, liikkuvassa bussissa vai rajoitteiden kanssa.</p>
+
+            <p>Vuonna 2026 saavutettavuusdirektiivi ja tiukentuneet vaatimukset ovat tehneet esteettömyydestä välttämättömyyden. Yrityksille tämä on kuitenkin valtava mahdollisuus: saavutettava sivu on lähes poikkeuksetta myös nopeampi, paremmin hakukoneoptimoitu ja helppokäyttöisempi.</p>
+
+            <h2>Mitä saavutettavuus käytännössä tarkoittaa?</h2>
+            <p>Yksinkertaisimmillaan saavutettavuus tarkoittaa sitä, että verkkosivun sisältö ja toiminnot ovat kaikkien käytettävissä. Tämä vaatii huomiota kolmeen pääalueeseen:</p>
+            <ol>
+                <li><strong>Visuaalisuus:</strong> Riittävät värikontrastit, selkeä typografia ja kuvien tekstivastineet (alt-tekstit).</li>
+                <li><strong>Tekniikka:</strong> Sivuston on oltava käytettävissä pelkällä näppäimistöllä ja yhteensopiva ruudunlukuohjelmien kanssa.</li>
+                <li><strong>Kieli:</strong> Selkeä rakenne, ymmärrettävät linkit ja looginen eteneminen.</li>
+            </ol>
+
+            <div class="mermaid">
+                mindmap
+                  root((Saavutettavuus))
+                    Käyttäjäkokemus
+                      Parempi luettavuus
+                      Selkeämpi rakenne
+                      Helppokäyttöisyys
+                    SEO ja Näkyvyys
+                      Parempi indeksointi
+                      Matala Bounce Rate
+                      Googlen suosima
+                    Lakisääteisyys
+                      Direktiivit
+                      WCAG 2.2 standardit
+                      Brändin suojaaminen
+                    Liiketoiminta
+                      Laajempi yleisö
+                      Parempi maine
+                      Korkeampi konversio
+            </div>
+
+            <h2>Saavutettavuus on SEO:n salainen ase</h2>
+            <p>Google ja muut hakukoneet "lukevat" sivustoja hyvin samalla tavalla kuin ruudunlukuohjelmat. Kun koodaat sivustosi saavutettavaksi, teet siitä samalla erittäin helposti ymmärrettävän hakukoneroboteille. </p>
+
+            <p>Esimerkiksi oikein käytetyt otsikkohierarkiat (H1-H4) ja kuvaavat alt-tekstit auttavat Googlea ymmärtämään, mistä sivullasi on kyse. Saavutettava sivu nousee hakutuloksissa korkeammalle, koska se tarjoaa objektiivisesti paremman rakenteen ja käyttökokemuksen.</p>
+
+            <div class="highlight-box">
+                <strong>Tiesitkö?</strong> Saavutettavuusparannukset voivat laajentaa yrityksesi potentiaalista asiakaskuntaa jopa 15–20 prosentilla huomioimalla erilaiset käyttörajoitteet ja tilanteesta riippuvat haasteet.
+            </div>
+
+            <h2>Brändi, joka välittää, voittaa</h2>
+            <p>Vuoden 2026 kuluttajat arvostavat vastuullisuutta. Kun yrityksesi verkkosivut ovat saavutettavat, viestit asiakkaillesi, että arvostat kaikkia käyttäjiä tasapuolisesti. Tämä rakentaa luottamusta ja vahvistaa brändin mainetta modernina ja eettisenä toimijana.</p>
+            
+            <p>Valoverstaalla me emme näe saavutettavuutta rajoitteena, vaan mahdollisuutena luoda upeaa designia, joka toimii kaikille. Saavutettava design on älykästä designia.</p>
+
+            <div class="article-cta">
+                <h3>Onko sivustosi valmis vuoteen 2026?</h3>
+                <p>Toteutamme verkkosivu-uudistukset, joissa saavutettavuus, nopeus ja upea ulkoasu kulkevat käsi kädessä. Varmista, ettei kukaan asiakas jää oven ulkopuolelle.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Pyydä saavutettavuusanalyysi</a>
+            </div>
+
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
