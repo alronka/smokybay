@@ -8,8 +8,14 @@
   </url>
   <url>
     <loc>https://valoverstas.fi/blogi.html</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://valoverstas.fi/yrityksen-verkkosivusto-checklist.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
