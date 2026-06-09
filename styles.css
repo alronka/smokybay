@@ -157,19 +157,19 @@ nav.scrolled {
 }
 
 .theme-toggle .sun-icon {
-    display: none;
+    display: block;
 }
 
 .theme-toggle .moon-icon {
-    display: block;
+    display: none;
 }
 
 [data-theme="light"] .theme-toggle .sun-icon {
-    display: block;
+    display: none;
 }
 
 [data-theme="light"] .theme-toggle .moon-icon {
-    display: none;
+    display: block;
 }
 
 .nav-container {
