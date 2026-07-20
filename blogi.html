@@ -119,6 +119,26 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .btn-archive {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: var(--glass);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-archive:hover {
+            background: var(--glass-hover);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
     </style>
     <!-- Google Consent Mode v2 & Google tags -->
     <script>
@@ -173,7 +193,23 @@
     </header>
 
     <section class="blog-grid">
-        <!-- POST 21 (LATEST) -->
+        <!-- POST 22 (LATEST) -->
+        <a href="geo-optimointi-verkkosivu-uudistus.html" class="blog-card" data-animate>
+            <div class="blog-image">
+                <img src="img/geo-optimointi-verkkosivu-uudistus.webp" alt="GEO-optimointi ja verkkosivu-uudistus 2026" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="blog-content">
+                <div class="blog-meta">Verkkosivu-uudistus • SEO/GEO • 7 min luku</div>
+                <h3>GEO-optimointi ja verkkosivu-uudistus: Näin tekoälyhaut muuttavat kaiken 2026</h3>
+                <p>ChatGPT, Perplexity ja Google AI Overview vastaavat asiakkaidesi kysymyksiin suoraan ilman klikkausta. Lue miten GEO-optimointi muuttaa verkkosivu-uudistuksen vaatimuksia 2026.</p>
+                <div class="blog-footer">
+                    <span>22. Kesäkuuta 2026</span>
+                    <span class="gradient-text">Lue lisää →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- POST 21 -->
         <a href="staattiset-verkkosivut-vs-wordpress.html" class="blog-card" data-animate>
             <div class="blog-image">
                 <img src="img/staattiset-verkkosivut-vs-wordpress.webp" alt="Staattiset verkkosivut vs. WordPress" style="width: 100%; height: 100%; object-fit: cover;">
@@ -253,268 +289,14 @@
             </div>
         </a>
 
-        <!-- POST 16 -->
-        <a href="verkkosivujen-hakukoneoptimointi.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/verkkosivujen-hakukoneoptimointi.webp" alt="Verkkosivujen hakukoneoptimointi" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">SEO & Näkyvyys • Kasvu • 5 min luku</div>
-                <h3>Verkkosivujen hakukoneoptimointi: Löydy verkosta ekologisesti</h3>
-                <p>Miten varmistat, että yrityksesi kotisivut löytyvät silloin, kun asiakkaat etsivät palveluitasi? Lue opas SEO-näkyvyyteen.</p>
-                <div class="blog-footer">
-                    <span>26. Toukokuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 15 -->
-        <a href="hiilineutraalit-verkkosivut.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/hiilineutraalit-verkkosivut.webp" alt="Hiilineutraalit verkkosivut 2026" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Vastuullisuus • Web-kehitys • 4 min luku</div>
-                <h3>Hiilineutraalit verkkosivut 2026: Vastuullisuusteko vai pakollinen standardi?</h3>
-                <p>Internet on yksi maailman suurimmista saastuttajista. Näin yrityksesi voi erottua edukseen vihreällä web-kehityksellä.</p>
-                <div class="blog-footer">
-                    <span>20. Toukokuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 14 -->
-        <a href="tekoalyohjattu-ux-suunnittelu-2026.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/tekoalyohjattu-ux-2026.png" alt="Tekoälyohjattu UX 2026" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Design • Tekoäly • 4 min luku</div>
-                <h3>Tekoälyohjattu UX-suunnittelu: Näin verkkosivut personoituvat vuonna 2026</h3>
-                <p>Staattisten sivujen aika on ohi. Miten hyperpersonointi ja tekoäly muuttavat käyttöliittymiä lennosta?</p>
-                <div class="blog-footer">
-                    <span>18. Toukokuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 13 -->
-        <a href="paikallinen-seo-2026-opas.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/paikallinen-seo-2026.png" alt="Paikallinen SEO 2026" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Strategia • Paikallinen SEO • 5 min luku</div>
-                <h3>Paikallinen SEO on yrityksesi tärkein investointi vuonna 2026</h3>
-                <p>Haluatko enemmän asiakkaita omalta alueeltasi? Lue miksi paikallinen hakukoneoptimointi on kriittistä ja miten dominaat paikallisia hakutuloksia.</p>
-                <div class="blog-footer">
-                    <span>11. Toukokuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 12 -->
-        <a href="verkkosivujen-saavutettavuus-2026.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/valoverstas_accessibility_hedgehog.png" alt="Verkkosivujen saavutettavuus" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Laatu & Saavutettavuus • 6 min luku</div>
-                <h3>Saavutettavuus on verkkosivujen uusi laatustandardi vuonna 2026</h3>
-                <p>Digitaalinen esteettömyys ei ole vain laki, se on merkki välittävästä brändistä. Lue miksi saavutettavuus on yrityksesi suurin kilpailuetu.</p>
-                <div class="blog-footer">
-                    <span>5. Toukokuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 11 -->
-        <a href="miksi-nopeat-verkkosivut-ovat-kriittisia-2026.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/verkkosivujen-nopeus-hero.png" alt="Verkkosivujen nopeus ja suorituskyky" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Web & Tekniikka • 5 min luku</div>
-                <h3>Miksi nopeat verkkosivut ovat kriittisiä vuonna 2026?</h3>
-                <p>Verkkosivujen nopeus ratkaisee myynnin ja SEO-näkyvyyden. Lue miksi nopeat sivut ovat yrityksesi tärkein investointi.</p>
-                <div class="blog-footer">
-                    <span>24. Huhtikuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- UUSIN POSTAUS: Verkkosivu-uudistus -->
-        <a href="verkkosivu-uudistus-kustannustehokkaasti.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/verkkosivu-uudistus-hero.png" alt="Verkkosivujen suunnittelu ja uudistus modernilla tekniikalla" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Opas • 4 min luku</div>
-                <h3>Verkkosivut uusiksi: Milloin on oikea aika muutokselle?</h3>
-                <p>Milloin yritys tarvitsee verkkosivu-uudistuksen? Lue kuinka teet päivityksen helposti ja kustannustehokkaasti.</p>
-                <div class="blog-footer">
-                    <span>14. Huhtikuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POSTAUS: Latausnopeus -->
-        <a href="miksi-verkkosivujen-latausnopeus-maarittaa-menestyksen.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img srcset="img/verkkosivujen-latausnopeus-yrityksen-menestys-mobile.webp 800w, img/verkkosivujen-latausnopeus-yrityksen-menestys.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/verkkosivujen-latausnopeus-yrityksen-menestys.webp" alt="Sivuston latausnopeus" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Web & Tekniikka • 4 min luku</div>
-                <h3>Miksi verkkosivujen latausnopeus määrittää menestyksesi vuonna 2026?</h3>
-                <p>Hitaat sivut tarkoittavat menetettyä myyntiä. Katso miksi latausaika ratkaisee asiakkaan ostopäätöksen.</p>
-                <div class="blog-footer">
-                    <span>10. Huhtikuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 5 (LATEST) -->
-        <a href="miksi-nopeus-vaikuttaa-suoraan-myyntiin.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img srcset="img/Wavy_Bus-12_Single-03-mobile.webp 800w, img/Wavy_Bus-12_Single-03.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/Wavy_Bus-12_Single-03.webp" alt="Verkkosivujen nopeus ja myynti" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Opas • 4 min luku</div>
-                <h3>Miksi verkkosivujen nopeus vaikuttaa suoraan myyntiin?</h3>
-                <p>Hitaat sivut karkottavat asiakkaita. Lue miksi modernit ja nopeat sivut parantavat sekä asiakaskokemusta että Googlen hakukonenäkyvyyttä.</p>
-                <div class="blog-footer">
-                    <span>2. Huhtikuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 4 -->
-        <a href="konversio-on-tarkeampi-kuin-kavijamaara.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <picture style="width: 100%; height: 100%;">
-                    <source srcset="img/verkkosivujen-konversio-optimointi-cro-mobile.webp" media="(max-width: 800px)">
-                    <img src="img/verkkosivujen-konversio-optimointi-cro.webp" alt="Konversio ja myynti" style="width: 100%; height: 100%; object-fit: cover;">
-                </picture>
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Liiketoiminta • 6 min luku</div>
-                <h3>Konversio on tärkeämpi kuin kävijämäärä</h3>
-                <p>Älä tuijota vain kävijöitä. Opi miten teet sivuistasi aidon myyntityökalun, joka kääntää selaajat asiakkaiksi.</p>
-                <div class="blog-footer">
-                    <span>31. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- UUSI POSTAUS 3 -->
-        <a href="miksi-kukaan-ei-loyda-sivuillesi.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img srcset="img/3414714-mobile.webp 800w, img/3414714.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/3414714.webp" alt="Näkyvyys ja SEO" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">SEO & Näkyvyys • 5 min luku</div>
-                <h3>Miksi kukaan ei löydä sivuillesi?</h3>
-                <p>Onko verkkosivusi pelkkä koriste? Opi 3 kriittistä asiaa, jotka estävät asiakkaita löytämästä sinua Googlen syövereistä.</p>
-                <div class="blog-footer">
-                    <span>24. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- UUSI POSTAUS 2 -->
-        <a href="viisi-merkkia-etta-yrityksesi-kaipaa-verkkosivu-uudistusta.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img srcset="img/vecteezy_isometric-style-illustration-about-a-web-programmer-working_6552084-mobile.webp 800w, img/vecteezy_isometric-style-illustration-about-a-web-programmer-working_6552084.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/vecteezy_isometric-style-illustration-about-a-web-programmer-working_6552084.webp" alt="Verkkosivu-uudistus" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Opas • 5 min luku</div>
-                <h3>5 merkkiä siitä, että yrityksesi kaipaa verkkosivu-uudistusta</h3>
-                <p>Älä anna vanhentuneen tekniikan karkottaa asiakkaitasi. Lue asiantuntijan vinkit siihen, milloin on aika päivittää sivusto.</p>
-                <div class="blog-footer">
-                    <span>17. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- UUSI POSTAUS 1 -->
-        <a href="miksi-verkkosivupaketti-on-pk-yrittajan-paras-ystava.html" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img srcset="img/edullinen-verkkosivupaketti-valoverstas-mobile.webp 800w, img/edullinen-verkkosivupaketti-valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/edullinen-verkkosivupaketti-valoverstas.webp" alt="Verkkosivupaketti yritykselle" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Yrityksille • 4 min luku</div>
-                <h3>Miksi verkkosivupaketti on pk-yrittäjän paras ystävä?</h3>
-                <p>Verkkosivujen hankkiminen pelottaa monia, mutta edullinen avaimet käteen -verkkosivupaketti säästää yrittäjän aikaa, rahaa ja hermoja.</p>
-                <div class="blog-footer">
-                    <span>15. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 1 -->
-        <a href="#" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/google-cloud-svgrepo-com.svg" alt="Design" style="width: 80px; opacity: 0.8;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Design • 5 min luku</div>
-                <h3>Psykologia verkkosivujen takana — Miten visuaalisuus ohjaa asiakasta?</h3>
-                <p>Tutustu siihen, miten tarkkaan harkittu visuaalinen ilme voi moninkertaistaa sivustosi konversion ja
-                    rakentaa luottamusta.</p>
-                <div class="blog-footer">
-                    <span>10. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 2 -->
-        <a href="#" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/json-svgrepo-com.svg" alt="SEO" style="width: 80px; opacity: 0.8;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">SEO • 4 min luku</div>
-                <h3>Core Web Vitals — Mitä ne ovat ja miksi ne ratkaisevat sijoituksesi Googlessa?</h3>
-                <p>Nopeus ei ole vain mukavuutta. Se on yksi tärkeimmistä hakukonakriteereistä. Laskimme nopeuden
-                    vaikutuksen myyntiin.</p>
-                <div class="blog-footer">
-                    <span>8. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- POST 3 -->
-        <a href="#" class="blog-card" data-animate>
-            <div class="blog-image">
-                <img src="img/google-cloud-svgrepo-com.svg" alt="Web" style="width: 80px; opacity: 0.8;">
-            </div>
-            <div class="blog-content">
-                <div class="blog-meta">Web-kehitys • 6 min luku</div>
-                <h3>Miksi staattiset verkkosivut ovat tulleet takaisin ryminällä?</h3>
-                <p>Nopeus, turvallisuus ja SEO-ystävällisyys. Modernit staattiset sivustot ovat PK-yrityksen paras
-                    työkalu digitaaliseen läsnäoloon.</p>
-                <div class="blog-footer">
-                    <span>2. Maaliskuuta 2026</span>
-                    <span class="gradient-text">Lue lisää →</span>
-                </div>
-            </div>
-        </a>
     </section>
+
+    <div style="text-align: center; padding: 0 24px 120px;">
+        <a href="arkisto.html" class="btn-archive">
+            <span>Katso loput artikkelit arkistosta</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+    </div>
 
     <!-- FOOTER -->
     <footer>
