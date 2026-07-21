@@ -85,7 +85,7 @@
             -webkit-appearance: none;
             width: 100%;
             height: 6px;
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--border);
             border-radius: 5px;
             outline: none;
             transition: 0.3s;
@@ -166,10 +166,10 @@
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--glass);
             padding: 20px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
             text-align: center;
         }
 
@@ -177,7 +177,7 @@
             display: block;
             font-size: 1.5rem;
             font-weight: 800;
-            color: #fff;
+            color: var(--text);
             margin-bottom: 4px;
         }
 
@@ -191,14 +191,14 @@
         .research-info {
             margin-top: 50px;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--glass);
             border-radius: var(--radius-sm);
             border-left: 4px solid var(--accent);
         }
 
         .research-info h4 {
             margin-bottom: 15px;
-            color: #fff;
+            color: var(--text);
         }
 
         .research-info p {
