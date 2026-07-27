@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivu-uudistuksen aikataulu ja budjetti: Realistinen opas PK-yrittäjälle | Valoverstas</title>
+    <meta name="description"
+        content="Kuinka kauan verkkosivu-uudistus kestää ja mistä kustannukset oikeasti koostuvat? Realistinen läpileikkaus aikatauluun ja budjettiin, ja mitä kannattaa kysyä tarjouspyynnössä.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivu-uudistus-aikataulu-budjetti.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivu-uudistus-aikataulu-budjetti.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivu-uudistus-aikataulu-budjetti.html">
+    <meta name="twitter:title" content="Verkkosivu-uudistuksen aikataulu ja budjetti: Realistinen opas PK-yrittäjälle">
+    <meta name="twitter:description" content="Kuinka kauan verkkosivu-uudistus kestää ja mistä kustannukset oikeasti koostuvat? Realistinen läpileikkaus.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivu-uudistus-aikataulu-budjetti.webp">
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kuinka kauan verkkosivu-uudistus kestää?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tyypillinen PK-yrityksen verkkosivu-uudistus kestää suunnittelusta julkaisuun noin 4-10 viikkoa, riippuen sivuston laajuudesta, sisällön valmiudesta ja päätöksenteon nopeudesta. Suurimmat viivästykset syntyvät yleensä sisällön ja kuvamateriaalin toimituksesta, ei itse toteutuksesta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mistä verkkosivu-uudistuksen kustannukset koostuvat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kustannukset koostuvat tyypillisesti suunnittelusta ja ulkoasusta, teknisestä toteutuksesta, sisällöntuotannosta (tekstit ja kuvat), sekä ylläpidosta ja hostingista. Halvimmat tarjoukset jättävät usein sisällöntuotannon ja ylläpidon pois, jolloin ne ilmestyvät yllätyksenä myöhemmin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä kannattaa kysyä verkkosivutoimittajalta tarjouspyynnössä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kysy sisältyykö tarjoukseen sisällöntuotanto, kuinka moneen korjauskierrokseen hinta sisältyy, kuka omistaa lopullisen koodin ja sisällön, mitä ylläpito maksaa jatkossa, ja mikä on realistinen aikataulu jos oma sisältö myöhästyy."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Verkkosivu-uudistuksen aikataulu ja budjetti: Realistinen opas PK-yrittäjälle",
+      "description": "Kuinka kauan verkkosivu-uudistus kestää ja mistä kustannukset oikeasti koostuvat? Realistinen läpileikkaus aikatauluun ja budjettiin.",
+      "image": "https://valoverstas.fi/img/verkkosivu-uudistus-aikataulu-budjetti.webp",
+      "datePublished": "2026-07-27",
+      "author": {
+        "@type": "Organization",
+        "name": "Valoverstas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Valoverstas",
+        "url": "https://valoverstas.fi"
+      }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content h3 { font-size: 1.3rem; margin-top: 32px; }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 { margin-top: 0; margin-bottom: 16px; }
+
+        .timeline-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .timeline-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .timeline-text strong { display: block; color: var(--text); margin-bottom: 6px; }
+        .timeline-text p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        @media (max-width: 600px) {
+            .cost-grid { grid-template-columns: 1fr; }
+        }
+
+        .cost-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .cost-card h3 {
+            margin-top: 0 !important;
+            margin-bottom: 12px !important;
+            font-size: 1.05rem !important;
+            color: var(--accent) !important;
+        }
+
+        .cost-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Verkkosivu-uudistus • Budjetointi • 7 min luku</div>
+            <h1>Verkkosivu-uudistuksen aikataulu ja budjetti: <span class="gradient-text">Realistinen opas PK-yrittäjälle</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">"Kuinka kauan tässä menee ja paljonko tämä maksaa?" ovat ensimmäiset kysymykset jokaisessa verkkosivuprojektissa — mutta vastaus on harvoin niin yksinkertainen kuin tarjouksessa lukee</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivu-uudistus-aikataulu-budjetti.webp" alt="Verkkosivu-uudistuksen aikataulu ja budjetti PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Moni verkkosivu-uudistus lähtee liikkeelle innolla ja päättyy turhautumiseen, ei siksi että lopputulos olisi huono, vaan koska aikataulu venyi kolminkertaiseksi ja lopullinen lasku oli yllättävän paljon tarjottua suurempi. Syy ei yleensä ole epärehellisyys, vaan se, ettei aikataulua ja budjettia ole alun perin purettu tarpeeksi konkreettisiksi osiksi.</p>
+
+            <p>Tämä artikkeli käy läpi, mistä verkkosivu-uudistuksen aika ja raha oikeasti kuluvat, jotta osaat arvioida tarjouksia realistisesti ja varautua projektiin etukäteen.</p>
+
+            <div class="highlight-box">
+                <strong>Nyrkkisääntö:</strong> Tyypillinen PK-yrityksen verkkosivu-uudistus kestää suunnittelusta julkaisuun noin 4-10 viikkoa. Suurin yksittäinen syy venymiseen ei ole toteutus, vaan oman sisällön ja kuvamateriaalin viivästyminen.
+            </div>
+
+            <h2>Verkkosivu-uudistuksen tyypilliset vaiheet ja kesto</h2>
+            <p>Vaikka jokainen projekti on erilainen, useimmat verkkosivu-uudistukset etenevät samaa peruskaavaa noudattaen:</p>
+
+            <ul class="timeline-list">
+                <li>
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-text">
+                        <strong>Määrittely ja suunnittelu (1-2 viikkoa)</strong>
+                        <p>Käydään läpi tavoitteet, kohderyhmä, sivukartta ja visuaalinen suunta. Tässä vaiheessa syntyy usein rautalankamalli tai luonnos, jonka pohjalta toteutus etenee.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-text">
+                        <strong>Sisällöntuotanto (1-3 viikkoa, usein rinnakkain)</strong>
+                        <p>Tekstit, kuvat ja muu materiaali kootaan tai tuotetaan. Tämä vaihe on yleisin pullonkaula, koska se riippuu tilaajan omasta aikataulusta enemmän kuin toimittajan.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-text">
+                        <strong>Tekninen toteutus (2-4 viikkoa)</strong>
+                        <p>Sivusto rakennetaan valitulla teknologialla, sisältö viedään sisään, toiminnallisuudet (lomakkeet, integraatiot) rakennetaan ja testataan eri laitteilla.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-text">
+                        <strong>Katselmointi ja korjauskierrokset (1-2 viikkoa)</strong>
+                        <p>Tilaaja käy sivuston läpi ja pyytää muutoksia. Tässä vaiheessa venyminen on yleistä, jos korjauskierroksia ei ole rajattu etukäteen tarjouksessa.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-number">5</div>
+                    <div class="timeline-text">
+                        <strong>Julkaisu ja jälkihoito (muutama päivä)</strong>
+                        <p>Sivusto siirretään tuotantoon, domain ja sähköpostit tarkistetaan, ja seuranta (esim. Google Analytics) otetaan käyttöön.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Mistä kustannukset oikeasti koostuvat?</h2>
+            <p>Verkkosivutarjoukset voivat näyttää hyvin erilaisilta, vaikka lopputulos olisi samankaltainen, koska ne sisältävät eri asioita. Neljä osa-aluetta kannattaa aina eritellä:</p>
+
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <h3>Suunnittelu ja ulkoasu</h3>
+                    <p>Visuaalinen ilme, käyttöliittymäsuunnittelu ja brändin sovittaminen sivustolle. Vaihtelee eniten sen mukaan, tehdäänkö räätälöity ulkoasu vai valmispohjan muokkaus.</p>
+                </div>
+                <div class="cost-card">
+                    <h3>Tekninen toteutus</h3>
+                    <p>Sivuston rakentaminen, integraatiot (esim. varausjärjestelmä, CRM), lomakkeet ja tekninen optimointi. Tämä on usein suurin yksittäinen erä.</p>
+                </div>
+                <div class="cost-card">
+                    <h3>Sisällöntuotanto</h3>
+                    <p>Tekstien kirjoitus, kuvien hankinta tai kuvaus. Moni tarjous jättää tämän tilaajan vastuulle, mikä on täysin normaalia, mutta se pitää tietää etukäteen, jotta osaa varata siihen aikaa.</p>
+                </div>
+                <div class="cost-card">
+                    <h3>Ylläpito ja hosting</h3>
+                    <p>Palvelinkulut, päivitykset, varmuuskopiot ja tekninen tuki julkaisun jälkeen. Kannattaa kysyä, onko tämä kertakustannus, kuukausimaksu, vai puuttuuko se tarjouksesta kokonaan.</p>
+                </div>
+            </div>
+
+            <p>Halvin tarjous on usein halpa juuri siksi, että se jättää sisällöntuotannon tai ylläpidon kokonaan pois. Se ei ole ongelma, jos tiedät sen etukäteen ja olet valmis hoitamaan ne itse tai hankkimaan erikseen, mutta se on ongelma, jos huomaat sen vasta laskutuksen yhteydessä. <a href="verkkosivujen-hankinta-ja-ostaminen.html">Verkkosivujen hankintaoppaassamme</a> käymme läpi tarkemmin, miten piilokuluja tunnistaa etukäteen.</p>
+
+            <h2>Mitä kannattaa kysyä tarjouspyynnössä?</h2>
+            <p>Selkeät kysymykset etukäteen säästävät sekä aikaa että rahaa myöhemmin. Näitä kannattaa kysyä jokaiselta tarjoajalta:</p>
+
+            <ul>
+                <li><strong>Sisältyykö hintaan sisällöntuotanto?</strong> Jos ei, kuka kirjoittaa tekstit ja hankkii kuvat, ja millä aikataululla se pitää olla valmiina?</li>
+                <li><strong>Kuinka moneen korjauskierrokseen hinta sisältyy?</strong> Rajaton "hienosäätö" kuulostaa hyvältä, mutta ilman rajaa se venyy helposti kuukausiksi.</li>
+                <li><strong>Kuka omistaa lopullisen koodin ja sisällön?</strong> Jos sivusto rakennetaan suljettuun alustaan, saatat olla sidottu samaan toimittajaan pysyvästi.</li>
+                <li><strong>Mitä ylläpito maksaa jatkossa?</strong> Kysy konkreettinen kuukausi- tai vuosihinta, älä tyydy "sovitaan myöhemmin" -vastaukseen.</li>
+                <li><strong>Mikä on realistinen aikataulu, jos oma sisältö myöhästyy?</strong> Hyvä toimittaja osaa kertoa tämän suoraan, koska se tapahtuu lähes joka projektissa jossain määrin.</li>
+            </ul>
+
+            <h2>Yleisimmät syyt aikataulun venymiseen</h2>
+            <p>Näiden tunnistaminen etukäteen on paras tapa välttää niitä:</p>
+            <ul>
+                <li><strong>Sisältö ei ole valmiina, kun tekninen toteutus alkaa.</strong> Tekninen työ voi edetä ilman lopullista sisältöä jonkin aikaa, mutta ei loputtomiin.</li>
+                <li><strong>Päätöksentekijöitä on monta, eivätkä he ole samaa mieltä.</strong> Yksi selkeä yhteyshenkilö tilaajan puolella nopeuttaa projektia merkittävästi.</li>
+                <li><strong>Korjauskierroksia ei ole rajattu.</strong> Ilman selkeää rajaa "vielä yksi pieni muutos" -kierroksia voi tulla kymmeniä.</li>
+                <li><strong>Kuvamateriaalia ei ole, ja sitä aletaan hankkia kesken projektin.</strong> Valokuvaus tai kuvapankkikuvien valinta vie yllättävän paljon aikaa, jos sitä ei ole aikataulutettu etukäteen.</li>
+            </ul>
+
+            <h2>Miten Valoverstas rakentaa aikataulun ja budjetin</h2>
+            <p>Ennen kuin annamme tarjousta, käymme läpi projektin laajuuden konkreettisesti: montako sivua, mitä toiminnallisuuksia, ja onko sisältö jo olemassa vai pitääkö se tuottaa. Tämän pohjalta aikataulu ja hinta ovat realistisia alusta asti, ei arvauksia jotka tarkentuvat vasta projektin edetessä.</p>
+
+            <p>Sovimme myös etukäteen, kuinka monta korjauskierrosta hintaan sisältyy ja mitä tapahtuu, jos oma sisältö myöhästyy, jotta kumpikaan osapuoli ei joudu yllätyksiin kesken projektin.</p>
+
+            <div class="article-cta">
+                <h3>Suunnitteletko verkkosivu-uudistusta? Saat meiltä selkeän aikataulun ja hinnan jo ensimmäisessä keskustelussa.</h3>
+                <p>Valoverstas kertoo suoraan, mitä projekti maksaa ja kestää, ilman piilokuluja tai epämääräisiä lisäkierroksia.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Pyydä maksuton hinta-arvio</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Ymmärrän</button>
+            <a href="#" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
