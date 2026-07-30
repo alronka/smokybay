@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobiilioptimointi ja miksi se ratkaisee myynnin | Valoverstas</title>
+    <meta name="description"
+        content="Suurin osa liikenteestä tulee jo mobiilista. Lue mitä mobiilioptimointi käytännössä tarkoittaa, ja miksi kömpelö mobiilikokemus karkottaa asiakkaita ennen kuin he ehtivät ostaa.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/mobiilioptimointi-ja-myynti.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/mobiilioptimointi-ja-myynti.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/mobiilioptimointi-ja-myynti.html">
+    <meta name="twitter:title" content="Mobiilioptimointi ja miksi se ratkaisee myynnin">
+    <meta name="twitter:description" content="Suurin osa liikenteestä tulee jo mobiilista. Lue mitä mobiilioptimointi käytännössä tarkoittaa.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/mobiilioptimointi-ja-myynti.webp">
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mitä mobiilioptimointi tarkoittaa käytännössä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mobiilioptimointi tarkoittaa enemmän kuin sitä, että sivusto \"näyttää hyvältä\" pienellä ruudulla. Se sisältää nopean latautumisen mobiiliverkossa, riittävän suuret kosketusalueet napeille ja linkeille, helposti täytettävät lomakkeet, ja sisällön järjestyksen joka toimii pystysuunnassa selattaessa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuinka paljon verkkosivuston liikenteestä tulee mobiililaitteilta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Useimmilla PK-yrityksillä 60-70 % verkkosivuston liikenteestä tulee jo mobiililaitteilta, toimialasta riippuen. Tämä tarkoittaa, että mobiilikokemus ei ole enää toissijainen ominaisuus, vaan se on se kokemus, jonka suurin osa asiakkaista näkee ensimmäisenä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vaikuttaako mobiilioptimointi Google-näkyvyyteen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä. Google käyttää mobile-first indexingiä, eli se arvioi sivuston ensisijaisesti mobiiliversion perusteella, ei pöytäkoneversion. Huonosti toimiva mobiilisivusto voi siis näkyä huonommin hauissa myös pöytäkoneella etsiville käyttäjille."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Mobiilioptimointi ja miksi se ratkaisee myynnin",
+      "description": "Suurin osa liikenteestä tulee jo mobiilista. Lue mitä mobiilioptimointi käytännössä tarkoittaa, ja miksi kömpelö mobiilikokemus karkottaa asiakkaita.",
+      "image": "https://valoverstas.fi/img/mobiilioptimointi-ja-myynti.webp",
+      "datePublished": "2026-07-30",
+      "author": {
+        "@type": "Organization",
+        "name": "Valoverstas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Valoverstas",
+        "url": "https://valoverstas.fi"
+      }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content h3 { font-size: 1.3rem; margin-top: 32px; }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 { margin-top: 0; margin-bottom: 16px; }
+
+        .action-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .action-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .action-text strong { display: block; color: var(--text); margin-bottom: 6px; }
+        .action-text p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Mobiilioptimointi • Konversio • 6 min luku</div>
+            <h1>Mobiilioptimointi ja miksi se <span class="gradient-text">ratkaisee myynnin</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Suurin osa asiakkaistasi näkee yrityksesi ensimmäisen kerran kännykän ruudulla, ei pöytäkoneella — silti moni verkkosivu on yhä suunniteltu toisin päin</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/mobiilioptimointi-ja-myynti.webp" alt="Mobiilioptimointi ja myynti PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Kun mietit, miltä verkkosivustosi näyttää, avaatko sen ensin tietokoneella? Moni yrittäjä tekee juuri niin, vaikka suurin osa hänen asiakkaistaan tekee toisin: he avaavat sivuston kännykällä, usein kiireessä, usein hyvän tai huonon 4G-yhteyden varassa, usein yhdellä peukalolla selaten.</p>
+
+            <p>Tämä ero suunnittelupöydän ja todellisuuden välillä on yksi yleisimmistä syistä, miksi muuten hyvännäköinen verkkosivusto ei myy niin hyvin kuin sen pitäisi.</p>
+
+            <div class="highlight-box">
+                <strong>Luvut puhuvat:</strong> Useimmilla PK-yrityksillä 60-70 % verkkosivuston liikenteestä tulee jo mobiililaitteilta. Google arvioi sivustosi ensisijaisesti mobiiliversion perusteella, ei pöytäkoneversion.
+            </div>
+
+            <h2>Mitä mobiilioptimointi oikeasti tarkoittaa?</h2>
+            <p>"Responsiivinen sivusto" on tullut monelle itsestäänselvyydeksi, ja teknisesti useimmat nykyaikaiset sivustot skaalautuvat jollain tavalla pienemmälle ruudulle. Mutta pelkkä skaalautuminen ei vielä tarkoita, että sivusto on oikeasti optimoitu mobiilikäyttöön.</p>
+
+            <p>Todellinen mobiilioptimointi kattaa useamman kerroksen:</p>
+            <ul>
+                <li><strong>Latausnopeus mobiiliverkossa.</strong> Ei vain nopealla toimistoverkolla, vaan myös vaihtelevalla 4G-yhteydellä liikkeellä.</li>
+                <li><strong>Riittävän suuret kosketusalueet.</strong> Napit ja linkit, joita on helppo osua peukalolla, ei hiiren tarkalla kursorilla.</li>
+                <li><strong>Sisällön järjestys.</strong> Mikä näytetään ensin, kun sivu on pitkä pystysuora nauha eikä leveä vaakataso.</li>
+                <li><strong>Lomakkeiden täyttäminen.</strong> Onko yhteydenottolomake helppo täyttää mobiilinäppäimistöllä, vai joutuuko käyttäjä zoomailemaan ja pyyhkäisemään edestakaisin?</li>
+            </ul>
+
+            <p>Sivusto voi näyttää hyvältä ensivilkaisulla mobiilissa, mutta silti epäonnistua näissä yksityiskohdissa, jotka ratkaisevat, ostaako kävijä vai poistuuko turhautuneena.</p>
+
+            <h2>Miten kömpelö mobiilisivu tappaa myynnin</h2>
+            <p>Mobiilikäyttäjä on usein vähemmän kärsivällinen kuin pöytäkoneella selaava, koska hän tekee muutakin samaan aikaan: kävelee, odottaa bussia, vertailee useaa vaihtoehtoa nopeasti peräkkäin. Jos sivusto lataa hitaasti tai lomake on hankala täyttää, vaihtoehto on yksi pyyhkäisy pois, kilpailijan sivulle.</p>
+
+            <p><a href="konversio-on-tarkeampi-kuin-kavijamaara.html">Konversio on tärkeämpi kuin kävijämäärä -artikkelissamme</a> käsittelimme sitä, miten kävijät voivat löytää sivustosi mutta silti olla ostamatta. Mobiilikitka on yksi yleisimmistä, mutta helpoimmin korjattavista syistä tähän: kävijä on jo osoittanut kiinnostuksensa löytämällä sivustosi, mutta menettää sen matkalla, jos kokemus ei toimi hänen laitteellaan sujuvasti.</p>
+
+            <h2>Konkreettinen tarkistuslista mobiilikokemukselle</h2>
+            <ul class="action-list">
+                <li>
+                    <div class="action-number">1</div>
+                    <div class="action-text">
+                        <strong>Testaa oikealla puhelimella, ei vain selaimen simulaattorilla</strong>
+                        <p>Selaimen kehittäjätyökalujen mobiilinäkymä on hyvä alkuun, mutta todellinen kosketustuntuma ja latausnopeus paljastuvat vasta oikealla laitteella, mielellään keskivertoisella 4G-yhteydellä.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">2</div>
+                    <div class="action-text">
+                        <strong>Varmista, että tärkein toiminto on yhden peukalonvenytyksen päässä</strong>
+                        <p>Soittopainike, yhteydenottolomake tai "osta nyt" -nappi ei saa vaatia vierittämistä sivun loppuun asti jokaisella sivulla.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">3</div>
+                    <div class="action-text">
+                        <strong>Pienennä kuvien ja fonttien latauspainoa</strong>
+                        <p>Raskaat, optimoimattomat kuvat ovat yleisin yksittäinen syy hitaaseen mobiililataukseen. Nykyaikaiset kuvaformaatit (esim. WebP) pienentävät tiedostokokoa merkittävästi ilman näkyvää laatuhäviötä.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">4</div>
+                    <div class="action-text">
+                        <strong>Yksinkertaista lomakkeet minimiin</strong>
+                        <p>Jokainen ylimääräinen kenttä on ylimääräinen syy jättää lomake kesken mobiilissa. Kysy vain se, mitä oikeasti tarvitset ensimmäisessä yhteydenotossa.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">5</div>
+                    <div class="action-text">
+                        <strong>Tarkista tekstin luettavuus ilman zoomausta</strong>
+                        <p>Jos käyttäjä joutuu nipistämään näyttöä suurentaakseen tekstiä, fonttikoko tai rivinväli on liian pieni mobiilinäkymässä.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Mobiili ja Google-näkyvyys kulkevat käsi kädessä</h2>
+            <p>Google on siirtynyt jo vuosia sitten mobile-first indexingiin, eli se arvioi sivustosi ensisijaisesti sen mobiiliversion perusteella, riippumatta siitä miltä laitteelta haku tehdään. Tämä tarkoittaa, että huonosti toimiva mobiilisivusto voi näkyä hakutuloksissa huonommin myös pöytäkoneella etsiville käyttäjille. <a href="miksi-nopeus-vaikuttaa-suoraan-myyntiin.html">Latausnopeuden vaikutuksesta myyntiin kirjoitimme tarkemmin täällä</a> — sama logiikka pätee erityisen vahvasti mobiilissa, jossa yhteysnopeus vaihtelee eniten.</p>
+
+            <h2>Miten Valoverstas varmistaa mobiilikokemuksen</h2>
+            <p>Rakennamme sivustot mobiili edellä, emme lisää mobiilitukea jälkikäteen pöytäkoneversion päälle. Tämä tarkoittaa, että sisällön järjestys, kuvien optimointi ja lomakkeiden käytettävyys suunnitellaan ensin pienelle ruudulle, ja pöytäkoneversio rakentuu sen pohjalta, ei toisin päin.</p>
+
+            <p>Jokainen julkaistava sivusto testataan oikeilla laitteilla ennen julkaisua, jotta tiedämme sivuston toimivan sujuvasti sillä laitteella, jolla suurin osa asiakkaistasi sen todennäköisesti kohtaa ensimmäisenä.</p>
+
+            <div class="article-cta">
+                <h3>Toimiiko sivustosi yhtä hyvin kännykällä kuin näytöllä?</h3>
+                <p>Valoverstas tarkistaa nykyisen sivustosi mobiilikokemuksen ja kertoo suoraan, mikä siinä karkottaa asiakkaita ennen ostoa.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Pyydä maksuton hinta-arvio</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Ymmärrän</button>
+            <a href="#" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
