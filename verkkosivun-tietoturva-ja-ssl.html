@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivun tietoturva ja SSL: Mitä PK-yrityksen pitää tietää | Valoverstas</title>
+    <meta name="description"
+        content="Tietoturva ei ole vain isojen yritysten murhe. Lue mitä SSL-sertifikaatti oikeasti tekee, mitkä ovat yleisimmät tietoturva-aukot pienten yritysten sivustoilla, ja miten suojaat lomakkeet ja käyttäjätiedot.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivun-tietoturva-ja-ssl.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivun-tietoturva-ssl.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivun-tietoturva-ja-ssl.html">
+    <meta name="twitter:title" content="Verkkosivun tietoturva ja SSL: Mitä PK-yrityksen pitää tietää">
+    <meta name="twitter:description" content="Tietoturva ei ole vain isojen yritysten murhe. Lue mitä SSL-sertifikaatti oikeasti tekee ja mitkä ovat yleisimmät tietoturva-aukot.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivun-tietoturva-ssl.webp">
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mitä SSL-sertifikaatti tekee verkkosivustolle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SSL-sertifikaatti salaa tiedonsiirron käyttäjän selaimen ja verkkosivuston palvelimen välillä, jolloin esimerkiksi lomakkeella lähetetty tieto ei kulje avoimena tekstinä verkossa. Se näkyy käyttäjälle osoiterivin lukko-kuvakkeena ja https-alkuisena osoitteena. Ilman sitä selaimet näyttävät suoran 'ei turvallinen' -varoituksen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onko pienen yrityksen verkkosivusto oikeasti hakkereiden kohteena?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä. Suurin osa verkkosivuhyökkäyksistä on automatisoituja bottien tekemiä massaskannauksia, jotka etsivät tunnettuja haavoittuvuuksia kaikilta löytämiltään sivustoilta, ei kohdista tiettyä yritystä. Pieni yritys on siis yhtä lailla kohteena kuin suuri, usein jopa todennäköisemmin, koska pienten sivustojen suojaus on keskimäärin heikommalla tasolla."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mikä on yleisin tietoturva-aukko pienten yritysten verkkosivuilla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vanhentuneet alustat ja päivittämättömät lisäosat, erityisesti sisällönhallintajärjestelmissä kuten WordPress. Suuri osa tunnetuista haavoittuvuuksista löytyy nimenomaan lisäosista, jotka on jätetty päivittämättä kuukausiksi tai vuosiksi."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Verkkosivun tietoturva ja SSL: Mitä PK-yrityksen pitää tietää",
+      "description": "Tietoturva ei ole vain isojen yritysten murhe. Lue mitä SSL-sertifikaatti oikeasti tekee ja mitkä ovat yleisimmät tietoturva-aukot pienten yritysten sivustoilla.",
+      "image": "https://valoverstas.fi/img/verkkosivun-tietoturva-ssl.webp",
+      "datePublished": "2026-08-02",
+      "author": {
+        "@type": "Organization",
+        "name": "Valoverstas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Valoverstas",
+        "url": "https://valoverstas.fi"
+      }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content h3 { font-size: 1.3rem; margin-top: 32px; }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 { margin-top: 0; margin-bottom: 16px; }
+
+        .action-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .action-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .action-text strong { display: block; color: var(--text); margin-bottom: 6px; }
+        .action-text p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Tietoturva • SSL • Verkkosivut • 6 min luku</div>
+            <h1>Verkkosivun tietoturva ja SSL: <span class="gradient-text">Mitä PK-yrityksen pitää tietää</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">"Meidän yritys on liian pieni kiinnostaakseen hakkereita" on yksi yleisimmistä ja vaarallisimmista harhaluuloista verkkosivujen tietoturvasta</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivun-tietoturva-ssl.webp" alt="Verkkosivun tietoturva ja SSL PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Kun puhutaan verkkosivujen tietoturvasta, mielikuva on usein kohdistettu hyökkäys jotain suurta pörssiyhtiötä vastaan. Todellisuus on toinen: valtaosa verkkosivuihin kohdistuvista hyökkäyksistä on automatisoituja bottiverkkoja, jotka skannaavat koko internetin läpi etsien tunnettuja haavoittuvuuksia, eivät valikoi kohdettaan yrityksen koon perusteella.</p>
+
+            <p>Tämä tarkoittaa, että pienen yrityksen verkkosivusto on yhtä todennäköinen kohde kuin ison, usein jopa todennäköisempi, koska pienten sivustojen suojaustaso on keskimäärin heikompi.</p>
+
+            <div class="highlight-box">
+                <strong>Yleisin virhe:</strong> tietoturva mielletään kertaluontoiseksi asiaksi, joka "hoidetaan kuntoon" julkaisun yhteydessä. Todellisuudessa se on jatkuva prosessi, koska uusia haavoittuvuuksia löytyy koko ajan käytössä olevista alustoista ja lisäosista.
+            </div>
+
+            <h2>Mitä SSL-sertifikaatti oikeasti tekee?</h2>
+            <p>SSL-sertifikaatti (nykyisin teknisesti TLS, mutta termi SSL on jäänyt yleiseen käyttöön) salaa tiedonsiirron käyttäjän selaimen ja palvelimen välillä. Käytännössä se tarkoittaa, että kun asiakas täyttää yhteydenottolomakkeen tai kirjautuu sisään sivustollasi, tieto ei kulje avoimena tekstinä verkon yli, jossa kuka tahansa samassa verkossa voisi periaatteessa lukea sen.</p>
+
+            <p>Käyttäjälle SSL näkyy kahdella tavalla: osoiterivin lukko-kuvakkeena ja osoitteen alkuna "https://" pelkän "http://" sijaan. Ilman sitä nykyaikaiset selaimet näyttävät suoran "ei turvallinen" -varoituksen, joka karkottaa kävijän tehokkaammin kuin mikään muu yksittäinen tekninen puute sivustolla.</p>
+
+            <p>Hyvä uutinen on, että SSL-sertifikaatti on nykyään lähes aina ilmainen ja automaattisesti uusiutuva osa modernia hosting-ratkaisua, ei erillinen kallis lisäosto niin kuin se oli vielä kymmenen vuotta sitten.</p>
+
+            <h2>Yleisimmät tietoturva-aukot pienten yritysten sivustoilla</h2>
+            <p>Käytännön kokemuksemme mukaan samat ongelmat toistuvat sivustolta toiselle:</p>
+
+            <ul class="action-list">
+                <li>
+                    <div class="action-number">1</div>
+                    <div class="action-text">
+                        <strong>Päivittämätön alusta ja lisäosat</strong>
+                        <p>Erityisesti WordPress-sivustoilla lisäosat jäävät helposti päivittämättä kuukausiksi tai vuosiksi. Suuri osa tunnetuista haavoittuvuuksista löytyy juuri lisäosista, ei itse ydinalustasta. <a href="staattiset-verkkosivut-vs-wordpress.html">Staattiset verkkosivut vs. WordPress -vertailussamme</a> käsittelimme tätä tarkemmin: staattisella sivustolla ei ole samaa jatkuvaa lisäosa-riskiä, koska siinä ei ole ajossa olevaa taustajärjestelmää jota hyökätä vastaan.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">2</div>
+                    <div class="action-text">
+                        <strong>Heikot tai uudelleenkäytetyt ylläpitäjätunnukset</strong>
+                        <p>Sama salasana monessa palvelussa, tai helposti arvattava käyttäjätunnus kuten "admin", on edelleen yksi yleisimmistä murtautumistavoista.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">3</div>
+                    <div class="action-text">
+                        <strong>Suojaamattomat lomakkeet</strong>
+                        <p>Yhteydenottolomake ilman roskapostisuojausta tai syötteen validointia voi altistua sekä roskapostille että haitallisen koodin syöttämiselle.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">4</div>
+                    <div class="action-text">
+                        <strong>Puuttuvat varmuuskopiot</strong>
+                        <p>Jos sivusto ei ole varmuuskopioitu säännöllisesti, yksikin onnistunut hyökkäys tai tekninen virhe voi tuhota vuosien työn palautumismahdollisuutta ilman.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Lomakkeiden ja käyttäjätietojen suojaaminen</h2>
+            <p>Jos sivustollasi on yhteydenottolomake, uutiskirjetilaus tai muu tapa kerätä käyttäjän tietoja, se tarkoittaa myös vastuuta niiden suojaamisesta. Perusasiat, jotka jokaisella lomakkeella pitäisi olla kunnossa:</p>
+
+            <ul>
+                <li>Tiedonsiirto tapahtuu aina salatun SSL-yhteyden yli, ei koskaan avoimena.</li>
+                <li>Lomakedata käsitellään ja tallennetaan vain sen ajan ja siihen tarkoitukseen, joka on aidosti tarpeen.</li>
+                <li>Roskapostisuojaus (esim. reCAPTCHA tai vastaava) estää automatisoitujen bottien massalähetykset.</li>
+                <li>Käyttäjälle kerrotaan selkeästi, mihin hänen tietojaan käytetään, GDPR:n vaatimusten mukaisesti.</li>
+            </ul>
+
+            <h2>Päivitykset ja miksi vanha alusta on suurin riski</h2>
+            <p>Jos verkkosivusto on rakennettu alustalle, joka vaatii jatkuvaa manuaalista päivittämistä (ydinjärjestelmä, teema, kymmeniä lisäosia), riski kasvaa jokaisen kuukauden myötä jonka päivitykset jäävät tekemättä. Moni pieni yritys ei yksinkertaisesti ehdi tai muista päivittää sivustoaan säännöllisesti, ja juuri tämä on se hetki jolloin tunnettu haavoittuvuus jää auki liian pitkäksi aikaa.</p>
+
+            <p>Tämä on yksi konkreettinen syy, miksi kevyempi, staattinen arkkitehtuuri vähentää tietoturvariskiä rakenteellisesti: kun sivustolla ei ole jatkuvasti ajossa olevaa taustajärjestelmää jota pitäisi päivittää, suuri osa tyypillisistä hyökkäysvektoreista katoaa kokonaan.</p>
+
+            <h2>Miten Valoverstas varmistaa sivuston perusturvan</h2>
+            <p>Jokainen julkaisemamme sivusto sisältää SSL:n oletuksena, ei lisämaksullisena optiona. Rakennamme sivustot pääosin kevyellä, staattisella arkkitehtuurilla, mikä poistaa suuren osan perinteisistä lisäosa- ja ydinjärjestelmäriskeistä jo lähtökohtaisesti. Lomakkeet suojataan roskaposti- ja syötevalidoinnilla, ja säännölliset varmuuskopiot kuuluvat jatkuvaan ylläpitoomme.</p>
+
+            <p>Jos suunnittelet verkkosivu-uudistusta, se on luonteva hetki korjata myös tietoturvan perusasiat kerralla kuntoon, sen sijaan että ne jäävät odottamaan seuraavaa projektia. <a href="verkkosivu-uudistus-roi-laskuri.html">Verkkosivu-uudistuksen ROI-laskurillamme</a> näet myös, miten uudistus vaikuttaa myyntiin, ei vain tietoturvaan.</p>
+
+            <div class="article-cta">
+                <h3>Onko sivustosi tietoturva ajan tasalla?</h3>
+                <p>Valoverstas tarkistaa nykyisen sivustosi tietoturvan perusasiat ja kertoo suoraan, mitä kannattaa korjata ensin.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Pyydä maksuton hinta-arvio</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Ymmärrän</button>
+            <a href="#" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
