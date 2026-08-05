@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evästeet ja GDPR verkkosivulla 2026: Mitä PK-yrityksen pitää tarkistaa | Valoverstas</title>
+    <meta name="description"
+        content="Evästebanneri ei yksin riitä. Lue mitä GDPR ja Traficomin evästeohjeistus oikeasti vaativat, miksi Google Consent Mode v2 koskee myös pientä yritystä, ja käytännön tarkistuslista sivustollesi.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/evasteet-ja-gdpr-verkkosivulla-2026.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/evasteet-ja-gdpr-verkkosivulla-2026.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/evasteet-ja-gdpr-verkkosivulla-2026.html">
+    <meta name="twitter:title" content="Evästeet ja GDPR verkkosivulla 2026: Mitä PK-yrityksen pitää tarkistaa">
+    <meta name="twitter:description" content="Evästebanneri ei yksin riitä. Lue mitä GDPR ja Traficomin evästeohjeistus oikeasti vaativat vuonna 2026.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/evasteet-ja-gdpr-verkkosivulla-2026.webp">
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Tarvitseeko jokainen verkkosivu evästebannerin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei suoraan jokainen, mutta lähes jokainen. Suostumusta ei tarvita evästeille, jotka ovat välttämättömiä sivuston toiminnalle (esim. ostoskori tai kirjautumistila). Sen sijaan analytiikka-, markkinointi- ja mainontaevästeet vaativat aina käyttäjän aktiivisen, etukäteisen suostumuksen ennen kuin niitä saa ladata."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riittääkö pelkkä \"Hyväksyn\"-nappi evästebannerissa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei. Jos bannerissa on vain hyväksy-nappi eikä yhtä helppoa tapaa kieltäytyä, suostumus ei täytä GDPR:n vaatimuksia vapaaehtoisuudesta. Traficomin ohjeistuksen mukaan kieltäytymisen pitää olla yhtä helppoa kuin hyväksymisen, ja ei-välttämättömät evästeet eivät saa ladata ennen valintaa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mitä käytännössä tapahtuu, jos evästekäytäntö ei ole kunnossa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traficom valvoo evästesäännösten noudattamista Suomessa ja voi puuttua puutteisiin. Lisäksi Google on kiristänyt omia vaatimuksiaan: ilman Consent Mode v2 -toteutusta EU-liikenteen mainonta- ja analytiikkadata ei kerry normaalisti, mikä näkyy suoraan kutistuvina mainosyleisöinä ja puutteellisena kävijädatana."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Evästeet ja GDPR verkkosivulla 2026: Mitä PK-yrityksen pitää tarkistaa",
+      "description": "Evästebanneri ei yksin riitä. Lue mitä GDPR ja Traficomin evästeohjeistus oikeasti vaativat, ja käytännön tarkistuslista sivustollesi.",
+      "image": "https://valoverstas.fi/img/evasteet-ja-gdpr-verkkosivulla-2026.webp",
+      "datePublished": "2026-08-05",
+      "author": {
+        "@type": "Organization",
+        "name": "Valoverstas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Valoverstas",
+        "url": "https://valoverstas.fi"
+      }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content h3 { font-size: 1.3rem; margin-top: 32px; }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 { margin-top: 0; margin-bottom: 16px; }
+
+        .action-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .action-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .action-text strong { display: block; color: var(--text); margin-bottom: 6px; }
+        .action-text p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Tietosuoja • GDPR • Evästeet • 6 min luku</div>
+            <h1>Evästeet ja GDPR verkkosivulla: <span class="gradient-text">Mitä PK-yrityksen pitää tarkistaa 2026</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">"Meillä on evästebanneri, eli olemme GDPR-kunnossa" on yksi yleisimmistä väärinkäsityksistä pienten yritysten verkkosivuilla</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/evasteet-ja-gdpr-verkkosivulla-2026.webp" alt="Evästeet ja GDPR verkkosivulla PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Lähes jokaisella verkkosivulla on nykyään joku muotoilu evästebannerista: "Käytämme evästeitä parantaaksemme kokemustasi. Hyväksy." Se tuntuu riittävältä, koska banneri on olemassa ja siinä on nappi. Todellisuudessa suuri osa näistä bannereista ei täytä GDPR:n eikä Suomessa evästeasioita valvovan Traficomin vaatimuksia, koska tekninen kokonaisuuden taakse ei ole ajateltu.</p>
+
+            <p>Tämä ei ole vain teoreettinen riski. Vuonna 2026 asia on tullut käytännölliseksi kahdesta suunnasta yhtä aikaa: viranomaisvalvonta on tiukentunut hallinto-oikeuden ratkaisujen jälkeen, ja Google on omilla teknisillä vaatimuksillaan (Consent Mode v2) tehnyt puutteellisesta evästekäytännöstä suoraan näkyvän ongelman mainonnan ja analytiikan datassa.</p>
+
+            <div class="highlight-box">
+                <strong>Yleisin virhe:</strong> evästebanneri rakennetaan niin, että "Hyväksyn"-nappi on iso ja näkyvä, mutta kieltäytymiseen ei ole yhtä helppoa vaihtoehtoa, tai evästeet ladataan jo ennen kuin käyttäjä on tehnyt valintaa. Molemmat ovat suoria rikkomuksia nykyistä tulkintaa vastaan.
+            </div>
+
+            <h2>Miksi pelkkä evästebanneri ei riitä</h2>
+            <p>Evästebanneri on vain näkyvä osa isompaa kokonaisuutta. GDPR:n mukaan suostumuksen pitää olla vapaaehtoinen, yksilöity, tietoinen ja yksiselitteinen. Käytännössä tämä tarkoittaa, ettei valmiiksi rastitettuja ruutuja saa olla, evästeitä ei saa ladata ennen valintaa, ja käyttäjän pitää tietää täsmälleen mihin hän suostuu, ei vain yleisluontoista "parannamme kokemustasi" -tekstiä.</p>
+
+            <p>Suomessa evästeitä koskevaa <a href="https://www.traficom.fi/fi/saadokset/evasteohjeistus-palveluntarjoajille" target="_blank" rel="noopener">Traficomin evästeohjeistusta</a> sovelletaan yhdessä GDPR:n kanssa, ja hallinto-oikeuden ratkaisut ovat selkeyttäneet erityisesti yhtä kohtaa: kieltäytymisen pitää olla yhtä helppoa kuin hyväksymisen. Jos "Hyväksyn kaikki" on yksi klikkaus mutta kieltäytyminen vaatii useamman valikon läpikäymistä, banneri ei täytä vaatimuksia, vaikka se näyttäisi asianmukaiselta.</p>
+
+            <h2>Google Consent Mode v2: miksi tämä koskee myös pientä yritystä</h2>
+            <p>Moni pieni yritys ajattelee evästeasiat pelkkänä juridisena muodollisuutena, kunnes huomaa ettei Google Analytics tai Google Ads -data enää täsmää. Syy on usein <a href="https://support.google.com/tagmanager/answer/13695607" target="_blank" rel="noopener">Google Consent Mode v2</a>, jonka Google on tehnyt pakolliseksi kaikelle EU/ETA-alueen liikenteelle mainontaa käyttäville sivustoille.</p>
+
+            <p>Käytännössä Consent Mode v2 tarkoittaa, että sivuston pitää lähettää Googlelle neljä erillistä suostumustilaa (analytiikka, mainonta, mainosdata, mainospersonointi), ja oletusarvoisesti kaikkien pitää olla asetettu "denied" ennen kuin käyttäjä on antanut suostumuksensa. Ilman tätä toteutusta uudelleenmarkkinointiyleisöt eivät enää kerry, konversiomallinnus ei toimi kunnolla, ja EU-liikenteen mainosdata kutistuu huomattavasti, koska Google yksinkertaisesti kieltäytyy käsittelemästä sitä täydellä tarkkuudella.</p>
+
+            <p>Tämä on hyvä esimerkki siitä, miten evästekäytäntö ei ole enää pelkkä lakiasia, vaan suoraan liiketoimintaan vaikuttava tekninen kokonaisuus, aivan samalla tavalla kuin kirjoitimme aiemmin <a href="verkkosivun-tietoturva-ja-ssl.html">verkkosivun tietoturvasta ja SSL:stä</a>: perusasiat kuntoon laittava yritys ei ainoastaan vältä sanktioita, vaan saa myös oikeasti toimivaa dataa liiketoimintansa tueksi.</p>
+
+            <h2>Käytännön tarkistuslista</h2>
+            <p>Näillä viidellä kohdalla pääsee jo pitkälle, riippumatta siitä minkä kokoinen yritys on kyseessä:</p>
+
+            <ul class="action-list">
+                <li>
+                    <div class="action-number">1</div>
+                    <div class="action-text">
+                        <strong>Ei-välttämättömät evästeet eivät lataudu ennen suostumusta</strong>
+                        <p>Analytiikka- ja markkinointiskriptit (Google Analytics, mainospikselit, upotetut videot) saavat käynnistyä vasta käyttäjän aktiivisen valinnan jälkeen, ei sivun latautuessa oletuksena.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">2</div>
+                    <div class="action-text">
+                        <strong>Kieltäytyminen yhtä helppoa kuin hyväksyminen</strong>
+                        <p>Bannerissa pitää olla selkeä "Hylkää" tai vastaava vaihtoehto samalla tasolla kuin "Hyväksy kaikki", ei piilotettuna asetusvalikon sisään.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">3</div>
+                    <div class="action-text">
+                        <strong>Consent Mode v2 asennettuna oikein</strong>
+                        <p>Jos sivustolla on Google Ads- tai Analytics-seuranta, oletustila pitää olla "denied" kaikille neljälle parametrille, ja tila päivittyy vasta käyttäjän valinnan jälkeen.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">4</div>
+                    <div class="action-text">
+                        <strong>Ajantasainen tietosuojaseloste</strong>
+                        <p>Selosteessa kerrotaan selkeästi mitä tietoja kerätään, mihin tarkoitukseen, kuinka kauan niitä säilytetään ja kuka on rekisterinpitäjä. Yleisluontoinen mallipohja ilman sivuston oikeaa sisältöä ei riitä.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">5</div>
+                    <div class="action-text">
+                        <strong>Suostumuksen peruuttaminen yhtä helppoa kuin sen antaminen</strong>
+                        <p>Käyttäjän pitää pystyä muuttamaan valintaansa jälkikäteen yhtä vaivattomasti kuin alkuperäisen suostumuksen antaminen, esimerkiksi footerin linkin kautta.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Miten Valoverstas hoitaa tämän</h2>
+            <p>Jokaiselle julkaisemallemme sivustolle asennetaan Consent Mode v2 oletuksena, oletustilalla "denied" kaikille neljälle suostumusparametrille, ja evästebanneri rakennetaan niin, että kieltäytyminen on yhtä helppoa kuin hyväksyminen. Kevyt, staattinen arkkitehtuuri, jota käsittelimme <a href="staattiset-verkkosivut-vs-wordpress.html">staattiset verkkosivut vs. WordPress -vertailussamme</a>, tekee myös evästehallinnasta yksinkertaisempaa: sivustolla ei pyöri kymmeniä kolmannen osapuolen lisäosia, joista jokainen voisi ladata omia evästeitään ilman että kukaan huomaa.</p>
+
+            <p>Jos suunnittelet verkkosivu-uudistusta, se on luonteva hetki tarkistaa myös evästekäytäntö kerralla kuntoon, sen sijaan että se jää odottamaan seuraavaa projektia tai pahimmillaan huomiota vasta valvovan viranomaisen yhteydenoton myötä.</p>
+
+            <div class="article-cta">
+                <h3>Onko sivustosi evästekäytäntö ajan tasalla?</h3>
+                <p>Valoverstas tarkistaa nykyisen sivustosi evästeasetukset ja Consent Mode -toteutuksen, ja kertoo suoraan mitä kannattaa korjata ensin.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Pyydä maksuton hinta-arvio</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.traficom.fi/fi/saadokset/evasteohjeistus-palveluntarjoajille" target="_blank" style="color: var(--accent); text-decoration: underline;">Traficom: "Evästeohjeistus palveluntarjoajille" (2026)</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" style="color: var(--accent); text-decoration: underline;">Euroopan parlamentin ja neuvoston asetus (EU) 2016/679 (yleinen tietosuoja-asetus, GDPR)</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://support.google.com/tagmanager/answer/13695607" target="_blank" style="color: var(--accent); text-decoration: underline;">Google: "Updates to consent mode for traffic in European Economic Area (EEA)"</a></li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="evasteet-ja-gdpr-verkkosivulla-2026.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
