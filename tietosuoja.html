@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tietosuoja — Valoverstas</title>
+    <meta name="description"
+        content="Selkokielinen tietosuojaseloste: mitä tietoja Valoverstas kerää verkkosivustollaan, mihin niitä käytetään ja kuinka kauan niitä säilytetään.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/tietosuoja.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://valoverstas.fi/tietosuoja.html">
+    <meta property="og:title" content="Tietosuoja — Valoverstas">
+    <meta property="og:description" content="Selkokielinen tietosuojaseloste: mitä tietoja Valoverstas kerää ja mihin niitä käytetään.">
+
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 20px; }
+
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+        }
+
+        .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.98rem;
+            color: var(--text);
+        }
+
+        .privacy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0 32px;
+            font-size: 0.95rem;
+        }
+
+        .privacy-table th,
+        .privacy-table td {
+            text-align: left;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+        }
+
+        .privacy-table th {
+            background: var(--glass);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+        }
+
+        .toc-box h4 {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .toc-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .toc-box a {
+            display: block;
+            padding: 4px 0;
+            transition: var(--transition);
+        }
+
+        .toc-box a:hover {
+            padding-left: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <h1>Tietosuoja</h1>
+            <p class="hero-sub" style="margin: 0 auto;">Selkokielellä: mitä tietoja sinusta kerätään, kun vierailet sivuillamme tai otat yhteyttä.</p>
+        </header>
+
+        <div class="article-content">
+            <p>Tämä sivu ei ole täytetty juristien lomakepohjasta. Kerromme tässä oikeasti, mitä tietoja käsittelemme, miksi, ja kuinka pitkään. Jos jokin jää epäselväksi, laita viestiä, vastaamme mielellämme.</p>
+
+            <div class="toc-box">
+                <h4>Sisällysluettelo</h4>
+                <ul>
+                    <li><a href="#rekisterinpitaja">Rekisterinpitäjä</a></li>
+                    <li><a href="#mita-keraamme">Mitä tietoja keräämme</a></li>
+                    <li><a href="#kayttotarkoitus">Mihin tietoja käytetään ja millä perusteella</a></li>
+                    <li><a href="#sailytysaika">Kuinka kauan tietoja säilytetään</a></li>
+                    <li><a href="#luovutus">Kenelle tietoja luovutetaan</a></li>
+                    <li><a href="#eu-siirto">Tietojen siirto EU:n ulkopuolelle</a></li>
+                    <li><a href="#evasteet">Evästeet</a></li>
+                    <li><a href="#oikeutesi">Sinun oikeutesi</a></li>
+                    <li><a href="#muutokset">Muutokset tähän selosteeseen</a></li>
+                    <li><a href="#kysyttavaa">Kysyttävää?</a></li>
+                </ul>
+            </div>
+
+            <h2 id="rekisterinpitaja">Rekisterinpitäjä</h2>
+            <p>Valok Oy (Y-tunnus 3490027-7)<br>
+            Raivionsuntti 6, 40520 Jyväskylä<br>
+            aleksanteri@valoverstas.fi</p>
+            <p><em>Valoverstas on Valok Oy:n brändi — sama yritys, eri palvelu. Ei syytä hämmentyä jos näet Valok-nimen jossain kohtaa.</em></p>
+
+            <h2 id="mita-keraamme">Mitä tietoja keräämme</h2>
+            <p><strong>Kun täytät yhteydenottolomakkeen:</strong> nimi, sähköpostiosoite, valitsemasi verkkosivupaketti, mahdolliset lisäominaisuustoiveesi (rastittamasi lisäpiirteet kuten lomakkeet, analytiikka, SEO) ja viestisi sisältö. Ei muuta.</p>
+            <p><strong>Kun selaat sivustoa:</strong> Google Analytics 4 kerää anonyymia käyttäytymistietoa, ja jos hyväksyt evästeet, myös Google Ads -mainonnan uudelleenmarkkinointiin liittyvää dataa (jotta esimerkiksi näkemämme mainoksemme voivat myöhemmin muistuttaa sinua sivustostamme muualla verkossa). Emme aktivoi kumpaakaan etukäteen.</p>
+            <p><strong>Teemavalintasi</strong> (vaalea/tumma) tallentuu selaimesi omaan paikalliseen muistiin (localStorage), ei koskaan meille.</p>
+
+            <h2 id="kayttotarkoitus">Mihin tietoja käytetään ja millä perusteella</h2>
+            <table class="privacy-table">
+                <tr><th>Tieto</th><th>Käyttötarkoitus</th><th>Peruste</th></tr>
+                <tr><td>Yhteydenottolomakkeen tiedot</td><td>Vastataksemme viestiisi ja valmistellaksemme tarjousta</td><td>Oikeutettu etu / sopimuksen valmistelu</td></tr>
+                <tr><td>Analytiikkadata</td><td>Ymmärtääksemme miten sivustoa käytetään</td><td>Suostumuksesi (evästebanneri)</td></tr>
+                <tr><td>Mainontadata (Google Ads)</td><td>Uudelleenmarkkinointi, mainosten kohdentaminen</td><td>Suostumuksesi (evästebanneri)</td></tr>
+            </table>
+
+            <h2 id="sailytysaika">Kuinka kauan tietoja säilytetään</h2>
+            <p>Yhteydenottolomakkeen tiedot säilytämme niin kauan kuin yhteydenpito tai mahdollinen asiakassuhde sitä edellyttää, sen jälkeen poistamme ne. Analytiikka- ja mainontadata säilyy Googlen omien oletuskäytäntöjen mukaisesti (tyypillisesti 14 kuukautta), emme pidennä niitä.</p>
+
+            <h2 id="luovutus">Kenelle tietoja luovutetaan</h2>
+            <ul>
+                <li><strong>Formspree</strong> — välittää yhteydenottolomakkeen sisällön meille sähköpostitse.</li>
+                <li><strong>Google</strong> (Analytics ja Ads) — käsittelee anonymisoitua käyttö- ja mainontadataa.</li>
+            </ul>
+            <p>Emme myy, vuokraa tai muuten luovuta tietojasi kolmansille osapuolille omiin tarkoituksiinsa. Meillä ei ole ostettua yhteystietolistaa.</p>
+
+            <h2 id="eu-siirto">Tietojen siirto EU:n ulkopuolelle</h2>
+            <p>Google saattaa käsitellä dataa myös EU:n/ETA:n ulkopuolella, Euroopan komission hyväksymien vakiosopimuslausekkeiden (SCC) puitteissa.</p>
+
+            <h2 id="evasteet">Evästeet</h2>
+            <p>Sivustolla on evästebanneri, josta voit valita "Hyväksy kaikki" tai "Hylkää". Ennen valintaasi sekä analytiikka että mainonta pysyvät pois päältä oletuksena. Voit muuttaa valintaasi milloin tahansa sivun alalaidan "Evästeasetukset"-linkistä. Kirjoitimme evästeistä ja GDPR:stä myös <a href="evasteet-ja-gdpr-verkkosivulla-2026.html">pidemmän oppaan blogissamme</a>, jos aihe kiinnostaa syvemmin.</p>
+
+            <h2 id="oikeutesi">Sinun oikeutesi</h2>
+            <p>Sinulla on oikeus:</p>
+            <ul>
+                <li>tarkastaa, mitä tietoja sinusta on tallennettu</li>
+                <li>pyytää virheellisen tiedon korjaamista</li>
+                <li>pyytää tietojesi poistamista</li>
+                <li>vastustaa käsittelyä tai peruuttaa suostumuksesi</li>
+                <li>tehdä valitus tietosuojavaltuutetun toimistolle</li>
+            </ul>
+            <p>Näiden käyttämiseksi riittää sähköposti osoitteeseen aleksanteri@valoverstas.fi.</p>
+
+            <h2 id="muutokset">Muutokset tähän selosteeseen</h2>
+            <p>Päivitämme tätä sivua tarvittaessa. Viimeisin päivitys: 5.8.2026.</p>
+
+            <h2 id="kysyttavaa">Kysyttävää?</h2>
+            <p>aleksanteri@valoverstas.fi — vastaamme itse.</p>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
