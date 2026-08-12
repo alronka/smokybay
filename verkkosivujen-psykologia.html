@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivujen psykologia: Miksi kävijä päättää ennen kuin ehtii lukea sanaakaan – Valoverstas</title>
+    <meta name="description"
+        content="Tutkimusten mukaan kävijä muodostaa mielipiteensä verkkosivusta 50 millisekunnissa. Lue mitä kävijän aivoissa tapahtuu ensimmäisten sekuntien aikana, ja miten se pitäisi ottaa huomioon verkkosivun suunnittelussa.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivujen-psykologia.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivujen-psykologia.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivujen-psykologia.html">
+    <meta name="twitter:title" content="Verkkosivujen psykologia: Miksi kävijä päättää ennen kuin ehtii lukea sanaakaan">
+    <meta name="twitter:description" content="Kävijä muodostaa mielipiteensä verkkosivusta 50 millisekunnissa. Lue mitä se tarkoittaa verkkosivun suunnittelulle.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivujen-psykologia.webp">
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">UX-suunnittelu • 6 min luku</div>
+            <h1>Verkkosivujen psykologia: miksi kävijä päättää ennen kuin ehtii <span class="gradient-text">lukea sanaakaan</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Tutkimusten mukaan mielipide sivustasi syntyy 50 millisekunnissa, kauan ennen kuin kukaan ehtii lukea otsikkoakaan</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <picture style="width: 100%;">
+                <source srcset="img/verkkosivujen-psykologia-mobile.webp" media="(max-width: 800px)">
+                <img src="img/verkkosivujen-psykologia.webp" alt="Verkkosivujen psykologia ja ensivaikutelman synty - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+            </picture>
+        </div>
+
+        <div class="article-content">
+            <p>Moni yritys ajattelee verkkosivu-uudistusta teknisenä projektina: uusi teema, nopeampi palvelin, ehkä muutama uusi kuva. Todellisuudessa suurin osa siitä, ostaako kävijä vai poistuuko hän, ratkeaa paikassa johon ei pääse käsiksi koodilla eikä designilla suoraan: kävijän aivoissa, ensimmäisten sekunnin murto-osien aikana.</p>
+
+            <h2>Ensivaikutelma syntyy ennen kuin ehdit ajatella</h2>
+            <p>Carletonin yliopiston tutkijat mittasivat 2000-luvun puolivälissä, kuinka nopeasti ihmiset muodostavat mielipiteensä verkkosivun ulkoasusta. Tulos oli hämmästyttävä: koehenkilöt arvioivat sivun houkuttelevuuden jo 50 millisekunnissa, eli 0,05 sekunnissa, ja tämä ensiarvio korreloi vahvasti sen kanssa mitä he arvioivat vielä 500 millisekunnin jälkeen. Tietoinen lukeminen ei ole vielä edes alkanut, kun tunneperäinen "pidänkö tästä" -päätös on jo tehty.</p>
+
+            <p>Toinen laajasti viitattu tutkimus, Missourin teknillisen yliopiston silmänliiketutkimus, päätyi siihen että jopa 94 prosenttia kävijän ensivaikutelmasta liittyy nimenomaan visuaaliseen ulkoasuun: värimaailmaan, asetteluun, logoon ja pääkuvaan, ei sisältöön itseensä. Tämä ei tarkoita, että sisällöllä ei olisi väliä, vaan sitä että huono ensivaikutelma estää kävijää koskaan pääsemästä lukemaan hyvää sisältöä asti.</p>
+
+            <div class="highlight-box">
+                <strong>Tärkeä huomio:</strong> Kävijä ei lue sivuasi ja päätä sitten, pitääkö hän siitä. Hän päättää ensin, tunnetasolla, ja etsii sen jälkeen perusteluja päätökselleen sisällöstä. Suunnittelu ei siis ole koristelua, se on se hetki jolloin peli joko voitetaan tai hävitään.
+            </div>
+
+            <h2>F-muotoinen katse: miten silmä oikeasti liikkuu sivulla</h2>
+            <p>Nielsen Norman Group on seurannut silmänliikeseurannalla satojen käyttäjien katsetta tuhansilla verkkosivuilla jo lähes 20 vuoden ajan, ja tulos on pysynyt yllättävän samana koko ajan. Ihmiset eivät lue verkkosivuja rivi riviltä niin kuin kirjaa, he silmäilevät niitä F-kirjaimen muotoisena kuviona: ensin leveä vaakasuora silmäys sisältöalueen yläosassa, sitten hieman alempana lyhyempi vaakasuora silmäys, ja lopuksi pystysuora silmäys sivun vasenta reunaa pitkin.</p>
+
+            <p>Tämä tarkoittaa käytännössä sitä, että sivun yläosa ja vasen reuna kantavat suurimman painon. Jos tärkein viesti, se joka kertoo mitä yritys tekee ja miksi kävijän kannattaisi jäädä, on haudattu keskelle sivua tai oikeaan laitaan koristeen taakse, suuri osa kävijöistä ei koskaan näe sitä silmillään, vaikka se olisi tekstinä täysin olemassa.</p>
+
+            <h2>Nopeus on osa psykologiaa, ei vain tekniikkaa</h2>
+            <p><a href="miksi-nopeus-vaikuttaa-suoraan-myyntiin.html">Sivun latausnopeudesta on kirjoitettu paljon teknisenä aiheena</a>, mutta se on yhtä lailla psykologinen kysymys. Google ja Deloitte julkaisivat yhdessä laajan "Milliseconds Make Millions" -tutkimuksen, jossa analysoitiin oikeaa dataa 37 brändiltä vähittäiskaupan, matkailun ja liidien keräämisen aloilta. Tulos: pelkkä 0,1 sekunnin parannus sivun latausnopeudessa nosti vähittäiskaupan konversioita 8,4 prosenttia ja keskimääräistä tilauksen arvoa 9,2 prosenttia, samalla kävijämäärällä ja samoilla hankintakustannuksilla.</p>
+
+            <p>Syy ei ole pelkästään kärsimättömyys. Hidas lataus rikkoo sen tunnetilan, jonka hyvä ensivaikutelma juuri loi. Kävijä on jo tehnyt tunnepohjaisen "tämä vaikuttaa luotettavalta" -päätöksen 50 millisekunnissa, ja jokainen ylimääräinen odotussekunti antaa aivoille aikaa kyseenalaistaa sen päätöksen uudelleen.</p>
+
+            <h2>Luottamuksen rakennuspalikat, joita kävijä etsii tiedostamatta</h2>
+            <p>Kun ensivaikutelma on syntynyt ja kävijä on jäänyt sivulle, aivot alkavat etsiä tiedostamatta merkkejä siitä, kannattaako luottamusta vahvistaa vai perua. Näitä merkkejä ovat muun muassa:</p>
+            <ul>
+                <li><strong>Visuaalinen johdonmukaisuus.</strong> Yhtenäinen värimaailma ja typografia koko sivustolla viestii huolellisuudesta, kun taas epäjohdonmukaisuus eri alasivuilla herättää tiedostamattoman epäilyksen.</li>
+                <li><strong>Selkeä hierarkia.</strong> Kävijän pitää nähdä yhdellä silmäyksellä, mikä sivulla on tärkeintä, ilman että hänen tarvitsee itse päätellä sitä.</li>
+                <li><strong>Konkreettiset luottamussignaalit.</strong> Oikeat yhteystiedot, asiakastarinat ja selkeästi näkyvä tarjous vastaavat kysymykseen "onko tämä oikea, olemassa oleva yritys" ilman että kävijän tarvitsee erikseen etsiä vastausta.</li>
+                <li><strong>Tila hengittää.</strong> Liian täyteen ahdettu sivu, jossa kaikki huutaa yhtä aikaa huomiota, lukee alitajuisesti epäluotettavana tai amatöörimäisenä, riippumatta siitä miten hyvää sisältö itsessään on.</li>
+            </ul>
+
+            <p><a href="konversio-on-tarkeampi-kuin-kavijamaara.html">Konversion kannalta tämä on lopulta tärkeämpää kuin kävijämäärä</a>: sata kävijää, jotka kaikki muodostavat huonon ensivaikutelman, tuottaa vähemmän kuin kymmenen kävijää, jotka luottavat sivuun heti ensi silmäyksellä.</p>
+
+            <h2>Käytännön muutokset, jotka vaikuttavat eniten</h2>
+            <p>Kaikkea ei tarvitse uudistaa kerralla. Näillä on tyypillisesti suurin vaikutus suhteessa työmäärään:</p>
+            <ul>
+                <li><strong>Siirrä tärkein viesti sivun yläosaan ja vasempaan reunaan</strong> F-kuvion mukaisesti, älä keskelle tai oikeaan laitaan sivukuvituksen taakse.</li>
+                <li><strong>Yhtenäistä värimaailma ja typografia</strong> kaikilla alasivuilla, älä vain etusivulla.</li>
+                <li><strong>Karsi, älä lisää.</strong> Jos sivulla on kymmenen elementtiä huutamassa huomiota yhtä aikaa, mikään niistä ei oikeasti saa sitä.</li>
+                <li><strong>Mittaa ja paranna latausnopeutta</strong> ensimmäisenä teknisenä toimenpiteenä, ei viimeisenä, koska se vaikuttaa suoraan siihen ehtiikö kävijä ylipäätään nähdä hyvin suunnitellun sisällön.</li>
+            </ul>
+
+            <h2>Yhteenveto</h2>
+            <p>Kun suunnittelemme verkkosivua, emme aloita väreistä tai fonteista sattumanvaraisesti. Aloitamme siitä, mitä kävijän pitää ymmärtää ensimmäisten sekuntien aikana, ja rakennamme visuaalisen hierarkian sen ympärille. Vasta sen jälkeen tulevat värit, typografia ja kuvitus, jotka tukevat tätä viestiä sen sijaan että kilpailisivat sen kanssa huomiosta.</p>
+
+            <p>Jos et ole varma, muodostaako sivustosi hyvän ensivaikutelman, helpoin tapa selvittää se on näyttää etusivua jollekulle, joka ei ole nähnyt sitä koskaan, viiden sekunnin ajan, ja kysyä mitä hän muistaa. Jos vastaus on hämmentynyt hiljaisuus, ongelma ei ole todennäköisesti sisällössä, vaan siinä mitä kävijän silmä näkee ensin.</p>
+
+            <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 8px;">• <a href="https://www.tandfonline.com/doi/abs/10.1080/01449290500330448" target="_blank" style="color: var(--accent); text-decoration: underline;">Lindgaard, G. ym. (2006): "Attention web designers: You have 50 milliseconds to make a good first impression!" — Behaviour & Information Technology, 25(2)</a></li>
+                <li style="margin-bottom: 8px;">• <a href="https://technologypartners.net/industry-insights/blog/2020/03/did-you-know-that-first-impressions-are-94-design-related" target="_blank" style="color: var(--accent); text-decoration: underline;">Missouri University of Science and Technology: silmänliiketutkimus verkkosivujen ensivaikutelmasta</a></li>
+                <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content-discovered/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "F-Shaped Pattern For Reading Web Content"</a></li>
+                <li style="margin-bottom: 8px;">• <a href="https://searchengineland.com/the-need-for-mobile-speed-small-improvements-have-a-big-conversion-impact-336453" target="_blank" style="color: var(--accent); text-decoration: underline;">Google & Deloitte: "Milliseconds Make Millions" -tutkimus latausnopeuden vaikutuksesta konversioihin</a></li>
+            </ul>
+
+            <div class="article-cta">
+                <h3>Muodostaako sivustosi hyvän ensivaikutelman?</h3>
+                <p>Valoverstas suunnittelee sivut siitä lähtökohdasta, mitä kävijän silmä ja aivot oikeasti tekevät ensimmäisten sekuntien aikana, ei siitä mikä näyttää hienolta suunnittelijan omasta mielestä.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col">
+                    <h4>Palvelut</h4>
+                    <ul>
+                        <li><a href="/#palvelut">Tuikku</a></li>
+                        <li><a href="/#palvelut">Lamppu</a></li>
+                        <li><a href="/#palvelut">Majakka</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään.
+        </div>
+    </footer>
+
+    <!-- PRIVACY BANNER -->
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Ymmärrän</button>
+            <a href="#" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
