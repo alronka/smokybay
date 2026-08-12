@@ -200,35 +200,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 (function initPrivacyBanner() {
     const banner = document.getElementById('cookieBanner');
     const acceptBtn = document.getElementById('acceptCookies');
+    const rejectBtn = document.getElementById('rejectCookies');
+    const settingsLink = document.getElementById('cookieSettingsLink');
     if (!banner || !acceptBtn) return;
 
-    function activateTracking() {
+    function updateConsent(granted) {
         if (typeof gtag === 'function') {
+            const state = granted ? 'granted' : 'denied';
             gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
+                'analytics_storage': state,
+                'ad_storage': state,
+                'ad_user_data': state,
+                'ad_personalization': state
             });
         }
     }
 
-    // Check if user has already accepted
-    if (!localStorage.getItem('privacyAccepted')) {
-        // Show banner with delay for better UX
-        setTimeout(() => {
-            banner.classList.add('visible');
-        }, 1500);
+    function hideBanner() {
+        banner.classList.remove('visible');
+    }
+
+    function showBanner() {
+        banner.classList.add('visible');
+    }
+
+    // Consent already stays denied by default (Consent Mode v2 default),
+    // so a saved choice only needs to act when it's an explicit grant or an explicit denial.
+    const savedChoice = localStorage.getItem('cookieConsent');
+    if (savedChoice === 'granted') {
+        updateConsent(true);
+    } else if (savedChoice === 'denied') {
+        updateConsent(false);
     } else {
-        // User has already accepted, activate tracking immediately
-        activateTracking();
+        setTimeout(showBanner, 1500);
     }
 
     acceptBtn.addEventListener('click', () => {
-        banner.classList.remove('visible');
-        localStorage.setItem('privacyAccepted', 'true');
-        activateTracking();
+        localStorage.setItem('cookieConsent', 'granted');
+        updateConsent(true);
+        hideBanner();
     });
+
+    if (rejectBtn) {
+        rejectBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'denied');
+            updateConsent(false);
+            hideBanner();
+        });
+    }
+
+    if (settingsLink) {
+        settingsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showBanner();
+        });
+    }
 })();
 
 // ---- CONTACT FORM DYNAMIC FEATURES ----

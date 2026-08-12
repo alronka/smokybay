@@ -1318,6 +1318,17 @@ footer {
     color: var(--text-dim);
 }
 
+.footer-bottom a {
+    color: var(--text-dim);
+    text-decoration: underline;
+    text-decoration-color: rgba(148, 163, 184, 0.4);
+    transition: var(--transition);
+}
+
+.footer-bottom a:hover {
+    color: var(--accent);
+}
+
 /* ============================
    ANIMATIONS
    ============================ */
@@ -1493,6 +1504,7 @@ footer {
 
 .cookie-btn-group {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
