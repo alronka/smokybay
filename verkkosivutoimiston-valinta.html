@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivutoimiston valinta: Mitä kysyä ennen kuin allekirjoitat sopimuksen – Valoverstas</title>
+    <meta name="description"
+        content="Verkkosivutoimiston valinta on isompi päätös kuin hintavertailu. Käy läpi seitsemän kysymystä omistuksesta, hinnoittelusta ja ylläpidosta, jotka kannattaa selvittää ennen sopimuksen allekirjoittamista.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivutoimiston-valinta.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivutoimiston-valinta.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivutoimiston-valinta.html">
+    <meta name="twitter:title" content="Verkkosivutoimiston valinta: Mitä kysyä ennen kuin allekirjoitat sopimuksen">
+    <meta name="twitter:description" content="Seitsemän kysymystä omistuksesta, hinnoittelusta ja ylläpidosta, jotka kannattaa selvittää ennen sopimuksen allekirjoittamista.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivutoimiston-valinta.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Verkkosivutoimiston valinta: Mitä kysyä ennen kuin allekirjoitat sopimuksen",
+      "description": "Verkkosivutoimiston valinta on isompi päätös kuin hintavertailu. Seitsemän kysymystä omistuksesta, hinnoittelusta ja ylläpidosta, jotka kannattaa selvittää ennen sopimusta.",
+      "image": "https://valoverstas.fi/img/verkkosivutoimiston-valinta.webp",
+      "datePublished": "2026-08-17",
+      "author": { "@type": "Organization", "name": "Valoverstas" },
+      "publisher": { "@type": "Organization", "name": "Valoverstas", "url": "https://valoverstas.fi" }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .checklist-box {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 24px;
+        }
+
+        .checklist-box li {
+            position: relative;
+            padding: 14px 16px 14px 44px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+        }
+
+        .checklist-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .action-list { list-style: none; padding-left: 0; }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .action-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .action-text strong { display: block; color: var(--text); margin-bottom: 6px; }
+        .action-text p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+    </style>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Verkkosivutoimisto • Osto-opas • 7 min luku</div>
+            <h1>Verkkosivutoimiston valinta: <span class="gradient-text">Mitä kysyä ennen kuin allekirjoitat sopimuksen</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Halvin tai hienoin tarjous ei ole aina paras. Seitsemän kysymystä omistuksesta, hinnoittelusta ja ylläpidosta, jotka kannattaa selvittää ennen kuin valitset toimiston.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivutoimiston-valinta.webp" alt="Verkkosivutoimiston valinnan tarkistuslista PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Verkkosivutoimiston valinta muistuttaa pintapuolisesti muuta ostopäätöstä: kolme tarjousta, halvin tai hienoin voittaa. Todellisuudessa kyse on pidempiaikaisesta kumppanuudesta kuin yksittäisestä hankinnasta, sivustoa päivitetään, laajennetaan ja ylläpidetään vuosia sen julkaisun jälkeen, ja huono valinta näkyy usein vasta kuukausia myöhemmin, kun jokin pitäisi muuttaa eikä kukaan enää vastaa puhelimeen.</p>
+
+            <p>Tämä artikkeli käy läpi seitsemän konkreettista kysymystä, jotka kannattaa selvittää ennen kuin allekirjoitat sopimuksen minkään toimiston kanssa.</p>
+
+            <h2>1. Miksi tämä on isompi päätös kuin miltä se näyttää</h2>
+            <p>Tuoreen Clutchin PK-yritysten verkkosivukyselyn mukaan 61 prosenttia pienyrityksistä käytti viimeisimpään verkkosivuprojektiinsa alle 10 000 dollaria, osuus on laskenut vuoden 2023 68 prosentista sitä mukaa kun ostajat vaativat enemmän räätälöityä suunnittelua ja konversioon tähtääviä ominaisuuksia. Käytännössä tämä tarkoittaa, että projektit ovat monimutkaistumassa juuri silloin kun budjetit eivät välttämättä kasva samaa tahtia, mikä tekee toimiston valinnasta entistä tärkeämpää: väärä valinta ei näy vain hinnassa, vaan siinä paljonko projektista oikeasti saa irti.</p>
+
+            <h2>2. Kuka omistaa lopputuloksen, kun projekti on valmis?</h2>
+            <p>Tämä on yksi eniten aliarvioiduista kysymyksistä koko prosessissa. Yleinen ja yllättävän tavallinen ongelma on tilanne, jossa toimisto rekisteröi asiakkaan verkkotunnuksen (domainin) omalla nimellään "helpottaakseen hallintaa", ja kun asiakassuhde myöhemmin päättyy riitaisasti, yritys huomaa ettei se itse asiassa omista omaa verkko-osoitettaan. Pahimmillaan koko yrityksen digitaalinen identiteetti, sivusto, sähköpostit, vuosien brändityö, voi kadota yhdessä iltapäivässä.</p>
+
+            <div class="highlight-box">
+                Varmista aina kirjallisesti: domain on rekisteröity <strong>sinun yrityksesi nimissä</strong>, ei toimiston nimissä. Sama koskee hostingtiliä, analytiikkatilejä ja mitä tahansa kolmannen osapuolen palvelua johon sivusto on kytketty. Jos toimisto ehdottaa, että he hoitavat rekisteröinnin "omalla tunnuksellaan", pyydä että se tehdään joka tapauksessa sinun yrityksesi tietoihin, sinä pysyt aina hallinnollisena yhteyshenkilönä.
+            </div>
+
+            <p>Kysy suoraan: kenen nimissä domain rekisteröidään, kuka omistaa lähdekoodin projektin valmistuttua, ja saatko täydet tunnukset kaikkiin järjestelmiin viimeistään laskun maksamisen jälkeen. Hyvä toimisto vastaa näihin kysymyksiin suoraan ja mielellään, epämääräinen tai välttelevä vastaus on jo itsessään varoitusmerkki.</p>
+
+            <h2>3. Onko hinnoittelu läpinäkyvä vai yksi iso luku?</h2>
+            <p>GoodFirmsin tuoreen kyselyn mukaan 65,6 prosenttia yrityksistä raportoi, että laajuuden hiipiminen (scope creep) nosti projektin kustannuksia tyypillisesti 10-25 prosenttia alkuperäisestä arviosta, ja 86 prosenttia vastaajista koki asiakkaan tarpeiden muuttumisen toistuvaksi ongelmaksi vaikka tavoitteet olisi määritelty selkeästi jo alussa. Tämä ei tarkoita, että muutokset olisivat aina toimiston syytä, mutta se korostaa miksi hinnoittelun eritteleminen etukäteen kannattaa.</p>
+
+            <p>Yhden ison summan tarjous ilman erittelyä on riskimerkki. Pyydä sen sijaan rivikohtainen erittely: suunnittelu, tekninen toteutus, sisällöntuotanto, testaus, käyttöönotto ja mahdolliset kolmannen osapuolen lisenssit omina riveinään. Tämä ei ole vain kirjanpidollinen muodollisuus, se paljastaa nopeasti mitä hintaan oikeasti sisältyy ja mitä ei, ja auttaa vertailemaan tarjouksia keskenään aidosti samalla mittarilla. <a href="verkkosivu-uudistus-kustannustehokkaasti.html">Verkkosivu-uudistus kustannustehokkaasti -artikkelissamme</a> käsittelimme tarkemmin, mistä kustannukset oikeasti koostuvat ja mistä niitä voi järkevästi karsia ilman että lopputulos kärsii.</p>
+
+            <h2>4. Mitä tapahtuu sen jälkeen, kun sivu julkaistaan?</h2>
+            <p>Moni tarjous keskittyy vain rakennusvaiheeseen ja jättää julkaisun jälkeisen ajan auki. Kysy suoraan: mitä ylläpito maksaa kuukaudessa, mikä sisältyy siihen hintaan (tietoturvapäivitykset, varmuuskopiot, pienet sisältömuutokset) ja mikä laskutetaan erikseen, sekä mikä on luvattu vasteaika kun jotain menee rikki. "Otamme yhteyttä tarvittaessa" ei ole vastaus, vaan konkreettinen vasteaikalupaus on.</p>
+
+            <p>Tämä liittyy suoraan siihen, minkälaiselle tekniselle perustalle sivu rakennetaan, sillä eri alustat vaativat hyvin erilaisen määrän jatkuvaa ylläpitoa. <a href="staattiset-verkkosivut-vs-wordpress.html">Staattiset verkkosivut vs. WordPress -vertailussamme</a> kävimme läpi, miten alustavalinta vaikuttaa suoraan siihen kuinka paljon ylläpitoa ja tietoturvapäivityksiä sivusto tarvitsee vuosien varrella.</p>
+
+            <h2>5. Kerrotaanko avoimesti, minkä alustan päälle sivu rakennetaan?</h2>
+            <p>Hyvä toimisto osaa perustella alustavalintansa, ei vain nimetä sitä. Kysy miksi juuri tämä alusta sopii sinun tarpeisiisi, mitä se tarkoittaa nopeuden, tietoturvan ja tulevien laajennusten kannalta, ja kuinka helppoa sisältöä on päivittää itse ilman että jokainen pieni muutos vaatii laskutettavaa kehittäjän työtä.</p>
+
+            <p>Läpinäkyvyys tekniikan suhteen kertoo yleensä laajemmin siitä, miten toimisto kommunikoi koko projektin ajan. Jos alustavalinnan perusteluihin vastataan ylimalkaisesti tai vältellen, sama todennäköisesti toistuu myöhemmin kun kysyt miksi aikataulu venyi tai mistä lisälasku johtuu.</p>
+
+            <h2>6. Referenssit, joille voi oikeasti soittaa</h2>
+            <p>Portfoliokuvat kertovat vain, miltä valmis sivu näyttää kuvakaappauksena, ei miten projekti oikeasti sujui asiakkaan näkökulmasta. Pyydä vähintään kahta tai kolmea referenssiasiakasta, joille voit soittaa suoraan ja kysyä: pysyikö aikataulu ja budjetti kutakuinkin kasassa, miten kommunikaatio sujui projektin aikana, ja miten toimisto reagoi kun jotain meni pieleen, koska jotain menee lähes aina jossain kohtaa pieleen.</p>
+
+            <p>Jos toimisto ei pysty tai halua järjestää yhtään suoraa yhteyttä oikeaan asiakkaaseen, se on syy epäillä joko referenssien aitoutta tai asiakassuhteiden laatua.</p>
+
+            <h2>7. Punaiset liput, joiden kohdalla kannattaa perääntyä</h2>
+            <p>Näistä yksikin riittää syyksi harkita toista vaihtoehtoa vakavasti:</p>
+
+            <ul class="action-list">
+                <li>
+                    <div class="action-number">!</div>
+                    <div class="action-text">
+                        <strong>Toimisto ei kysy liiketoiminnastasi mitään</strong>
+                        <p>Jos ensimmäinen keskustelu käsittelee vain väriä ja fontteja eikä lainkaan sitä, mitä sivun pitäisi saada aikaan liiketoiminnalle, suunnittelu tulee tapahtumaan irrallaan tavoitteistasi.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">!</div>
+                    <div class="action-text">
+                        <strong>Ei kirjallista sopimusta</strong>
+                        <p>Suullinen sopimus ei suojaa kumpaakaan osapuolta, jos jokin menee myöhemmin erimielisyyteen.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">!</div>
+                    <div class="action-text">
+                        <strong>Epämääräinen vastaus omistusoikeuksista</strong>
+                        <p>Ks. kohta 2. Jos vastaus domainin tai koodin omistukseen on epäselvä tai välttelevä, se ei selkiydy myöhemminkään.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="action-number">!</div>
+                    <div class="action-text">
+                        <strong>Ei mainintaa julkaisun jälkeisestä tuesta</strong>
+                        <p>Jos ylläpito ja tuki tulevat puheeksi vasta kun erikseen kysyt, se kertoo mihin toimiston fokus oikeasti päättyy.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h2>Muistilista ennen sopimuksen allekirjoittamista</h2>
+            <p>Ennen kuin allekirjoitat mitään, käy vielä kertaalleen läpi:</p>
+
+            <ul class="checklist-box">
+                <li>Domain ja hosting rekisteröidään sinun yrityksesi nimiin, ei toimiston</li>
+                <li>Hinnoittelu on eritelty riveittäin, ei yksi kertasumma</li>
+                <li>Julkaisun jälkeinen ylläpito, sen hinta ja vasteaika on kirjattu, ei vain luvattu suullisesti</li>
+                <li>Alustavalinta on perusteltu, ei vain nimetty</li>
+                <li>Olet puhunut suoraan vähintään yhden aiemman asiakkaan kanssa</li>
+                <li>Sopimus on kirjallinen ja molempien allekirjoittama</li>
+            </ul>
+
+            <p><a href="yrityksen-verkkosivusto-checklist.html">Yrityksen verkkosivusto-checklist -artikkelissamme</a> käsittelimme laajemman muistilistan koko projektille suunnittelusta julkaisuun asti, tämä lista keskittyy nimenomaan siihen mitä kannattaa varmistaa ennen kuin toimistoa edes valitaan.</p>
+
+            <p>Hyvä toimisto ei hermostu näistä kysymyksistä, päinvastoin, selkeät vastaukset omistuksesta, hinnoittelusta ja tuesta ovat merkki siitä että toimisto on tehnyt tätä ennenkin ja tietää mitä asiakas oikeasti tarvitsee kuullakseen.</p>
+
+            <div class="article-cta">
+                <h3>Haluatko tietää, mitä oma verkkosivuprojektisi vaatisi?</h3>
+                <p>Käymme yhdessä läpi tarpeenne, aikataulun ja budjetin, avoimesti ja ilman piilokuluja.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://clutch.co/resources/state-of-small-business-websites-2025" target="_blank" style="color: var(--accent); text-decoration: underline;">Clutch: "The State of Small Business Websites 2025"</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.goodfirms.co/resources/website-construction-cost-survey/" target="_blank" style="color: var(--accent); text-decoration: underline;">GoodFirms: "Website Development Cost in 2026" -kysely (scope creep -data)</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://passionindesign.com/help-tutorials/your-web-agency-is-holding-your-domain-hostage-heres-how-to-get-it-back/" target="_blank" style="color: var(--accent); text-decoration: underline;">Passion In Design: "Your Web Agency Is Holding Your Domain Hostage"</a></li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -13,9 +13,10 @@
     <title>Blogiarkisto — Valoverstas</title>
     <meta name="description"
         content="Selaa kaikkia kirjoituksiamme verkkosivukehityksestä, designista ja digitaalisesta kasvusta.">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
     <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
     <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
 
@@ -107,7 +108,7 @@
     </style>
 </head>
 
-<body>
+<body class="ink-world">
     <canvas id="particles"></canvas>
 
     <!-- NAVIGATION -->
@@ -137,6 +138,22 @@
     </header>
 
     <section class="blog-grid">
+        <a href="verkkosivun-tietoturva-ja-ssl.html" class="blog-card">
+            <div class="blog-content">
+                <div class="blog-meta">Tietoturva • SSL • Verkkosivut • 2.8.2026</div>
+                <h3>Verkkosivun tietoturva ja SSL: Mitä PK-yrityksen pitää tietää</h3>
+                <p>Tietoturva ei ole vain isojen yritysten murhe. Lue mitä SSL-sertifikaatti oikeasti tekee, mitkä ovat yleisimmät tietoturva-aukot pienten yritysten sivustoilla, ja miten suojaat lomakkeet ja käyttäjätiedot.</p>
+            </div>
+        </a>
+
+        <a href="mobiilioptimointi-ja-myynti.html" class="blog-card">
+            <div class="blog-content">
+                <div class="blog-meta">Mobiilioptimointi • Konversio • 30.7.2026</div>
+                <h3>Mobiilioptimointi ja miksi se ratkaisee myynnin</h3>
+                <p>Suurin osa liikenteestä tulee jo mobiilista. Lue mitä mobiilioptimointi käytännössä tarkoittaa, ja miksi kömpelö mobiilikokemus karkottaa asiakkaita ennen kuin he ehtivät ostaa.</p>
+            </div>
+        </a>
+
         <a href="verkkosivu-uudistus-aikataulu-budjetti.html" class="blog-card">
             <div class="blog-content">
                 <div class="blog-meta">Verkkosivu-uudistus • Budjetointi • 27.7.2026</div>
@@ -299,6 +316,7 @@
     </section>
 
     <!-- FOOTER -->
+    <div class="footer-ink-strip" aria-hidden="true"></div>
     <footer>
         <div class="footer-grid">
             <div class="footer-col footer-brand">

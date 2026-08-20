@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milloin verkkosivu kannattaa uudistaa: 7 merkkiä – Valoverstas</title>
+    <meta name="description"
+        content="Verkkosivun uudistamista lykätään usein liian pitkään, koska sivu 'toimii vielä'. Käy läpi seitsemän konkreettista merkkiä, jotka kertovat että vanha sivu on muuttunut liiketoiminnan jarruksi.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/milloin-verkkosivu-kannattaa-uudistaa.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/milloin-verkkosivu-kannattaa-uudistaa.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/milloin-verkkosivu-kannattaa-uudistaa.html">
+    <meta name="twitter:title" content="Milloin verkkosivu kannattaa uudistaa: 7 merkkiä">
+    <meta name="twitter:description" content="Seitsemän konkreettista merkkiä, jotka kertovat että vanha sivu on muuttunut liiketoiminnan jarruksi.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/milloin-verkkosivu-kannattaa-uudistaa.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Milloin verkkosivu kannattaa uudistaa: 7 merkkiä, että vanha sivu jarruttaa liiketoimintaa",
+      "description": "Seitsemän konkreettista merkkiä, jotka kertovat että vanha sivu on muuttunut liiketoiminnan jarruksi, sekä miten uudistuspäätös kannattaa tehdä.",
+      "image": "https://valoverstas.fi/img/milloin-verkkosivu-kannattaa-uudistaa.webp",
+      "datePublished": "2026-08-20",
+      "author": { "@type": "Organization", "name": "Valoverstas" },
+      "publisher": { "@type": "Organization", "name": "Valoverstas", "url": "https://valoverstas.fi" }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(6, 182, 212, 0.4);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+
+        .checklist-box {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 24px;
+        }
+
+        .checklist-box li {
+            position: relative;
+            padding: 14px 16px 14px 44px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            margin-bottom: 12px;
+        }
+
+        .checklist-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 16px;
+            top: 14px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .action-list { list-style: none; padding-left: 0; }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+        }
+
+        .action-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d4ff);
+            color: #fff;
+            font-weight: 900;
+            font-size: 0.9rem;
+        }
+
+        .action-text strong { display: block; color: var(--text); margin-bottom: 6px; }
+        .action-text p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Verkkosivu-uudistus • Päätöksenteko • 6 min luku</div>
+            <h1>Milloin verkkosivu kannattaa uudistaa: <span class="gradient-text">7 merkkiä</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Vanha sivu "toimii vielä" on huono syy lykätä uudistusta. Seitsemän konkreettista merkkiä, jotka kertovat että vanha sivu on muuttunut liiketoiminnan jarruksi.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/milloin-verkkosivu-kannattaa-uudistaa.webp" alt="Milloin verkkosivu kannattaa uudistaa - seitsemän merkkiä PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Verkkosivun uudistaminen on helppo lykätä loputtomiin, koska vanha sivu "toimii vielä": se on pystyssä, siellä käy kävijöitä, eikä mikään ole rikki tavalla joka pakottaisi toimeen. Ongelma on siinä, että sivu voi jarruttaa liiketoimintaa hiljaa, ilman että mikään hälyttää siitä suoraan, hitaasti heikkenevänä konversiona, kasvavana kehityskustannuksena tai kävijöinä jotka poistuvat ennen kuin ehtivät edes lukea mitä yritys tekee.</p>
+
+            <p>Tämä artikkeli käy läpi seitsemän konkreettista merkkiä, joiden kohdalla uudistus kannattaa nostaa agendalle, ei "joskus ensi vuonna" vaan nyt.</p>
+
+            <h2>1. Miksi uudistuspäätöstä lykätään liian pitkään</h2>
+            <p>Web-suunnittelun alan datan mukaan markkinoijista 68 prosenttia pitää 1-3 vuoden väliä sopivana uudistustahtina, ja täysimittainen uudistus suositellaan tehtäväksi keskimäärin 2-3 vuoden välein liiketoiminnan kasvun, käyttäjäodotusten ja hakukoneiden vaatimusten muuttuessa. Silti moni PK-yritys venyttää tätä huomattavasti pidemmäksi, koska uudistus mielletään isoksi, kalliiksi ja aikaa vieväksi projektiksi verrattuna siihen, että "sivu toimii nytkin".</p>
+
+            <p>Todellisuudessa lykkääminen tulee usein kalliimmaksi kuin ajoissa tehty uudistus, koska hitaasti heikkenevä sivu ei näy kuluna missään yksittäisessä laskussa, se näkyy menetettyinä liideinä ja kävijöinä jotka eivät koskaan ottaneet yhteyttä.</p>
+
+            <h2>2. Merkki 1: Sivu ei näytä hyvältä tai toimi kunnolla puhelimessa</h2>
+            <p>Käyttäjät muodostavat mielipiteensä sivusta noin 0,05 sekunnissa, ja 94 prosenttia tästä ensivaikutelmasta perustuu nimenomaan ulkoasuun, ei sisältöön. Jos tämä ensivaikutelma syntyy rikkinäisestä tai puutteellisesta mobiilinäkymästä, peli on usein menetetty ennen kuin kävijä ehtii lukea yhtäkään lausetta.</p>
+
+            <div class="highlight-box">
+                73 prosenttia käyttäjistä poistuu sivustolta nimenomaan huonon mobiilikäytettävyyden takia, ja mobiilioptimoitu sivu tuottaa jopa 40 prosenttia korkeamman konversion kuin optimoimaton. Jos et ole varma miltä oma sivusi näyttää puhelimella, testaa se nyt, ei kun ehdit.
+            </div>
+
+            <p>Käsittelimme mobiilioptimointia tarkemmin <a href="mobiilioptimointi-ja-myynti.html">Mobiilioptimointi ja miksi se ratkaisee myynnin -artikkelissamme</a>, jos tämä merkki osuu omalle kohdalle, se on hyvä lähtöpiste sen ymmärtämiseen miksi ja miten paljon se maksaa liiketoiminnalle.</p>
+
+            <h2>3. Merkki 2: Jokainen pieni sisältömuutos vaatii kehittäjän</h2>
+            <p>Jos hinnan päivittäminen, uuden referenssin lisääminen tai yhden lauseen korjaaminen vaatii aina yhteydenoton kehittäjään ja laskun, sivu on todennäköisesti rakennettu tavalla joka ei tue arkista ylläpitoa. Tämä ei ole vain kustannuskysymys, se on myös nopeuskysymys: tarjous joka pitäisi julkaista tänään venyy viikon, koska joku muu on kiireinen.</p>
+
+            <p>Tämä liittyy suoraan siihen, millä alustalla sivu on rakennettu, sillä eri alustat vaativat hyvin erilaisen määrän jatkuvaa kehittäjäriippuvuutta pienissä muutoksissa. Jos tämä tuntuu tutulta, kannattaa lukea läpi mitä vaihtoehtoja uudistuksessa oikeasti on ennen kuin toimistoa valitaan, ks. <a href="verkkosivutoimiston-valinta.html">Verkkosivutoimiston valinta -artikkelimme</a>, jossa käydään läpi mitä alustavalinnasta ja sen perusteluista kannattaa kysyä.</p>
+
+            <h2>4. Merkki 3: Sivu latautuu hitaasti</h2>
+            <p>Hidas latautuminen ei ole enää vain käyttäjäkokemuskysymys, se vaikuttaa suoraan myös hakukonenäkyvyyteen Core Web Vitals -mittareiden kautta. Jos sivu on rakennettu vuosia sitten päälle liimatuilla lisäosilla ja skripteillä, sen latausaika kasvaa usein huomaamatta ajan myötä, jokainen yksittäinen lisäys tuntuu pieneltä, mutta summa ei ole pieni.</p>
+
+            <p>Konkreettinen testi: avaa oma sivusi Google PageSpeed Insightsilla tai vastaavalla työkalulla. Jos tulos on selvästi punaisella tai keltaisella alueella, se ei ole vain teknisen tiimin murhe, se on osa samaa keskustelua kuin uudistuksen ajankohta.</p>
+
+            <h2>5. Merkki 4: Yhteydenottolomake ei tuota liidejä</h2>
+            <p>Jos yhteydenottolomake saa kävijöitä mutta ei liidejä, syy ei useinkaan ole markkinoinnissa vaan itse lomakkeessa: liian monta kenttää, epäselvä call-to-action, tai lomake joka ei näy kunnolla mobiilissa. Käyttöliittymän hyvä suunnittelu voi nostaa konversiota jopa 200 prosenttia, ja pelkkä selkeä toimintakehotus voi nostaa konversiota yli 3 prosenttia sellaisenaan.</p>
+
+            <p>Kävimme läpi tarkemmin, mikä lomakkeessa oikeasti ratkaisee konversion, <a href="liidilomakkeet-ja-konversio-2026.html">Liidilomakkeet ja konversio -artikkelissamme</a>. Jos oma lomake on pysynyt samana vuosia eikä kukaan ole koskaan mitannut sen konversiota, se on jo itsessään merkki siitä että sivu kaipaa uudempaa silmää.</p>
+
+            <h2>6. Merkki 5: Sivu ei enää vastaa nykyistä palveluvalikoimaa tai brändiä</h2>
+            <p>Yritykset muuttuvat, mutta sivut jäävät usein jälkeen: palveluvalikoima on laajentunut, hinnoittelu on muuttunut, tai koko brändi-ilme on päivittynyt muualla paitsi verkossa. Kun sivu ei vastaa sitä mitä yritys nykyään oikeasti tekee, se ei vain näytä vanhalta, se aktiivisesti antaa väärän kuvan siitä mitä asiakas on ostamassa.</p>
+
+            <p>Tämä on erityisen yleistä yrityksissä jotka ovat kasvaneet nopeasti: alkuperäinen sivu suunniteltiin yhden palvelun ympärille, ja nyt sivulla yritetään väkisin esitellä viittä palvelua sivupalkissa, joka ei koskaan suunniteltu sitä varten.</p>
+
+            <h2>7. Merkki 6: Kilpailijat ohittavat hakutuloksissa</h2>
+            <p>Jos kilpailijat, joiden tiesit ennen olevan sinua heikompia, alkavat näkyä sinua korkeammalla hakutuloksissa, syy on usein tekninen: uudempi, nopeampi ja paremmin rakennettu sivu pärjää hakukoneoptimoinnissa systemaattisesti paremmin kuin vanha, riippumatta siitä kumman sisältö on parempi. Google painottaa nykyään voimakkaasti nimenomaan teknisiä signaaleja, kuten latausnopeutta ja mobiilikäytettävyyttä, joissa juuri vanhat sivut tyypillisesti epäonnistuvat.</p>
+
+            <p>Tämä ei tarkoita, että sisällöllä ei olisi väliä, vaan sitä että tekninen perusta on edellytys sille että hyvä sisältö ylipäätään pääsee näkyviin.</p>
+
+            <h2>8. Merkki 7: Alusta on niin vanha, että tietoturva mietityttää</h2>
+            <p>Jos sivu on rakennettu alustalla tai lisäosilla joita ei ole päivitetty säännöllisesti, tai jos et ole varma milloin viimeksi tietoturvapäivitys tehtiin, tämä on syy uudistukselle joka ei liity ollenkaan ulkoasuun. Vanhentunut alusta on yksi yleisimmistä hyökkäysvektoreista pienten yritysten sivustoilla, koska tunnettuja haavoittuvuuksia jää korjaamatta.</p>
+
+            <p>Kävimme läpi konkreettisesti mitä PK-yrityksen kannattaa tarkistaa tietoturvan osalta <a href="verkkosivun-tietoturva-ja-ssl.html">Verkkosivun tietoturva ja SSL -artikkelissamme</a>, jos tämä merkki osuu kohdalle, se kannattaa nostaa uudistuskeskustelussa yhtä painavaksi argumentiksi kuin ulkoasu.</p>
+
+            <h2>9. Uudistus vai paikkaus: miten päätös kannattaa tehdä</h2>
+            <p>Ei jokainen näistä merkeistä vaadi täysimittaista uudistusta, joskus riittää kohdennettu korjaus, esimerkiksi vain lomakkeen uudelleensuunnittelu tai latausnopeuden optimointi. Täysimittainen uudistus kannattaa, kun useampi merkki osuu kohdalle samaan aikaan, tai kun ongelma on rakenteellinen, kuten alusta joka ei tue nykyaikaista ylläpitoa ylipäätään.</p>
+
+            <p>Käytännön nyrkkisääntö: jos korjauslista alkaa näyttää siltä että se maksaisi lähes yhtä paljon kuin uudistus, mutta lopputulos olisi silti vanhan alustan päälle rakennettu paikkaus, uudistus on todennäköisesti järkevämpi valinta pitkällä aikavälillä. Kun päätös uudistuksesta on tehty, kannattaa seuraavaksi käydä läpi realistinen aikataulu ja budjetti, ks. <a href="verkkosivu-uudistus-aikataulu-budjetti.html">Verkkosivu-uudistuksen aikataulu ja budjetti -artikkelimme</a>.</p>
+
+            <h2>Muistilista ja seuraava askel</h2>
+            <p>Käy vielä kertaalleen läpi:</p>
+
+            <ul class="checklist-box">
+                <li>Testaa sivu oikealla puhelimella, älä vain selaimen mobiilinäkymällä</li>
+                <li>Kokeile tehdä yksi pieni sisältömuutos itse ja katso kuinka helppoa tai vaikeaa se on</li>
+                <li>Aja sivu PageSpeed Insightsin läpi ja katso tulos</li>
+                <li>Katso yhteydenottolomakkeen konversiota viimeisen kolmen kuukauden ajalta, jos dataa ylipäätään on</li>
+                <li>Vertaa sivun sisältöä siihen, mitä yritys oikeasti myy tänään</li>
+                <li>Katso missä sijoituksessa näyt hakutuloksissa verrattuna kahteen tärkeimpään kilpailijaan</li>
+                <li>Selvitä milloin alustan tietoturvapäivitykset on viimeksi tehty</li>
+            </ul>
+
+            <p>Jos useampi kohta listalta osuu omalle sivulle, kannattaa aloittaa keskustelu uudistuksesta ennen kuin jokin näistä muuttuu akuutiksi ongelmaksi.</p>
+
+            <div class="article-cta">
+                <h3>Osuiko useampi merkki omalle sivullesi?</h3>
+                <p>Käymme yhdessä läpi, kannattaisiko sinun uudistaa vai riittäisikö kohdennettu korjaus.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://vwo.com/blog/web-design-statistics/" target="_blank" style="color: var(--accent); text-decoration: underline;">VWO: "70+ Key Web Design Statistics"</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.pixeto.co/blog/how-often-should-you-redesign-your-website" target="_blank" style="color: var(--accent); text-decoration: underline;">Pixeto: "How Often Should You Redesign Your Website?"</a></li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
