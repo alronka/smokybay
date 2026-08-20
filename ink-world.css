@@ -170,6 +170,15 @@ body.ink-world .btn-ghost:hover {
     border-color: var(--ink-carbon);
 }
 
+/* The ink-basin world is a single committed light "paper" palette with no
+   dark variant (see .impeccable/surfaces/index-html.md) — its tokens are
+   set directly on body.ink-world, so they always win over whatever the
+   dark/light toggle writes to [data-theme] on <html>. A visible toggle that
+   does nothing is a worse experience than no toggle, so it's hidden here. */
+body.ink-world .theme-toggle {
+    display: none;
+}
+
 /* ---------- BLOG POST TEMPLATES: numbered badges and link underlines were
    authored with a hardcoded cyan (#00d4ff / rgba(6,182,212,*)) that belonged
    to the old dark-SaaS look. Every post page uses these same class names, so

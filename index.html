@@ -652,6 +652,14 @@
             background: rgba(30, 27, 22, 0.04);
             border-color: var(--ink-carbon);
         }
+
+        /* Single committed light "paper" palette, no dark variant — its
+           tokens live on body.ink-world so they always beat [data-theme] on
+           <html>. Hide the toggle rather than ship a button that does
+           nothing. */
+        body.ink-world .theme-toggle {
+            display: none;
+        }
     </style>
 
     <link rel="canonical" href="https://valoverstas.fi/">
