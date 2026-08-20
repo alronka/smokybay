@@ -1,0 +1,191 @@
+/*
+  Suminagashi ink-basin world — shared system CSS.
+
+  Originally authored inline on index.html (the flagship surface, see
+  .impeccable/surfaces/index-html.md) and extracted here so blogi.html,
+  arkisto.html, tietosuoja.html and every blog post can opt into the same
+  warm paper/ink palette, typography and component treatments by adding
+  class="ink-world" to <body> and linking this file, without duplicating
+  600+ lines of CSS per page. The hero's live WebGL ink simulation
+  (fluid-sim.js, #ink-canvas, .ink-hero-*) stays homepage-only and is not
+  part of this file — it is the flagship's one signature interactive
+  moment, not the site-wide system.
+
+  Every existing component (cards, buttons, sections) already reads the
+  same custom properties this file redefines, so this cascades cleanly
+  over the shared dark-SaaS token set in styles.css.
+*/
+
+body.ink-world {
+    --bg: #F5F0E6;
+    --bg-subtle: #EDE5D3;
+    --accent: #B33B24;
+    --accent-rgb: 179, 59, 36;
+    --accent-light: #C9553A;
+    --accent-glow: rgba(179, 59, 36, 0.14);
+    --glass: rgba(30, 27, 22, 0.035);
+    --glass-hover: rgba(30, 27, 22, 0.07);
+    --border: rgba(30, 27, 22, 0.14);
+    --border-hover: rgba(30, 27, 22, 0.26);
+    --text: #1E1B16;
+    --text-muted: #5B5347;
+    --text-dim: #9C9384;
+    --radius: 6px;
+    --radius-sm: 4px;
+    --nav-bg: rgba(245, 240, 230, 0.82);
+    --nav-bg-scrolled: rgba(245, 240, 230, 0.95);
+    --nav-bg-mobile: rgba(245, 240, 230, 0.98);
+    --cookie-bg: rgba(245, 240, 230, 0.97);
+    --particles-opacity: 0;
+
+    --ink-indigo: #1D3461;
+    --ink-vermillion: #B33B24;
+    --ink-carbon: #1E1B16;
+    --ink-paper: #F5F0E6;
+
+    font-family: 'Work Sans', sans-serif;
+}
+
+body.ink-world h1,
+body.ink-world h2,
+body.ink-world h3,
+body.ink-world .logo-text,
+body.ink-world .nav-links a,
+body.ink-world .btn {
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Ink no longer glows on a dark ground here; gradient-text becomes a
+   flat vermillion instead of the old cyan gradient. */
+body.ink-world .gradient-text {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--ink-vermillion);
+}
+
+/* ---------- NAV: an inked underline, not a rounded hover-pill ---------- */
+body.ink-world .nav-links a:not(.nav-cta) {
+    position: relative;
+    border-radius: 0;
+    padding: 8px 14px;
+}
+
+body.ink-world .nav-links a:not(.nav-cta)::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 3px;
+    background: var(--ink-vermillion);
+    transform: scaleX(0) rotate(-0.4deg);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+body.ink-world .nav-links a:not(.nav-cta):hover {
+    background: none;
+    color: var(--ink-carbon);
+}
+
+body.ink-world .nav-links a:not(.nav-cta):hover::after {
+    transform: scaleX(1) rotate(-0.4deg);
+}
+
+body.ink-world .nav-cta {
+    background: var(--ink-vermillion) !important;
+    border-radius: 3px !important;
+    border: 1px solid rgba(30, 27, 22, 0.2);
+    box-shadow: 0 4px 0 rgba(30, 27, 22, 0.14);
+}
+
+body.ink-world .nav-cta:hover {
+    background: var(--accent-light) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 0 rgba(30, 27, 22, 0.16);
+}
+
+/* ---------- FOOTER: a marbled strip instead of a plain hairline ---------- */
+body.ink-world footer {
+    border-top: none;
+    padding-top: 64px;
+}
+
+body.ink-world .footer-ink-strip {
+    height: 10px;
+    background-image: url('img/footer-ink-strip.webp');
+    background-size: auto 22px;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+body.ink-world .footer-col a,
+body.ink-world .footer-bottom a {
+    color: var(--ink-carbon) !important;
+    text-decoration-color: rgba(30, 27, 22, 0.3) !important;
+}
+
+body.ink-world .footer-col a:hover,
+body.ink-world .footer-bottom a:hover {
+    color: var(--ink-vermillion) !important;
+}
+
+body.ink-world .footer-col h4 {
+    color: var(--ink-vermillion);
+    letter-spacing: 0.12em;
+}
+
+body.ink-world .footer-social a {
+    border-radius: 50%;
+    background: var(--glass);
+}
+
+body.ink-world .footer-social a:hover {
+    background: var(--ink-vermillion);
+    border-color: var(--ink-vermillion);
+}
+
+/* ---------- BUTTONS SITEWIDE: a stamped seal, not a neon glow-pill ---------- */
+body.ink-world .btn-primary {
+    background: var(--ink-vermillion);
+    border: 1px solid rgba(30, 27, 22, 0.2);
+    box-shadow: 0 4px 0 rgba(30, 27, 22, 0.14);
+}
+
+body.ink-world .btn-primary:hover {
+    background: var(--accent-light);
+    box-shadow: 0 5px 0 rgba(30, 27, 22, 0.16);
+}
+
+body.ink-world .btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(30, 27, 22, 0.24);
+    color: var(--ink-carbon);
+}
+
+body.ink-world .btn-ghost:hover {
+    background: rgba(30, 27, 22, 0.04);
+    border-color: var(--ink-carbon);
+}
+
+/* ---------- BLOG POST TEMPLATES: numbered badges and link underlines were
+   authored with a hardcoded cyan (#00d4ff / rgba(6,182,212,*)) that belonged
+   to the old dark-SaaS look. Every post page uses these same class names, so
+   one rule here re-inks all of them instead of hand-editing ~28 files. ---------- */
+body.ink-world .action-number,
+body.ink-world .timeline-number,
+body.ink-world .level-number {
+    background: var(--ink-vermillion);
+    border: 1px solid rgba(30, 27, 22, 0.2);
+    box-shadow: 0 3px 0 rgba(30, 27, 22, 0.14);
+}
+
+body.ink-world .article-content a:not(.btn) {
+    text-decoration-color: rgba(179, 59, 36, 0.35);
+}
+
+body.ink-world .article-cta {
+    background: linear-gradient(135deg, var(--glass), rgba(179, 59, 36, 0.06));
+}

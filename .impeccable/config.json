@@ -1,0 +1,29 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "plus jakarta sans",
+        "createdAt": "2026-08-20T07:17:54.033Z",
+        "reason": "pre-existing sitewide base font predating this session, used across dozens of pages on both Valok and Valoverstas; ink-world already supersedes it with Work Sans for headings/body"
+      },
+      {
+        "rule": "side-tab",
+        "value": "border-left: 4px solid var(--accent)",
+        "createdAt": "2026-08-20T07:17:54.059Z",
+        "reason": "established .highlight-box template pattern used identically across the whole site's blog template, predates this session, not introduced by the ink-world propagation"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "arkisto.html"
+        ],
+        "createdAt": "2026-08-20T07:17:54.086Z",
+        "reason": "pre-existing compact archive-card typography, identical to Valok's arkisto.html template, untouched by today's ink-world propagation edit"
+      }
+    ]
+  }
+}
