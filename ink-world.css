@@ -198,3 +198,15 @@ body.ink-world .article-content a:not(.btn) {
 body.ink-world .article-cta {
     background: linear-gradient(135deg, var(--glass), rgba(179, 59, 36, 0.06));
 }
+
+/* Post cover images are mostly square (1024x1024), but every post's own
+   .article-image img rule — and on 11 posts, an inline style="" on the
+   <img> tag itself — caps height at 500px with object-fit: cover on a
+   ~1000px-wide box: a ~2:1 crop that cuts the top and bottom off a square
+   photo. !important is required here because an inline style attribute
+   otherwise beats any external stylesheet rule regardless of specificity.
+   Dropping the cap lets the image render at its own aspect ratio in full,
+   uncropped, instead of a zoomed-in slice. */
+body.ink-world .article-image img {
+    max-height: none !important;
+}

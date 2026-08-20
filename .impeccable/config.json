@@ -23,6 +23,15 @@
         ],
         "createdAt": "2026-08-20T07:17:54.086Z",
         "reason": "pre-existing compact archive-card typography, identical to Valok's arkisto.html template, untouched by today's ink-world propagation edit"
+      },
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "ink-world.css"
+        ],
+        "createdAt": "2026-08-20T07:38:45.255Z",
+        "reason": "false positive: regex detector matched the CSS selector text '.article-image img' inside a .css file as a literal <img> tag; ink-world.css contains no HTML img elements at all"
       }
     ]
   }
