@@ -414,16 +414,6 @@
             letter-spacing: 0.12em;
         }
 
-        body.ink-world .footer-social a {
-            border-radius: 50%;
-            background: var(--glass);
-        }
-
-        body.ink-world .footer-social a:hover {
-            background: var(--ink-vermillion);
-            border-color: var(--ink-vermillion);
-        }
-
         /* ---------- PROCESS: stamped seals on a dotted thread, not a plain
            circle-and-gradient-line connector ---------- */
         body.ink-world .timeline::before {
@@ -695,7 +685,6 @@
       "image": "https://valoverstas.fi/img/valoverstas.webp",
       "@id": "https://valoverstas.fi/",
       "url": "https://valoverstas.fi/",
-      "telephone": "",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Jyväskylä",
@@ -718,9 +707,6 @@
         "opens": "09:00",
         "closes": "17:00"
       },
-      "sameAs": [
-        "https://linkedin.com/in/aleksanterironka"
-      ],
       "description": "valoverstas toteuttaa modernit, suorituskykyiset ja hakukoneoptimoidut verkkosivut suomalaisille yrityksille."
     }
     </script>
@@ -787,7 +773,6 @@
       ]
     }
     </script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body class="ink-world">
@@ -1327,10 +1312,6 @@
                     <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
                 </div>
                 <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="LinkedIn">in</a>
-                    <a href="#" aria-label="GitHub">gh</a>
-                </div>
             </div>
             <div class="footer-col">
                 <h4>Palvelut</h4>
@@ -1353,7 +1334,6 @@
                 <h4>Yhteystiedot</h4>
                 <ul>
                     <li>aleksanteri@valoverstas.fi</li>
-                    <li><a href="https://linkedin.com" target="_blank">Ota yhteyttä LinkedInissä</a></li>
                     <li>Jyväskylä, Finland</li>
                 </ul>
             </div>
@@ -1375,17 +1355,6 @@
         </div>
     </div>
 
-    <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
-    </script>
     <script src="main.js"></script>
 </body>
 

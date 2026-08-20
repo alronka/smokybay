@@ -1,0 +1,24 @@
+# Valoverstas
+
+> Valoverstas suunnittelee ja rakentaa nopeita, saavutettavia ja hakukoneoptimoituja verkkosivuja suomalaisille yrityksille, ja jatkaa kumppanina sivun julkaisun jälkeen ylläpidossa, sisällönpäivityksissä ja teknisessä kehityksessä. Toimimme Jyväskylästä käsin, koko Suomen alueella.
+
+Valoverstas ei ole sidottu yhteen teknologiaan tai sivustotyyppiin: teemme sekä yksinkertaisia esittelysivuja että laajempia liidejä keräviä sivustoja, ja huolehdimme SEO/GEO-näkyvyydestä jatkuvana palveluna, ei kertaluontoisena lisänä. Palvelut on jaettu kolmeen pakettiin: Tuikku (kevyt yhden sivun sivusto, alle 2 viikossa), Lamppu (laajempi yrityssivusto CMS:llä ja blogilla, 3–5 viikkoa) ja Majakka (jatkuva ylläpito- ja kehityskumppanuus). Sisältö on suomenkielistä ja kohdistettu PK-yritysten päättäjille, joiden nykyinen sivusto on vanhentunut, hidas tai ei tuota liidejä.
+
+## Palvelut
+
+- [Etusivu](https://valoverstas.fi/): Palvelupaketit (Tuikku/Lamppu/Majakka), prosessi, ROI-laskuri ja yhteydenotto.
+- [Blogi](https://valoverstas.fi/blogi.html): Oppaita verkkosivukehityksestä, SEO/GEO:sta, saavutettavuudesta ja konversio-optimoinnista.
+
+## Blogi (uusimmat artikkelit)
+
+- [Milloin verkkosivu kannattaa uudistaa: 7 merkkiä](https://valoverstas.fi/milloin-verkkosivu-kannattaa-uudistaa.html): Seitsemän konkreettista merkkiä, jotka kertovat että vanha sivu on muuttunut liiketoiminnan jarruksi.
+- [Verkkosivutoimiston valinta: Mitä kysyä ennen kuin allekirjoitat sopimuksen](https://valoverstas.fi/verkkosivutoimiston-valinta.html): Seitsemän kysymystä omistuksesta, hinnoittelusta ja ylläpidosta, jotka kannattaa selvittää ennen kuin valitset toimiston.
+- [Core Web Vitals selitettynä: LCP, INP ja CLS käytännössä](https://valoverstas.fi/core-web-vitals-selitettyna.html): Mitä LCP, INP ja CLS oikeasti mittaavat, mitkä ovat hyvät raja-arvot 2026, ja mitä konkreettisia korjauksia kukin vaatii.
+- [Verkkosivujen psykologia: Miksi kävijä päättää ennen kuin ehtii lukea sanaakaan](https://valoverstas.fi/verkkosivujen-psykologia.html): Mitä kävijän aivoissa tapahtuu ensimmäisten sekuntien aikana, ja miten se pitäisi ottaa huomioon verkkosivun suunnittelussa.
+- [Liidilomakkeet ja konversio: Miten yhteydenottolomake kerää oikeasti liidejä](https://valoverstas.fi/liidilomakkeet-ja-konversio-2026.html): Tutkimusdata siitä, mikä lomakkeessa oikeasti ratkaisee konversion.
+- [Evästeet ja GDPR verkkosivulla: Mitä PK-yrityksen pitää tarkistaa 2026](https://valoverstas.fi/evasteet-ja-gdpr-verkkosivulla-2026.html): Mitä GDPR ja Traficomin evästeohjeistus oikeasti vaativat, ja käytännön tarkistuslista sivustollesi.
+- [Blogin arkisto](https://valoverstas.fi/arkisto.html): Kaikki vanhemmat artikkelit verkkosivukehityksestä, SEO/GEO:sta ja digitaalisesta kasvusta.
+
+## Muut sivut
+
+- [Tietosuojaseloste](https://valoverstas.fi/tietosuoja.html): Rekisterinpitäjän tiedot, tietojen käyttötarkoitukset ja rekisteröidyn oikeudet.

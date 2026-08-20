@@ -137,15 +137,6 @@ body.ink-world .footer-col h4 {
     letter-spacing: 0.12em;
 }
 
-body.ink-world .footer-social a {
-    border-radius: 50%;
-    background: var(--glass);
-}
-
-body.ink-world .footer-social a:hover {
-    background: var(--ink-vermillion);
-    border-color: var(--ink-vermillion);
-}
 
 /* ---------- BUTTONS SITEWIDE: a stamped seal, not a neon glow-pill ---------- */
 body.ink-world .btn-primary {
