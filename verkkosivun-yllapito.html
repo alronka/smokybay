@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivun ylläpito: mitä kuukausihintaan oikeasti kuuluu | Valoverstas</title>
+    <meta name="description"
+        content="Ylläpitosopimuksen kuukausihinta vaihtelee toimistosta toiseen, mutta vielä enemmän vaihtelee se, mitä hintaan oikeasti sisältyy. Käy läpi mitä ylläpitoon kuuluu aina, mitä usein luullaan kuuluvan muttei kuulu, ja mitä kannattaa kysyä ennen sopimusta.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivun-yllapito.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivun-yllapito.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivun-yllapito.html">
+    <meta name="twitter:title" content="Verkkosivun ylläpito: mitä kuukausihintaan oikeasti kuuluu">
+    <meta name="twitter:description" content="Mitä ylläpitoon kuuluu aina, mitä usein luullaan kuuluvan muttei kuulu, ja mitä kannattaa kysyä ennen sopimusta.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivun-yllapito.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Verkkosivun ylläpito: mitä kuukausihintaan oikeasti kuuluu (ja mitä ei)",
+      "description": "Mitä ylläpitoon kuuluu aina, mitä usein luullaan kuuluvan muttei kuulu, ja mitä kannattaa kysyä ennen sopimuksen allekirjoittamista.",
+      "image": "https://valoverstas.fi/img/verkkosivun-yllapito.webp",
+      "datePublished": "2026-08-23",
+      "author": { "@type": "Organization", "name": "Valoverstas" },
+      "publisher": { "@type": "Organization", "name": "Valoverstas", "url": "https://valoverstas.fi" }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Ylläpito • Hinnoittelu • 6 min luku</div>
+            <h1>Verkkosivun ylläpito: <span class="gradient-text">mitä kuukausihintaan oikeasti kuuluu</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Ylläpitosopimuksen kuukausihinta vaihtelee toimistosta toiseen, mutta vielä enemmän vaihtelee se, mitä hintaan oikeasti sisältyy. Mitä kuuluu aina, mitä usein luullaan kuuluvan muttei kuulu.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivun-yllapito.webp" alt="Verkkosivun ylläpidon sisältö ja hinnoittelu PK-yritykselle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Verkkosivun julkaisu on projekti, jolla on selkeä alku ja loppu, mutta ylläpito ei ole: se jatkuu niin kauan kuin sivu on käytössä. Silti ylläpitosopimusta ei useinkaan käydä läpi yhtä huolella kuin itse rakennusprojektia, vaikka juuri ylläpitosopimuksen sisältö ratkaisee, mitä tapahtuu sen jälkeen kun sivu on jo julkaistu ja lasku maksettu.</p>
+
+            <p>Tämä artikkeli käy läpi, mitä kuukausittaiseen ylläpitohintaan pitäisi aina sisältyä, mitä usein luullaan sisältyvän muttei sisälly, ja mitä kannattaa kysyä suoraan ennen kuin allekirjoittaa mitään.</p>
+
+            <h2>1. Miksi ylläpitohinta on niin vaikea vertailla</h2>
+            <p>Kansainvälisten alan selvitysten mukaan pienyrityksen verkkosivun ylläpito maksaa tyypillisesti 75–200 dollaria kuukaudessa, mutta hintahaarukka koko markkinalla venyy 20 dollarista aina tuhansiin dollareihin riippuen siitä, mitä kaikkea "ylläpito" sanan alle on pakattu.<sup>1</sup> Tämä hajonta ei johdu pelkästään toimistojen erilaisesta hinnoittelusta, vaan siitä, että sana "ylläpito" tarkoittaa eri toimistoille eri asioita: toiselle se on pelkkä tietoturvapäivitys kerran kuussa, toiselle se sisältää myös sisällönpäivitykset ja pientä jatkokehitystä.</p>
+
+            <p>Tämä tekee kahden tarjouksen vertailusta harhaanjohtavaa, jos katsoo vain kuukausihintaa erittelemättä mitä hinta sisältää. Halvempi tarjous voi olla kalliimpi pitkällä aikavälillä, jos se ei sisällä jotain, joka lopulta joudutaan ostamaan erikseen joka tapauksessa.</p>
+
+            <h2>2. Mitä ylläpitoon pitäisi aina kuulua</h2>
+            <p>Riippumatta toimistosta tai hintatasosta, näiden pitäisi kuulua jokaiseen kunnolliseen ylläpitosopimukseen ilman erillistä lisämaksua:</p>
+
+            <ul>
+                <li><strong>Tietoturvapäivitykset.</strong> Alustan, lisäosien ja riippuvuuksien pitäminen ajan tasalla tunnettuja haavoittuvuuksia vastaan.</li>
+                <li><strong>Varmuuskopiointi.</strong> Säännöllinen, testattu varmuuskopio josta sivu voidaan palauttaa, jos jotain menee pieleen.</li>
+                <li><strong>Saatavuuden seuranta.</strong> Automaattinen ilmoitus, jos sivu kaatuu tai lakkaa vastaamasta, ei vasta kun asiakas huomauttaa asiasta.</li>
+                <li><strong>SSL-sertifikaatin voimassaolo.</strong> Sen varmistaminen, ettei sertifikaatti pääse vanhenemaan huomaamatta.</li>
+            </ul>
+
+            <div class="highlight-box">
+                Näistä yksikin puuttuessa sopimuksesta, kyseessä ei ole täysi ylläpito vaan osittainen. Se ei ole automaattisesti huono asia, jos hinta on sen mukainen, mutta se pitää tietää etukäteen, ei vasta kun jotain menee rikki eikä kukaan korjaa sitä.
+            </div>
+
+            <h2>3. Mitä usein luullaan kuuluvan, muttei kuulu</h2>
+            <p>Tässä kohtaa syntyy suurin osa väärinkäsityksistä, koska nämä kuulostavat siltä että niiden pitäisi kuulua "ylläpitoon", vaikka moni sopimus rajaa ne pois tai laskuttaa niistä erikseen:</p>
+
+            <ul>
+                <li><strong>Sisällönpäivitykset.</strong> Uuden tekstin, kuvan tai hinnaston lisääminen ei ole sama asia kuin tekninen ylläpito, ja monessa sopimuksessa se laskutetaan erikseen tuntityönä.</li>
+                <li><strong>Uudet sivut tai ominaisuudet.</strong> Kokonaan uuden alasivun tai lomakkeen rakentaminen on kehitystyötä, ei ylläpitoa, vaikka raja voi tuntua häilyvältä.</li>
+                <li><strong>Isommat muutokset olemassa olevaan sisältöön.</strong> Yhden lauseen korjaus on eri asia kuin koko etusivun rakenteen uudelleensuunnittelu.</li>
+                <li><strong>Kolmannen osapuolen palvelumaksut.</strong> Domain, hosting ja mahdolliset lisenssit saattavat kulkea ylläpitäjän kautta, mutta niiden hinta ei useinkaan sisälly ylläpitomaksuun sellaisenaan.</li>
+            </ul>
+
+            <p>Tämä ei tarkoita, että näitä ei kannattaisi ostaa samalta toimistolta, vaan sitä että niiden pitäisi näkyä sopimuksessa omina, erillisinä riveinään, ei piilossa yhden epämääräisen "ylläpito"-sanan takana.</p>
+
+            <h2>4. Kysymykset, jotka kannattaa esittää ennen sopimusta</h2>
+            <p>Ennen kuin allekirjoitat ylläpitosopimuksen, kannattaa kysyä suoraan:</p>
+
+            <ul>
+                <li>Mitä tarkalleen kuuluu kuukausihintaan, eriteltynä riveittäin, ei yhtenä epämääräisenä kokonaisuutena?</li>
+                <li>Mikä on luvattu vasteaika, kun sivu kaatuu tai jokin muu akuutti ongelma ilmenee?</li>
+                <li>Kuinka usein varmuuskopiot otetaan, ja onko palautus testattu oikeasti toimivaksi, ei vain teoriassa olemassa olevaksi?</li>
+                <li>Mitä pieni sisällönpäivitys maksaa, jos se ei sisälly kuukausihintaan?</li>
+                <li>Mitä tapahtuu, jos haluat vaihtaa toimistoa myöhemmin: saatko täydet tunnukset kaikkiin järjestelmiin?</li>
+            </ul>
+
+            <p>Hyvä toimisto vastaa näihin suoraan ja mielellään. Epämääräinen tai kiertelevä vastaus mihin tahansa näistä on jo itsessään varoitusmerkki, samasta syystä jota käsittelimme <a href="verkkosivutoimiston-valinta.html">Verkkosivutoimiston valinta -artikkelissamme</a>: läpinäkyvyys hinnoittelussa kertoo yleensä laajemmin siitä, miten toimisto kommunikoi koko asiakassuhteen ajan.</p>
+
+            <h2>5. Milloin ylläpito kannattaa ulkoistaa ja milloin ei</h2>
+            <p>Ylläpidon ulkoistaminen kannattaa lähes aina teknisen tietoturvan osalta: harva PK-yritys haluaa itse seurata haavoittuvuustiedotteita ja asentaa päivityksiä säännöllisesti, ja yksikin unohtunut päivitys voi olla kallis virhe. Tämä koskee erityisesti sivustoja jotka on rakennettu alustoilla, jotka vaativat jatkuvaa lisäosien ja ydinohjelmiston päivittämistä.</p>
+
+            <p>Sisällönpäivitysten kohdalla tilanne on toinen: jos sivu on rakennettu niin, että yritys pystyy itse päivittämään tekstejä ja kuvia ilman kehittäjän apua, moni pieni muutos kannattaa tehdä itse eikä maksaa siitä erikseen joka kerta. Tämä on yksi syy, miksi alustavalinnalla on väliä jo ennen kuin ylläpitosopimusta edes aletaan miettiä: sivu joka vaatii kehittäjän jokaiseen pieneen muutokseen, tekee itse tekemisestä mahdotonta riippumatta ylläpitosopimuksen sisällöstä.</p>
+
+            <h2>6. Miten Valoverstas hoitaa ylläpidon</h2>
+            <p>Majakka-paketissamme ylläpito ei ole erillinen lisäpalvelu, vaan koko kumppanuuden ydin: tietoturvapäivitykset, varmuuskopiot ja saatavuuden seuranta hoituvat jatkuvasti taustalla, ja sisällönpäivitykset ja pienet jatkokehitystarpeet käydään läpi säännöllisesti osana samaa kumppanuutta, ei erillisinä yllätyslaskuina.</p>
+
+            <p>Kerromme aina etukäteen, mitä kuukausihintaan sisältyy ja mitä ei, jotta et joudu arvaamaan mistä seuraava lasku koostuu. Jos mietit tällä hetkellä, kattaako oma ylläpitosopimuksesi oikeasti sen mitä luulit, tai haluat kuulla miten Majakka-kumppanuus toimii käytännössä, jutellaan mielellämme.</p>
+
+            <div class="article-cta">
+                <h3>Kattaako oma ylläpitosopimuksesi oikeasti sen mitä luulit?</h3>
+                <p>Käymme yhdessä läpi mitä Majakka-kumppanuus tarkoittaa juuri teidän sivustollenne.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.webfx.com/web-development/pricing/website-maintenance/" target="_blank" style="color: var(--accent); text-decoration: underline;">WebFX: "2026 Website Maintenance Pricing: How Much Should You Pay?"</a></li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
