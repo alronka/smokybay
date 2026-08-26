@@ -11,12 +11,12 @@ Valoverstas ei ole sidottu yhteen teknologiaan tai sivustotyyppiin: teemme sekä
 
 ## Blogi (uusimmat artikkelit)
 
+- [Esittelysivu vai verkkokauppa: Miten PK-yritys valitsee oikean ratkaisun](https://valoverstas.fi/esittelysivu-vai-verkkokauppa.html): Kysymys ei ole mitä yritys myy, vaan miten se myy. Milloin esittelysivu riittää, milloin verkkokauppa kannattaa, ja mitä väliratkaisuja on olemassa niiden välissä.
 - [Verkkosivun ylläpito: mitä kuukausihintaan oikeasti kuuluu](https://valoverstas.fi/verkkosivun-yllapito.html): Mitä ylläpitoon kuuluu aina, mitä usein luullaan kuuluvan muttei kuulu, ja mitä kannattaa kysyä ennen sopimusta.
 - [Milloin verkkosivu kannattaa uudistaa: 7 merkkiä](https://valoverstas.fi/milloin-verkkosivu-kannattaa-uudistaa.html): Seitsemän konkreettista merkkiä, jotka kertovat että vanha sivu on muuttunut liiketoiminnan jarruksi.
 - [Verkkosivutoimiston valinta: Mitä kysyä ennen kuin allekirjoitat sopimuksen](https://valoverstas.fi/verkkosivutoimiston-valinta.html): Seitsemän kysymystä omistuksesta, hinnoittelusta ja ylläpidosta, jotka kannattaa selvittää ennen kuin valitset toimiston.
 - [Core Web Vitals selitettynä: LCP, INP ja CLS käytännössä](https://valoverstas.fi/core-web-vitals-selitettyna.html): Mitä LCP, INP ja CLS oikeasti mittaavat, mitkä ovat hyvät raja-arvot 2026, ja mitä konkreettisia korjauksia kukin vaatii.
 - [Verkkosivujen psykologia: Miksi kävijä päättää ennen kuin ehtii lukea sanaakaan](https://valoverstas.fi/verkkosivujen-psykologia.html): Mitä kävijän aivoissa tapahtuu ensimmäisten sekuntien aikana, ja miten se pitäisi ottaa huomioon verkkosivun suunnittelussa.
-- [Liidilomakkeet ja konversio: Miten yhteydenottolomake kerää oikeasti liidejä](https://valoverstas.fi/liidilomakkeet-ja-konversio-2026.html): Tutkimusdata siitä, mikä lomakkeessa oikeasti ratkaisee konversion.
 - [Blogin arkisto](https://valoverstas.fi/arkisto.html): Kaikki vanhemmat artikkelit verkkosivukehityksestä, SEO/GEO:sta ja digitaalisesta kasvusta.
 
 ## Muut sivut
