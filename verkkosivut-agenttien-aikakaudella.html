@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivut agenttien aikakaudella: kun sivustoasi lukee yhä useammin kone | Valoverstas</title>
+    <meta name="description"
+        content="Tekoälyagentit ja AI-haku muuttavat sitä, kuka verkkosivujasi lukee. Lue mitä se tarkoittaa yrityssivujen rakenteelle, sisällölle ja tekniikalle, ilman että sivusto muuttuu käyttökelvottomaksi ihmiselle.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivut-agenttien-aikakaudella.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivut-agenttien-aikakaudella.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivut-agenttien-aikakaudella.html">
+    <meta name="twitter:title" content="Verkkosivut agenttien aikakaudella: kun sivustoasi lukee yhä useammin kone">
+    <meta name="twitter:description" content="Miten AI-haku ja tekoälyagentit muuttavat sitä, millaiset verkkosivut yrityksen kannattaa rakentaa.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivut-agenttien-aikakaudella.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Verkkosivut agenttien aikakaudella: kun sivustoasi lukee yhä useammin kone",
+      "description": "Tekoälyagentit ja AI-haku muuttavat sitä, kuka verkkosivujasi lukee. Mitä se tarkoittaa yrityssivujen rakenteelle, sisällölle ja tekniikalle.",
+      "image": "https://valoverstas.fi/img/verkkosivut-agenttien-aikakaudella.webp",
+      "datePublished": "2026-08-31",
+      "author": { "@type": "Organization", "name": "Valoverstas" },
+      "publisher": { "@type": "Organization", "name": "Valoverstas", "url": "https://valoverstas.fi" }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Verkkosivut • AI-haku • Sisällön rakenne • 7 min luku</div>
+            <h1>Verkkosivut agenttien aikakaudella: <span class="gradient-text">kun sivustoasi lukee yhä useammin kone</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Tekoälyagentit ja AI-haku muuttavat sitä, kuka verkkosivujasi oikeasti lukee. Yhä useammin ensimmäinen "kävijä" on ChatGPT, Perplexity tai Google AI Overviews, joka lukee sivusi asiakkaan puolesta ja tiivistää vastauksen. Lue mitä se tarkoittaa yrityksen verkkosivujen rakenteelle, sisällölle ja tekniikalle.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivut-agenttien-aikakaudella.webp" alt="Verkkosivujen sisältöä lukeva ja tiivistävä tekoäly - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>Verkkosivuilla on perinteisesti ollut kaksi yleisöä: ihmiset ja hakukoneiden indeksointirobotit. Nyt mukaan on tullut kolmas ryhmä, joka ei klikkaa, ei selaa ja ei näe ulkoasua: tekoäly, joka lukee sivusi asiakkaan puolesta ja kirjoittaa vastauksen tämän kysymykseen. Tämä artikkeli käy läpi, mitä se tarkoittaa yrityksen verkkosivujen rakenteelle, sisällölle ja tekniikalle, ilman että sivusto muuttuu käyttökelvottomaksi ihmiselle.</p>
+
+            <h2>1. Mikä oikeasti muuttuu: kolme uutta lukijaa</h2>
+            <p>Käytännössä yrityssivustolla on nyt kolme lukijatyyppiä:</p>
+            <ul>
+                <li><strong>AI-hakukoneet</strong> (ChatGPT-haku, Perplexity, Google AI Overviews, Gemini), jotka hakevat sivusi, lukevat sen ja kirjoittavat käyttäjälle tiivistetyn vastauksen, usein ilman että käyttäjä koskaan klikkaa sivullesi.</li>
+                <li><strong>Tekoälyagentit</strong>, jotka toimivat käyttäjän puolesta: vertailevat toimittajia, keräävät yhteystietoja, tarkistavat aukioloja tai hintoja useilta sivuilta kerralla.</li>
+                <li><strong>Tutut hakukoneet ja ihmiset</strong>, jotka eivät ole kadonneet minnekään.</li>
+            </ul>
+
+            <p>Käytännön seuraus: sivustosi on yhä useammin lähde, josta kone poimii faktoja, ei vain sivu, jolle ihminen saapuu. Jos kone ei löydä sivultasi selkeää vastausta siihen, mitä yrityksesi tekee, kenelle, missä ja mihin hintaan, se joko jättää sinut mainitsematta tai arvaa väärin.</p>
+
+            <h2>2. Miksi tämä ei ole "SEO uudestaan"</h2>
+            <p>Hakukoneoptimoinnin perusasiat pätevät yhä: sivun pitää latautua nopeasti, olla teknisesti ehjä ja vastata siihen, mitä ihminen etsii. Käsittelimme näitä <a href="seo-tekoalyaikana-2026.html">SEO tekoälyaikana -artikkelissamme</a>.</p>
+
+            <p>Ero on tavoitteessa. Perinteinen SEO tähtää klikkaukseen: sijoitu korkealle, saa käyttäjä sivulle. AI-haussa klikkausta ei välttämättä tule lainkaan. Tavoite on tulla lainatuksi ja mainituksi vastauksessa oikein. Se palkitsee eri asioita: selkeitä suoria vastauksia, tarkkoja faktoja, jäsenneltyä tietoa ja lähteen uskottavuutta, ei niinkään avainsanojen toistoa tai pitkää sisältöä sen itsensä vuoksi.</p>
+
+            <h2>3. Sivuston rakenne, jonka kone ymmärtää</h2>
+            <p>Kone lukee sivun rakennetta, ei ulkoasua. Muutama asia auttaa merkittävästi:</p>
+            <ul>
+                <li><strong>Yksi selkeä aihe per sivu.</strong> Palvelusivu kertoo yhdestä palvelusta ja vastaa sitä koskeviin kysymyksiin. Sekava "kaikki kerralla" -sivu on koneelle vaikea tiivistää.</li>
+                <li><strong>Kuvaavat otsikot kysymysmuodossa tai suorina väittäminä.</strong> "Paljonko verkkosivut maksavat?" on koneelle parempi kuin "Hinnoittelu".</li>
+                <li><strong>Vastaus heti otsikon jälkeen.</strong> Ensimmäinen kappale antaa suoran vastauksen, tarkennukset tulevat perässä. Tämä on sama rakenne, jota AI-haku suosii poiminnoissaan.</li>
+                <li><strong>Rakenteinen data (schema.org).</strong> Yrityksen tiedot, palvelut, arvostelut, usein kysytyt kysymykset ja artikkelien tiedot merkittynä JSON-LD-muodossa, jotta kone ei joudu arvaamaan niitä sivun tekstistä.</li>
+                <li><strong><code>llms.txt</code>-tiedosto</strong> sivuston juuressa, joka kertoo tiiviisti mitä yritys tekee ja listaa tärkeimmät sivut. Se on kevyt, koneille suunnattu sisällysluettelo.</li>
+            </ul>
+
+            <h2>4. Sisältö, jonka agentti voi lainata</h2>
+            <p>Koneen näkökulmasta lainattava sisältö on:</p>
+            <ul>
+                <li><strong>Konkreettista.</strong> "Toimitamme verkkosivut 3–4 viikossa" on lainattava. "Nopea ja joustava toimitus" ei ole.</li>
+                <li><strong>Ajantasaista ja päivätty.</strong> Näkyvä julkaisu- tai päivityspäivä auttaa konetta arvioimaan, onko tieto yhä pätevä.</li>
+                <li><strong>Yhtenäistä koko sivustolla.</strong> Jos hinta, yhteystiedot tai palvelukuvaus eroavat eri sivuilla, kone menettää luottamuksen lähteeseen.</li>
+                <li><strong>Yrityksen omaa, kokemuspohjaista tietoa.</strong> AI-haku suosii sisältöä, jossa näkyy aitoa asiantuntemusta ja esimerkkejä, ei geneeristä yleistekstiä, jota löytyy sadalta muultakin sivulta.</li>
+            </ul>
+
+            <div class="highlight-box">
+                Käytännössä tämä tarkoittaa, että "meistä"-sivun, palvelukuvausten ja usein kysyttyjen kysymysten pitää olla kirjoitettu selkeästi ja pidettävä ajan tasalla, ei kertaalleen täytetty ja unohdettu.
+            </div>
+
+            <h2>5. Tekniset perusasiat, jotka ratkaisevat</h2>
+            <ul>
+                <li><strong>Sisältö näkyy ilman JavaScriptiä.</strong> Monet AI-hakurobotit eivät suorita raskasta JavaScriptiä. Jos teksti latautuu vasta selaimessa skriptin jälkeen, kone voi nähdä tyhjän sivun. Staattiset tai palvelinpuolella renderöidyt sivut ovat tässä etulyöntiasemassa, mikä oli yksi peruste <a href="staattiset-verkkosivut-vs-wordpress.html">Staattiset verkkosivut vs. WordPress -artikkelissamme</a>.</li>
+                <li><strong>Robots.txt ei estä AI-robotteja</strong>, ellei se ole tietoinen valinta. Kannattaa tarkistaa, ettei sivusto vahingossa blokkaa GPTBotia, PerplexityBotia tai Google-Extendedia.</li>
+                <li><strong>Nopea latautuminen.</strong> Sama vaatimus kuin ihmisille ja hakukoneille: hidas sivu jää lukematta.</li>
+                <li><strong>Selkeät, pysyvät osoitteet.</strong> Jos URL-rakenne muuttuu jatkuvasti, koneen aiemmin poimima linkki menee rikki.</li>
+            </ul>
+
+            <h2>6. Mitä ei kannata tehdä</h2>
+            <ul>
+                <li><strong>Älä kirjoita sivua pelkästään koneille.</strong> Avainsanalistat, näkymätön teksti tai "AI-optimoitu" täytesisältö kostautuu: sekä hakukoneet että AI-haku tunnistavat sen ja ihminen pomppaa pois.</li>
+                <li><strong>Älä piilota olennaista tietoa yhteydenottolomakkeen taakse.</strong> Jos hintahaarukka, palvelut ja sijainti eivät ole luettavissa sivulla, kone ei voi niitä lainata.</li>
+                <li><strong>Älä oleta, että AI-haku korvaa verkkosivut.</strong> Se lukee verkkosivujasi. Ilman ajantasaista, selkeää sivustoa ei ole mitään, mistä poimia vastausta.</li>
+            </ul>
+
+            <h2>7. Miten Valoverstas rakentaa tämän</h2>
+            <p>Rakennamme yrityssivustot staattisena, nopeasti latautuvana kokonaisuutena, jossa sisältö on koneluettavassa muodossa jo lähtökohtaisesti: selkeä sivukohtainen aihe, kysymysmuotoiset otsikot, rakenteinen data ja <code>llms.txt</code> mukana. Käytännössä sama työ, joka tekee sivustosta hyvän ihmiselle, selkeä rakenne ja suorat vastaukset, tekee siitä myös lainattavan koneelle.</p>
+
+            <p>Jos nykyinen sivustosi on rakennettu raskaalla alustalla tai sisältö on vanhentunutta ja hajanaista, kartoitamme mielellämme, mitä siitä kannattaa uudistaa, jotta yrityksesi näkyy oikein myös AI-haussa.</p>
+
+            <div class="article-cta">
+                <h3>Näkyykö yrityksesi oikein AI-haussa?</h3>
+                <p>Käymme läpi, onko sivustosi rakenne ja sisältö sellaista, jota tekoäly osaa lukea ja lainata.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton kartoitus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="seo-tekoalyaikana-2026.html" style="color: var(--accent); text-decoration: underline;">Valoverstas: "SEO tekoälyaikana"</a>: perusteet hakunäkyvyydestä, kun vastaukset tuotetaan tekoälyllä.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://llmstxt.org/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">llmstxt.org: "The /llms.txt file"</a>: koneille suunnatun sisällysluettelotiedoston tarkoitus ja muoto.</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
