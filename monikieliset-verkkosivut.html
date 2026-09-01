@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monikieliset verkkosivut: Milloin ja miten PK-yritys laajentaa useammalle kielelle | Valoverstas</title>
+    <meta name="description"
+        content="Uusi kieliversio ei ole vain käännöstyötä, vaan jatkuva ylläpitovastuu. Lue milloin monikielinen sivusto oikeasti kannattaa, mitä hreflang tarkoittaa käytännössä, ja mitkä virheet vievät näkyvyyden väärässä maassa.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/monikieliset-verkkosivut.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/monikieliset-verkkosivut.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/monikieliset-verkkosivut.html">
+    <meta name="twitter:title" content="Monikieliset verkkosivut: Milloin ja miten PK-yritys laajentaa useammalle kielelle">
+    <meta name="twitter:description" content="Uusi kieliversio ei ole vain käännöstyötä, vaan jatkuva ylläpitovastuu. Milloin monikielinen sivusto oikeasti kannattaa.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/monikieliset-verkkosivut.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Monikieliset verkkosivut: Milloin ja miten PK-yritys laajentaa useammalle kielelle",
+      "description": "Uusi kieliversio ei ole vain käännöstyötä, vaan jatkuva ylläpitovastuu. Milloin monikielinen sivusto oikeasti kannattaa, mitä hreflang tarkoittaa käytännössä, ja mitkä virheet vievät näkyvyyden väärässä maassa.",
+      "image": "https://valoverstas.fi/img/monikieliset-verkkosivut.webp",
+      "datePublished": "2026-09-01",
+      "author": { "@type": "Organization", "name": "Valoverstas" },
+      "publisher": { "@type": "Organization", "name": "Valoverstas", "url": "https://valoverstas.fi" }
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Kansainvälistyminen • SEO • Ylläpito • 6 min luku</div>
+            <h1>Monikieliset verkkosivut: <span class="gradient-text">milloin ja miten PK-yritys laajentaa useammalle kielelle</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Uusi kieliversio ei ole vain käännöstyötä, vaan jatkuva ylläpitovastuu. Lue milloin monikielinen sivusto oikeasti kannattaa, mitä hreflang tarkoittaa käytännössä, ja mitkä virheet vievät näkyvyyden väärässä maassa.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/monikieliset-verkkosivut.webp" alt="Monikieliset verkkosivut: milloin PK-yritys laajentaa useammalle kielelle - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <p>"Pitäisikö meidän kääntää sivusto ruotsiksi tai englanniksi?" on kysymys, joka nousee esiin lähes aina, kun yritys alkaa saada kyselyitä rajan takaa tai harkitsee laajentumista. Vastaus tuntuu itsestäänselvältä: totta kai, useampi kieli tarkoittaa useampaa asiakasta. Todellisuus on hieman monimutkaisempi, koska uusi kieliversio ei ole kertaluontoinen käännösprojekti, vaan pysyvä ylläpitovastuu, joka jatkuu niin kauan kuin sivusto on käytössä.</p>
+
+            <p>Tämä artikkeli käy läpi, milloin monikielinen sivusto oikeasti kannattaa, mitä siihen teknisesti kuuluu hreflang-merkintöjen osalta, ja mitkä virheet ovat yleisimpiä kun pienempi yritys lähtee laajentamaan sivustoaan.</p>
+
+            <h2>1. Milloin monikielinen sivusto kannattaa</h2>
+            <p>Yhdellä kielellä ja yhdelle markkina-alueelle suunnatulla sivustolla toinen kieliversio tuo useimmiten vain ylimääräistä ylläpitoa ilman vastaavaa hyötyä.<sup>1</sup> Kääntäminen alkaa olla perusteltua, kun jokin näistä pätee: yritys tavoittelee aidosti kansainvälistä tai kaksikielistä markkinaa, hakunäkyvyys toisella kielellä toisi mitattavaa liikennettä, tai olemassa oleva asiakaskunta jo pyytää sisältöä toisella kielellä.</p>
+
+            <p>Jos näistä mikään ei päde vielä, kannattaa odottaa. Kieliversio, joka rakennetaan "varmuuden vuoksi" ilman oikeaa kysyntää, jää useimmiten vanhentuneeksi ensimmäisten kuukausien jälkeen, mikä on pahempi tilanne kuin ettei versiota olisi ollenkaan.</p>
+
+            <h2>2. Käännös on vasta alku, ei koko työ</h2>
+            <p>Lokalisointi tarkoittaa enemmän kuin sanojen kääntämistä: se sisältää myös visuaalisten elementtien ja käyttökokemuksen sovittamista kohdeyleisölle.<sup>1</sup> Käytännössä tämä tarkoittaa, että jokaisen kieliversion kohdalla kannattaa käydä läpi neljä asiaa erikseen, ei vain leipätekstiä:</p>
+
+            <ul>
+                <li><strong>Metatiedot per kieli.</strong> Otsikkotagi ja kuvaus pitää kääntää siinä missä näkyvä sisältökin, ei jättää alkuperäiskielelle. Tämä vaikuttaa suoraan siihen, klikkaako hakukoneen käyttäjä tulosta ollenkaan.<sup>2</sup></li>
+                <li><strong>Kuvat ja media.</strong> Kuvatekstit, screenshotit ja esimerkit kannattaa tarkistaa kulttuurisen sopivuuden kannalta, ei vain kääntää niiden ympärillä olevaa tekstiä.</li>
+                <li><strong>Valuutta ja yksiköt.</strong> Hinnat, päivämäärämuoto ja mittayksiköt vaihtelevat markkinoittain, ja niiden unohtaminen näkyy heti epäammattimaisena.</li>
+                <li><strong>Yhteystiedot ja lomakkeet.</strong> Puhelinnumeron muoto, osoitekentät ja lähetettävän lomakkeen vastaanottaja voivat vaihdella markkinan mukaan.</li>
+            </ul>
+
+            <h2>3. Hreflang: miksi se on tekninen peruspilari, ei yksityiskohta</h2>
+            <p>Kun sivustolla on useampi kieli- tai maaversio samasta sisällöstä, hreflang-merkinnät kertovat hakukoneille, mikä versio pitää näyttää kenellekin.<sup>1</sup> Jokaisen kieliversion pitää sisältää merkintä itseensä ja kaikkiin muihin versioihin, mukaan lukien oletusversio (<code>x-default</code>) käyttäjille, joiden kieltä ei tunnisteta.</p>
+
+            <div class="highlight-box">
+                Jopa kolme neljästä kansainvälisestä sivustosta sisältää virheitä hreflang-toteutuksessaan, ja seuraus on konkreettinen: hakukone näyttää väärän kieliversion väärässä maassa, käyttäjä päätyy vieraskieliselle sivulle, ja konversio romahtaa, vaikka koko käännöstyö olisi tehty huolella.<sup>2</sup>
+            </div>
+
+            <p>Käytännön sääntö: hreflang-merkinnät pitää tarkistaa aina, kun lisätään uusi kieli, muutetaan URL-rakennetta, tai uudistetaan sivusto. Tämä kannattaa kirjata osaksi julkaisuprosessia, ei jättää muistinvaraiseksi.</p>
+
+            <h2>4. Ylläpidon todellinen sisältö: mitä tapahtuu kuuden kuukauden päästä</h2>
+            <p>Suurin käytännön riski monikielisessä sivustossa ei ole julkaisuhetki, vaan se mitä tapahtuu sen jälkeen. Kun pääkielinen sisältö päivittyy mutta käännökset jäävät jälkeen, sivuston eri kieliversiot ajautuvat vähitellen erilleen toisistaan, ja lopulta kävijä saattaa löytää vanhentunutta tietoa väärältä kieliversiolta.<sup>1</sup> Tämä on sama ylläpitologiikka, jonka kävimme läpi laajemmin <a href="verkkosivun-yllapito.html">Verkkosivun ylläpito -artikkelissamme</a>: näkymätön, toistuva työ on se, mikä ratkaisee lopputuloksen, ei julkaisupäivän lopputulos.</p>
+
+            <p>Käytännön ratkaisuja tähän on muutamia: manuaalinen kopiointi ja käännös sopii pienelle sivustolle, jossa muutoksia on harvoin, kun taas käännöstyökalu tai natiivisti monikielisyyttä tukeva alusta helpottaa ylläpitoa isommalla sivustolla, jossa sisältö muuttuu usein.<sup>1</sup> Valinta kannattaa tehdä sivuston koon ja päivitystiheyden mukaan, ei sen mukaan mikä työkalu sattuu olemaan tuttu.</p>
+
+            <h2>5. Miten Valoverstas rakentaa monikielisen sivuston</h2>
+            <p>Kun asiakas harkitsee toista kieliversiota, käymme ensin läpi, mikä konkreettinen tarve sen taustalla on: onko kyse todellisesta markkinasta, hakunäkyvyydestä vai asiakkaiden suorasta pyynnöstä. Tämä ratkaisee myös, kannattaako lähteä liikkeelle yhdestä avainsivusta vai koko sivuston täydestä käännöksestä kerralla.</p>
+
+            <p>Rakennamme hreflang-merkinnät ja URL-rakenteen alusta asti oikein, jotta sivusto ei ajaudu siihen tilanteeseen, jossa väärä kieliversio näkyy väärässä maassa. Jos harkitset toista kieliversiota sivustollenne, jutellaan mielellämme, mikä ratkaisu sopisi juuri teidän tilanteeseenne.</p>
+
+            <div class="article-cta">
+                <h3>Harkitsetteko toista kieliversiota sivustollenne?</h3>
+                <p>Käymme yhdessä läpi, kannattaako laajentaa, ja miten se tehdään niin ettei ylläpito jää huomaamatta jälkeen.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.kuasi.fi/artikkelit/verkkosivujen-kaantaminen" target="_blank" style="color: var(--accent); text-decoration: underline;">Kuasi: "Verkkosivujen kääntäminen - Miksi ja miten lokalisoida verkkosivut?"</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://depechecode.io/multilingual-website-seo/" target="_blank" style="color: var(--accent); text-decoration: underline;">Depeche Code: "Multilingual Website SEO And Sitemap Hreflang"</a></li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
