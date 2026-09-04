@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miten verkkosivun sisältö kirjoitetaan niin, että tekoälyhakukoneet siteeraavat sitä | Valoverstas</title>
+    <meta name="description"
+        content="Tekoälyvastaukseen päätyminen vaatii osin eri asioita kuin perinteinen hakukoneoptimointi. Lue mistä ChatGPT, Perplexity ja Google AI poimivat lähteensä, ja mitä tutkimus kertoo siteerausta nostavista sisältövalinnoista.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/sisallon-siteerattavuus-tekoalyhaussa.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/sisallon-siteerattavuus-tekoalyhaussa.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/sisallon-siteerattavuus-tekoalyhaussa.html">
+    <meta name="twitter:title" content="Miten verkkosivun sisältö kirjoitetaan niin, että tekoälyhakukoneet siteeraavat sitä">
+    <meta name="twitter:description" content="Mistä ChatGPT, Perplexity ja Google AI poimivat lähteensä, ja mitä tutkimus kertoo siteerausta nostavista sisältövalinnoista.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/sisallon-siteerattavuus-tekoalyhaussa.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Miten verkkosivun sisältö kirjoitetaan niin, että tekoälyhakukoneet siteeraavat sitä",
+      "description": "Tekoälyvastaukseen päätyminen vaatii osin eri asioita kuin perinteinen hakukoneoptimointi. Mistä ChatGPT, Perplexity ja Google AI poimivat lähteensä, ja mitä tutkimus kertoo siteerausta nostavista sisältövalinnoista.",
+      "image": "https://valoverstas.fi/img/sisallon-siteerattavuus-tekoalyhaussa.webp",
+      "datePublished": "2026-09-04",
+      "author": { "@type": "Organization", "name": "Valoverstas" },
+      "publisher": { "@type": "Organization", "name": "Valoverstas", "url": "https://valoverstas.fi" }
+    }
+    </script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Pitääkö meidän tehdä llms.txt-tiedosto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei ole pakko. Google on todennut, ettei se käytä llms.txt-tiedostoa tekoälyominaisuuksissaan. Sellaisen voi tehdä kevyenä lisänä, mutta se ei korvaa sitä, että itse sivujen sisältö on selkeää ja indeksoitavissa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Auttaako schema-merkintä pääsemään tekoälyvastauksiin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rakenteinen data ei ole edellytys tekoälyvastauksiin pääsemiselle, eikä siihen ole olemassa erillistä tekoäly-schemaa. Schema kannattaa silti pitää kunnossa, koska se tuo rich-tulos-näkyvyyttä perinteisessä haussa ja antaa koneelle selkeän kontekstin sisällöstä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kannattaako sisältö kirjoittaa eri tavalla tekoälyä varten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei erillistä tekoälytyyliä. Samat asiat, jotka tekevät tekstistä hyödyllisen ja uskottavan ihmiselle, eli suora vastaus heti, konkreettiset luvut, merkityt lähteet ja selkeä rakenne, ovat myös ne, jotka nostavat siteerausta tekoälyvastauksissa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riittääkö hyvä Google-sijoitus tekoälynäkyvyyteen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei automaattisesti. Tekoälyvastauksissa siteeratut sivut ovat vain osittain samoja kuin Googlen kärkitulokset, ja siteerausta ennustaa vahvasti se, kuinka usein yritys mainitaan muualla verkossa, ei pelkkä oma hakusijoitus."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">GEO • Sisältö • Hakunäkyvyys • 6 min luku</div>
+            <h1>Miten verkkosivun sisältö kirjoitetaan niin, että <span class="gradient-text">tekoälyhakukoneet siteeraavat sitä</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Kun asiakas kysyy ChatGPT:ltä, Perplexityltä tai Googlen tekoälyvastaukselta suosituksia toimialallanne, vastaus kootaan muutamasta lähteestä ja loput jäävät näkymättömiin. Tekoälyvastauksiin päätyminen vaatii osin eri asioita kuin perinteinen hakukoneoptimointi.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/sisallon-siteerattavuus-tekoalyhaussa.webp" alt="Siili tarkastelee suurennuslasilla verkkosivun sisältöä, jota tekoäly lukee vieressä - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#lahteet">1. Mistä tekoälyvastaus poimii lähteensä</a></li>
+                    <li><a href="#suora-vastaus">2. Suora vastaus heti, ei kolmen kappaleen pohjustuksen jälkeen</a></li>
+                    <li><a href="#faktat">3. Faktat, luvut ja lähdeviitteet nostavat siteerausta mitattavasti</a></li>
+                    <li><a href="#tuoreus">4. Tuoreus ratkaisee enemmän kuin perinteisessä haussa</a></li>
+                    <li><a href="#mita-ei">5. Mitä ei kannata tehdä</a></li>
+                    <li><a href="#miten-valoverstas">6. Miten Valoverstas rakentaa siteerattavaa sisältöä</a></li>
+                    <li><a href="#ukk">7. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <p>Kysymys ei ole enää vain "olemmeko Googlen ensimmäisellä sivulla", vaan "poimiiko kielimalli meidän sivultamme sen virkkeen, jonka se näyttää käyttäjälle". Nämä kaksi eivät ole sama asia, ja tekoälyvastauksiin päätyminen vaatii osin eri asioita kuin perinteinen hakukoneoptimointi.</p>
+
+            <h2 id="lahteet">1. Mistä tekoälyvastaus poimii lähteensä</h2>
+            <p>Tekoälyhakukone ei toimi kuten Google-tuloslista, jossa sijoitus yhdestä kymmeneen ratkaisee. Se hakee muutaman lähteen, lukee ne, ja kirjoittaa niiden pohjalta vastauksen, jossa mainitaan tyypillisesti kolmesta viiteen sivustoa. Ahrefsin analyysin mukaan Googlen sijoituksen ja tekoälyvastauksissa siteeratuksi tulemisen välinen yhteys on selvästi heikompi kuin voisi olettaa: vain pieni osa tekoälyn siteeraamista sivuista on saman haun Google-top-kymmenikössä, ja siteeratuksi tulemista ennustaa parhaiten se, kuinka usein brändi mainitaan muualla verkossa, vahvemmin kuin linkkien määrä.<sup>1</sup></p>
+
+            <p>Käytännön johtopäätös PK-yritykselle: pelkkä hyvä Google-sijoitus ei takaa tekoälynäkyvyyttä, eikä sen puuttuminen sulje sitä pois. Sisällön pitää olla sellaista, että kielimalli pystyy poimimaan siitä selkeän, siteerattavan väitteen, ja yrityksen pitää tulla mainituksi myös oman sivustonsa ulkopuolella. Kävimme koneellisen lukemisen näkökulmaa laajemmin läpi artikkelissa <a href="verkkosivut-agenttien-aikakaudella.html">Verkkosivut agenttien aikakaudella</a>.</p>
+
+            <h2 id="suora-vastaus">2. Suora vastaus heti, ei kolmen kappaleen pohjustuksen jälkeen</h2>
+            <p>Kielimalli lukee sivun ja etsii siitä vastauksen käyttäjän kysymykseen. Jos vastaus on haudattu johdannon, taustoituksen ja tarinankerronnan alle, malli joko ei löydä sitä tai poimii jonkun muun sivun selkeämmän muotoilun.</p>
+
+            <p>Toimiva rakenne on yksinkertainen: jokainen osio alkaa suoralla vastauksella otsikon kysymykseen, ja perustelut, esimerkit ja nyanssit tulevat sen jälkeen. Sama pätee sivun alkuun: ensimmäisen kappaleen pitää kertoa, mitä sivu käsittelee ja mikä on ydinvastaus, ei vain herätellä kiinnostusta. Tämä palvelee myös ihmislukijaa, joka harvoin lukee sivua alusta loppuun.</p>
+
+            <h2 id="faktat">3. Faktat, luvut ja lähdeviitteet nostavat siteerausta mitattavasti</h2>
+            <p>Princetonin ja IIT Delhin tutkijoiden GEO-tutkimus (julkaistu ACM SIGKDD 2024 -konferenssissa) testasi järjestelmällisesti, mitkä sisältömuutokset lisäävät sivun näkyvyyttä tekoälyvastauksissa. Kolme tehokkainta keinoa olivat konkreettisten tilastojen lisääminen, suorien sitaattien lisääminen asiantuntijoilta tai lähteistä, ja lähdeviitteiden merkitseminen. Parhaimmillaan nämä nostivat sivun näkyvyyttä tekoälyvastauksissa noin 40 prosenttia, ja vaikutus oli suurin sivuille, jotka eivät olleet lähteiden kärjessä.<sup>2</sup></p>
+
+            <p>Sama tutkimus havaitsi, että avainsanojen toistaminen tekstissä ("keyword stuffing") tuotti huonomman tuloksen kuin se, ettei tehnyt mitään.<sup>2</sup></p>
+
+            <div class="highlight-box">
+                Käytännössä: korvaa epämääräinen väite ("moni yritys hyötyy tästä") konkreettisella luvulla ja lähteellä ("erään tutkimuksen mukaan X prosenttia..."). Lisää asiantuntijasitaatti, jos sellainen on. Merkitse mistä tieto on peräisin. Nämä ovat samat asiat, jotka tekevät tekstistä uskottavan ihmiselle, mikä ei ole sattumaa.
+            </div>
+
+            <h2 id="tuoreus">4. Tuoreus ratkaisee enemmän kuin perinteisessä haussa</h2>
+            <p>Tekoälyhakukoneilla on selvä taipumus suosia tuoretta sisältöä. Seer Interactiven yli 5 000 URL-osoitetta kattaneen analyysin (jonka mm. Forbes ja Semrush ovat nostaneet esiin) mukaan lähes kaksi kolmasosaa tekoälybottien sivulatauksista kohdistui viimeisen vuoden aikana julkaistuun sisältöön, ja noin 90 prosenttia viimeisen kolmen vuoden sisältöön.<sup>3</sup></p>
+
+            <p>Tämä ei tarkoita, että vanha sisältö pitää poistaa, vaan että sitä pitää päivittää: tarkista luvut, päivitä vuosiluvut, lisää uutta tietoa, ja merkitse muokkauspäivä näkyviin. Tämä on osa samaa jatkuvaa ylläpitotyötä, jota käsittelimme artikkelissa <a href="verkkosivun-yllapito.html">Verkkosivun ylläpito</a>, ei erillinen tekoälyprojekti.</p>
+
+            <h2 id="mita-ei">5. Mitä ei kannata tehdä</h2>
+            <p>Tekoälynäkyvyyden ympärille on syntynyt paljon pikavoittoja lupaavia neuvoja, joista osa on hyödyttömiä tai haitallisia. Google on omassa ohjeistuksessaan todennut suoraan, ettei tekoälyominaisuuksiin pääsemiseksi tarvita erillistä schema-merkintää, <code>llms.txt</code>-tiedostoa, sisällön pilkkomista keinotekoisiin palasiin, eikä erityistä kirjoitustyyliä "vain tekoälyä varten". Sama laadukas, ihmiselle hyödyllinen sisältö ja tekninen kunto, joka toimii perinteisessä haussa, on pohja myös tekoälyvastauksissa.<sup>4</sup></p>
+
+            <ul>
+                <li><strong>Avainsanojen tunkeminen tekstiin.</strong> Heikentää tulosta mitattavasti.<sup>2</sup></li>
+                <li><strong>Keinotekoisten brändimainintojen ostaminen.</strong> Google mainitsee tämän erikseen asiana, jota ei kannata tehdä.<sup>4</sup></li>
+                <li><strong>Sisällön kirjoittaminen roboteille ihmisen kustannuksella.</strong> Sekä Googlen ohje että GEO-tutkimus osoittavat samaan suuntaan: selkeä, uskottava, hyvin jäsennelty teksti palvelee molempia.</li>
+            </ul>
+
+            <h2 id="miten-valoverstas">6. Miten Valoverstas rakentaa siteerattavaa sisältöä</h2>
+            <p>Kun rakennamme tai uudistamme sivustoa, sisältö jäsennellään alusta asti niin, että jokaiseen olennaiseen kysymykseen löytyy suora vastaus heti otsikon alta. Konkreettiset luvut ja väitteet merkitään lähteineen, ja sivuille rakennetaan selkeä otsikkohierarkia, jota sekä hakukone että kielimalli pystyy lukemaan.</p>
+
+            <p>Tekninen perusta hoidetaan samalla kuntoon: sivut ovat indeksoitavissa ja ladattavissa nopeasti, otsikkotagit ja kuvaukset ovat kohdillaan, ja rakenteinen data on paikallaan siltä osin kuin se tuo rich-tulos-hyötyä. Emme lupaa "tekoälynäkyvyyttä" temppuna, koska sellaista ei ole, vaan rakennamme sisällön ja tekniikan niin, että se kestää sekä ihmislukijan että koneen arvion. Jos mietit, miten teidän sivustonne pärjää tekoälyhakukoneissa, jutellaan mielellämme.</p>
+
+            <h2 id="ukk">7. Usein kysyttyä</h2>
+
+            <p class="faq-question">Pitääkö meidän tehdä llms.txt-tiedosto?</p>
+            <p>Ei ole pakko. Google on todennut, ettei se käytä <code>llms.txt</code>-tiedostoa tekoälyominaisuuksissaan. Sellaisen voi tehdä kevyenä lisänä, mutta se ei korvaa sitä, että itse sivujen sisältö on selkeää ja indeksoitavissa.</p>
+
+            <p class="faq-question">Auttaako schema-merkintä pääsemään tekoälyvastauksiin?</p>
+            <p>Rakenteinen data ei ole edellytys tekoälyvastauksiin pääsemiselle, eikä siihen ole olemassa erillistä "tekoäly-schemaa". Schema kannattaa silti pitää kunnossa, koska se tuo rich-tulos-näkyvyyttä perinteisessä haussa ja antaa koneelle selkeän kontekstin sisällöstä.</p>
+
+            <p class="faq-question">Kannattaako sisältö kirjoittaa eri tavalla tekoälyä varten?</p>
+            <p>Ei erillistä "tekoälytyyliä". Samat asiat, jotka tekevät tekstistä hyödyllisen ja uskottavan ihmiselle, eli suora vastaus heti, konkreettiset luvut, merkityt lähteet ja selkeä rakenne, ovat myös ne, jotka nostavat siteerausta tekoälyvastauksissa.</p>
+
+            <p class="faq-question">Riittääkö hyvä Google-sijoitus tekoälynäkyvyyteen?</p>
+            <p>Ei automaattisesti. Tekoälyvastauksissa siteeratut sivut ovat vain osittain samoja kuin Googlen kärkitulokset, ja siteerausta ennustaa vahvasti se, kuinka usein yritys mainitaan muualla verkossa, ei pelkkä oma hakusijoitus.</p>
+
+            <div class="article-cta">
+                <h3>Kestääkö teidän sivustonne sisältö koneen arvion?</h3>
+                <p>Käymme yhdessä läpi, poimivatko tekoälyhakukoneet sivultanne selkeitä vastauksia, ja mitä sisällölle ja rakenteelle kannattaa tehdä.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://ahrefs.com/blog/ai-search-overlap/" target="_blank" style="color: var(--accent); text-decoration: underline;">Ahrefs: "Only 12% of AI-Cited URLs Rank in Google's Top 10" sekä Ahrefsin analyysi brändimainintojen ja AI Overviews -siteerausten yhteydestä</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://arxiv.org/abs/2311.09735" target="_blank" style="color: var(--accent); text-decoration: underline;">Aggarwal ym.: "GEO: Generative Engine Optimization", ACM SIGKDD 2024 (arXiv:2311.09735)</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.seerinteractive.com/insights/study-ai-brand-visibility-and-content-recency" target="_blank" style="color: var(--accent); text-decoration: underline;">Seer Interactive: "Study: AI Brand Visibility and Content Recency" (yli 5 000 URL:n analyysi)</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" style="color: var(--accent); text-decoration: underline;">Google Search Central: "Guidance on AI features in Google Search"</a></li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -32,6 +32,15 @@
         ],
         "createdAt": "2026-08-20T07:38:45.255Z",
         "reason": "false positive: regex detector matched the CSS selector text '.article-image img' inside a .css file as a literal <img> tag; ink-world.css contains no HTML img elements at all"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "sisallon-siteerattavuus-tekoalyhaussa.html"
+        ],
+        "createdAt": "2026-09-04T07:21:32.384Z",
+        "reason": "established Valoverstas blog template: .highlight-box border-left 4px accent, identical to all existing posts (e.g. monikieliset-verkkosivut.html)"
       }
     ]
   }
