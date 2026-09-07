@@ -41,6 +41,15 @@
         ],
         "createdAt": "2026-09-04T07:21:32.384Z",
         "reason": "established Valoverstas blog template: .highlight-box border-left 4px accent, identical to all existing posts (e.g. monikieliset-verkkosivut.html)"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "tarvitseeko-yrityksesi-sivusto-llms-txt.html"
+        ],
+        "createdAt": "2026-09-07T15:34:02.142Z",
+        "reason": "established Valoverstas blog template: .highlight-box left accent border is site-wide across all posts (identical in sisallon-siteerattavuus-tekoalyhaussa.html)"
       }
     ]
   }
