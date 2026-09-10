@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkosivun tekstien kirjoittaminen itse: rakenne, äänensävy ja yleiset virheet | Valoverstas</title>
+    <meta name="description"
+        content="Käytännön ohje yrityksesi verkkosivun tekstien kirjoittamiseen: miten kävijä oikeasti lukee, mitä kullekin sivulle kuuluu, ja mitkä virheet toistuvat.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivun-tekstien-kirjoittaminen-itse.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivun-tekstien-kirjoittaminen-itse.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivun-tekstien-kirjoittaminen-itse.html">
+    <meta name="twitter:title" content="Verkkosivun tekstien kirjoittaminen itse: rakenne, äänensävy ja yleiset virheet">
+    <meta name="twitter:description" content="Miten kävijä oikeasti lukee verkkosivua, mitä kullekin sivulle kuuluu, ja mitkä kuusi virhettä toistuvat pk-yritysten sivuilla.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivun-tekstien-kirjoittaminen-itse.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Verkkosivun tekstien kirjoittaminen itse: rakenne, äänensävy ja yleiset virheet",
+  "description": "Miten kävijä oikeasti lukee verkkosivua, mitä kullekin sivulle kuuluu, ja mitkä kuusi virhettä toistuvat pk-yritysten sivuilla.",
+  "image": "https://valoverstas.fi/img/verkkosivun-tekstien-kirjoittaminen-itse.webp",
+  "datePublished": "2026-09-10",
+  "author": {
+    "@id": "https://valoverstas.fi/#organization"
+  },
+  "publisher": {
+    "@id": "https://valoverstas.fi/#organization"
+  }
+}
+</script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kannattaako verkkosivun tekstit kirjoittaa itse vai ostaa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Itse kirjoittaminen kannattaa silloin, kun tunnet asiakkaasi ja osaat kertoa mitä teet omin sanoin. Yrittäjä tietää usein paremmin kuin ulkopuolinen, mitä asiakas oikeasti kysyy. Ammattilaisen apu kannattaa, jos teksti ei tunnu etenevän, jos sivustoja on paljon, tai jos haluat että joku muokkaa raakatekstisi julkaisukuntoon. Näiden väliltä toimii hyvin malli, jossa kirjoitat sisällön itse ja se toimitetaan ennen julkaisua."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuinka pitkä verkkosivun tekstin pitäisi olla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Niin lyhyt kuin asia sallii. Tutkimusten mukaan kävijä ehtii lukea keskimäärin noin 20 - 28 prosenttia sivun sanoista, joten jokainen turha lause vie huomiota olennaiselta. Palvelusivulle riittää usein 200 - 400 sanaa, kunhan se vastaa asiakkaan kysymyksiin. Pituus ei ole tavoite, vastauksen selkeys on."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Saako verkkosivun tekstit kirjoittaa tekoälyllä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Saa, mutta tekoäly toimii paremmin luonnostelijana kuin kirjoittajana. Se tuottaa nopeasti rakenteen ja ensimmäisen version, mutta lopputulos kuulostaa geneeriseltä, jos sitä ei muokkaa omalla äänellä ja omilla esimerkeillä. Lue teksti ääneen: jos et sanoisi sitä asiakkaalle kasvokkain, kirjoita se uudelleen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mistä sivusta kannattaa aloittaa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aloita palvelusivuista, älä etusivusta. Palvelusivut vastaavat asiakkaan konkreettisiin kysymyksiin, ja kun ne ovat valmiit, etusivu on helppo koota niiden tärkeimmistä kohdista. Etusivu kirjoitettuna ensin jää usein ympäripyöreäksi, koska sisältö ei ole vielä jäsentynyt."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Sisältö • Copywriting • Konversio • 6 min luku</div>
+            <h1>Verkkosivun tekstien kirjoittaminen itse: <span class="gradient-text">rakenne, äänensävy ja yleiset virheet</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Moni pk-yrittäjä kirjoittaa verkkosivunsa tekstit itse, ja usein se on oikea ratkaisu: kukaan ei tunne asiakasta paremmin. Ongelma on harvoin kirjoitustaito, vaan se, ettei tiedä miten kävijä oikeasti lukee sivua ja mitä kullekin sivulle kuuluu. Käydään molemmat läpi.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivun-tekstien-kirjoittaminen-itse.webp" alt="Siili kirjoittaa verkkosivun tekstejä muistivihkoon työpöydän ääressä - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#miten-luetaan">1. Miten kävijä oikeasti lukee verkkosivua</a></li>
+                    <li><a href="#pyramidi">2. Aloita johtopäätöksestä, älä pohjustuksesta</a></li>
+                    <li><a href="#sivut">3. Mitä kullekin sivulle kuuluu</a></li>
+                    <li><a href="#aanensavy">4. Äänensävy: kirjoita kuin puhuisit asiakkaalle</a></li>
+                    <li><a href="#virheet">5. Kuusi virhettä, jotka toistuvat pk-yritysten sivuilla</a></li>
+                    <li><a href="#tarkistuslista">6. Tarkistuslista ennen julkaisua</a></li>
+                    <li><a href="#ukk">7. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <p>Verkkosivun teksti ei ole esite eikä essee. Se on vastaus kysymykseen, jonka kävijä toi tullessaan: teettekö te tätä, sopiiko tämä minulle, mitä tämä maksaa, miten otan yhteyttä. Kun teksti kirjoitetaan tämä mielessä, lopputulos on lähes aina parempi kuin kauniisti muotoiltu mutta ympäripyöreä kappale.</p>
+
+            <h2 id="miten-luetaan">1. Miten kävijä oikeasti lukee verkkosivua</h2>
+            <p>Kukaan ei lue verkkosivua niin kuin kirjaa. Nielsen Norman Groupin tutkimusten mukaan noin 79 prosenttia käyttäjistä silmäilee sivun ja vain 16 prosenttia lukee sanasta sanaan. Keskimääräisen käynnin aikana kävijä ehtii lukea korkeintaan noin 28 prosenttia sivun sanoista, ja realistisempi luku on lähempänä 20:tä prosenttia.<sup>1</sup></p>
+
+            <p>Silmäily ei myöskään etene tasaisesti. Katse kulkee tyypillisesti niin sanotun F-kuvion mukaan: ensin vaakasuoraan sivun yläosan yli, sitten hieman alempaa lyhyempi vaakaveto, ja lopuksi pystysuoraan vasenta reunaa pitkin.<sup>2</sup> Käytännössä tämä tarkoittaa, että otsikot, ensimmäiset sanat kappaleissa ja listojen alut kantavat viestin. Jos ne eivät kerro mitään, kävijä ei lue loppua selvittääkseen.</p>
+
+            <p>Tästä seuraa kolme sääntöä, jotka ohjaavat kaikkea muuta tässä artikkelissa: kirjoita lyhyesti, jäsennä väliotsikoilla ja listoilla, ja laita tärkein asia alkuun.</p>
+
+            <h2 id="pyramidi">2. Aloita johtopäätöksestä, älä pohjustuksesta</h2>
+            <p>Journalismista lainattu käänteinen pyramidi toimii verkossa erityisen hyvin: kerro tärkein asia ensin, ja lisää taustaa ja yksityiskohtia vasta sen jälkeen.<sup>3</sup> Uutisessa se tarkoittaa, että ensimmäinen virke sisältää koko jutin ytimen. Verkkosivulla se tarkoittaa, että jokainen osio alkaa suoralla vastauksella otsikkonsa kysymykseen.</p>
+
+            <p>Vertaa näitä kahta palvelusivun aloitusta:</p>
+            <ul>
+                <li><strong>Pohjustus ensin:</strong> "Digitalisaation myötä yritysten on yhä tärkeämpää huolehtia näkyvyydestään verkossa. Me olemme intohimoinen tiimi, joka on auttanut lukuisia asiakkaita matkalla kohti parempaa digitaalista läsnäoloa..."</li>
+                <li><strong>Vastaus ensin:</strong> "Rakennamme nopeita ja selkeitä verkkosivuja pk-yrityksille. Toimitus 3 - 4 viikossa, kiinteä hinta, sisältö ja hakukoneoptimointi mukana."</li>
+            </ul>
+
+            <p>Jälkimmäinen kertoo kolmessa sekunnissa, mitä saa, milloin ja millä ehdoilla. Edellinen ei kerro vielä mitään. Sama periaate auttaa myös tekoälyhakua löytämään sivultasi selkeän, siteerattavan vastauksen, mistä kirjoitimme artikkelissa <a href="sisallon-siteerattavuus-tekoalyhaussa.html">Miten verkkosivun sisältö kirjoitetaan niin, että tekoälyhakukoneet siteeraavat sitä</a>.</p>
+
+            <h2 id="sivut">3. Mitä kullekin sivulle kuuluu</h2>
+            <p>Aloita palvelusivuista, älä etusivusta. Palvelusivut pakottavat sinut kertomaan konkreettisesti mitä teet, ja kun ne ovat valmiit, etusivun kokoaa nopeasti niiden tärkeimmistä kohdista.</p>
+
+            <ul>
+                <li><strong>Palvelusivu.</strong> Mitä palvelu on, kenelle se sopii ja kenelle ei, mitä se sisältää, miten se etenee, mitä se maksaa tai mistä hinta muodostuu, ja mitä seuraavaksi tapahtuu. Yksi palvelu per sivu, jotta kävijä ja hakukone tietävät mistä sivu kertoo.</li>
+                <li><strong>Etusivu.</strong> Yhdellä lauseella mitä teet ja kenelle, sitten linkit palveluihin, muutama todiste (asiakas, tulos, arvio) ja selkeä yhteydenottokehotus. Etusivu on hakemisto, ei kaiken kertova sivu.</li>
+                <li><strong>Meistä-sivu.</strong> Kävijä lukee tämän arvioidakseen, voiko teihin luottaa. Kerro kuka tekee työn, mikä on kokemus ja tausta, ja miksi teette tätä. Konkreettinen ja rehellinen voittaa kiillotetun.</li>
+                <li><strong>Yhteystiedot.</strong> Kaikki tavat ottaa yhteyttä, vasteaika jos sellainen luvataan, ja lyhyt lomake. Älä piilota yhteystietoja lomakkeen taakse.</li>
+                <li><strong>Blogi tai artikkelit.</strong> Vapaaehtoinen, mutta hyvä tapa vastata asiakkaan kysymyksiin ennen ostoa ja tulla löydetyksi haussa. Yksi kysymys per kirjoitus.</li>
+            </ul>
+
+            <h2 id="aanensavy">4. Äänensävy: kirjoita kuin puhuisit asiakkaalle</h2>
+            <p>Paras testi verkkotekstille on lukea se ääneen. Jos et sanoisi lausetta asiakkaalle kasvokkain, älä kirjoita sitä sivulle. Tämä karsii heti suurimman osan kankeasta virastokielestä ja markkinointifraaseista.</p>
+
+            <ul>
+                <li><strong>Puhuttele lukijaa suoraan.</strong> "Saat valmiin sivuston kolmessa viikossa", ei "Asiakkaalle toimitetaan sivusto kolmen viikon kuluessa".</li>
+                <li><strong>Käytä tavallisia sanoja.</strong> "Autamme", ei "tarjoamme kokonaisvaltaisia ratkaisuja". Konkreettinen verbi kertoo enemmän kuin abstrakti substantiivi.</li>
+                <li><strong>Ole täsmällinen.</strong> "3 - 4 viikkoa" on parempi kuin "nopeasti", "alkaen 1 500 euroa" on parempi kuin "kilpailukykyiseen hintaan".</li>
+                <li><strong>Yksi ajatus per virke.</strong> Jos virkkeessä on kaksi "ja"-sanaa ja yksi "sekä", katkaise se.</li>
+            </ul>
+
+            <p>Äänensävy saa silti olla teidän näköisenne. Persoonallinen ja selkeä ei ole ristiriita, päinvastoin. Käsittelimme sitä, miten sivun sanat vaikuttavat luottamukseen ja päätöksentekoon, artikkelissa <a href="verkkosivujen-psykologia.html">Verkkosivujen psykologia</a>.</p>
+
+            <h2 id="virheet">5. Kuusi virhettä, jotka toistuvat pk-yritysten sivuilla</h2>
+            <ul>
+                <li><strong>Etusivun hero-teksti, joka ei kerro mitä yritys tekee.</strong> "Tervetuloa" tai "Unelmiesi kumppani" ei ole sisältöä. Ensimmäisen lauseen pitää nimetä toimiala ja kohderyhmä.</li>
+                <li><strong>"Me"-näkökulma "sinä"-näkökulman sijaan.</strong> Sivu, joka kertoo vain kuinka intohimoinen ja kokenut tiimi on, ei vastaa kävijän kysymykseen. Käännä lauseet asiakkaan hyödyksi.</li>
+                <li><strong>Ammattislangi ilman selitystä.</strong> Jos kohderyhmä ei käytä termiä itse, selitä se tai vaihda se.</li>
+                <li><strong>Yksi valtava tekstikappale.</strong> Ilman väliotsikoita ja kappalejakoa silmäilevä kävijä ei löydä etsimäänsä ja poistuu.</li>
+                <li><strong>Ei yhtään konkreettista lukua.</strong> Hinnat, toimitusajat, määrät ja esimerkit tekevät tekstistä uskottavan. Epämääräisyys luetaan epävarmuudeksi.</li>
+                <li><strong>Heikko tai puuttuva toimintakehotus.</strong> Jokaisen sivun lopussa pitää olla selvä seuraava askel: varaa aika, pyydä tarjous, soita. "Ota rohkeasti yhteyttä" ilman linkkiä tai lomaketta ei riitä.</li>
+            </ul>
+
+            <div class="highlight-box">
+                Nopea korjaus: käy jokainen sivu läpi ja alleviivaa ensimmäinen virke. Jos se ei kerro kävijälle mitä sivu käsittelee ja mitä hän siitä hyötyy, kirjoita se uudelleen. Tämä yksi muutos parantaa useimpia pk-yritysten sivuja enemmän kuin mikään muu.
+            </div>
+
+            <h2 id="tarkistuslista">6. Tarkistuslista ennen julkaisua</h2>
+            <ul>
+                <li>Jokaisen sivun ensimmäinen virke kertoo, mitä sivu käsittelee ja kenelle.</li>
+                <li>Jokaisella sivulla on väliotsikoita, ja pelkkiä otsikoita lukemalla saa käsityksen sisällöstä.</li>
+                <li>Tekstissä on konkreettisia lukuja: hintoja, aikoja, määriä tai esimerkkejä.</li>
+                <li>Luit tekstin ääneen etkä törmännyt lauseeseen, jota et sanoisi asiakkaalle.</li>
+                <li>Jokaisen sivun lopussa on yksi selkeä toimintakehotus toimivalla linkillä.</li>
+                <li>Otsikot ja ensimmäiset kappaleet toimivat myös irrallaan, koska niitä silmäillään ensin.</li>
+                <li>Teit erillisen oikolukukierroksen, myös pilkut.</li>
+            </ul>
+
+            <h2 id="ukk">7. Usein kysyttyä</h2>
+
+            <p class="faq-question">Kannattaako verkkosivun tekstit kirjoittaa itse vai ostaa?</p>
+            <p>Itse kirjoittaminen kannattaa silloin, kun tunnet asiakkaasi ja osaat kertoa mitä teet omin sanoin. Yrittäjä tietää usein paremmin kuin ulkopuolinen, mitä asiakas oikeasti kysyy. Ammattilaisen apu kannattaa, jos teksti ei tunnu etenevän, jos sivustoja on paljon, tai jos haluat että joku muokkaa raakatekstisi julkaisukuntoon. Näiden väliltä toimii hyvin malli, jossa kirjoitat sisällön itse ja se toimitetaan ennen julkaisua.</p>
+
+            <p class="faq-question">Kuinka pitkä verkkosivun tekstin pitäisi olla?</p>
+            <p>Niin lyhyt kuin asia sallii. Tutkimusten mukaan kävijä ehtii lukea keskimäärin noin 20 - 28 prosenttia sivun sanoista, joten jokainen turha lause vie huomiota olennaiselta. Palvelusivulle riittää usein 200 - 400 sanaa, kunhan se vastaa asiakkaan kysymyksiin. Pituus ei ole tavoite, vastauksen selkeys on.</p>
+
+            <p class="faq-question">Saako verkkosivun tekstit kirjoittaa tekoälyllä?</p>
+            <p>Saa, mutta tekoäly toimii paremmin luonnostelijana kuin kirjoittajana. Se tuottaa nopeasti rakenteen ja ensimmäisen version, mutta lopputulos kuulostaa geneeriseltä, jos sitä ei muokkaa omalla äänellä ja omilla esimerkeillä. Lue teksti ääneen: jos et sanoisi sitä asiakkaalle kasvokkain, kirjoita se uudelleen.</p>
+
+            <p class="faq-question">Mistä sivusta kannattaa aloittaa?</p>
+            <p>Aloita palvelusivuista, älä etusivusta. Palvelusivut vastaavat asiakkaan konkreettisiin kysymyksiin, ja kun ne ovat valmiit, etusivu on helppo koota niiden tärkeimmistä kohdista. Etusivu kirjoitettuna ensin jää usein ympäripyöreäksi, koska sisältö ei ole vielä jäsentynyt.</p>
+
+            <div class="article-cta">
+                <h3>Kirjoitit tekstit itse, mutta et ole varma toimivatko ne?</h3>
+                <p>Käymme sivustonne tekstit läpi ja kerromme konkreettisesti, mitä kannattaa muuttaa, jotta kävijä löytää vastauksen ja ottaa yhteyttä.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/articles/how-little-do-users-read/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "How Little Do Users Read?"</a> (kävijä lukee keskimäärin 20 - 28 prosenttia sivun sanoista; 79 prosenttia silmäilee, 16 prosenttia lukee sanasta sanaan)</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "F-Shaped Pattern of Reading on the Web: Misunderstood, But Still Relevant"</a></li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/articles/inverted-pyramid/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "The Inverted Pyramid: Write Comprehensible Articles"</a> (tärkein asia ensin)</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.gov.uk/guidance/content-design/writing-for-gov-uk" target="_blank" style="color: var(--accent); text-decoration: underline;">GOV.UK: "Content design: writing for GOV.UK"</a> (selkokielen ja lyhyiden virkkeiden periaatteet)</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

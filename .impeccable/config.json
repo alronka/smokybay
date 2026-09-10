@@ -50,6 +50,15 @@
         ],
         "createdAt": "2026-09-07T15:34:02.142Z",
         "reason": "established Valoverstas blog template: .highlight-box left accent border is site-wide across all posts (identical in sisallon-siteerattavuus-tekoalyhaussa.html)"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "verkkosivun-tekstien-kirjoittaminen-itse.html"
+        ],
+        "createdAt": "2026-09-10T05:24:38.319Z",
+        "reason": "established Valoverstas blog template: .highlight-box left accent border is site-wide across all posts (identical in tarvitseeko-yrityksesi-sivusto-llms-txt.html)"
       }
     ]
   }
