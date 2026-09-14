@@ -59,6 +59,15 @@
         ],
         "createdAt": "2026-09-10T05:24:38.319Z",
         "reason": "established Valoverstas blog template: .highlight-box left accent border is site-wide across all posts (identical in tarvitseeko-yrityksesi-sivusto-llms-txt.html)"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "tekoaly-verkkosivujen-teossa.html"
+        ],
+        "createdAt": "2026-09-14T08:46:19.099Z",
+        "reason": "established Valoverstas blog template: .highlight-box left accent border is site-wide across all posts (identical in tarvitseeko-yrityksesi-sivusto-llms-txt.html, verkkosivun-tekstien-kirjoittaminen-itse.html)"
       }
     ]
   }

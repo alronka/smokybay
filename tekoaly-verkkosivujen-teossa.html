@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekoäly verkkosivujen teossa: mihin se auttaa, ja miksi sivun ei tarvitse näyttää siltä | Valoverstas</title>
+    <meta name="description"
+        content="Tekoäly nopeuttaa verkkosivun tekoa, mutta oletusasetuksilla lopputulos näyttää samalta kuin kaikki muutkin. Näin vältät geneerisen AI-sivun.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/tekoaly-verkkosivujen-teossa.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/tekoaly-verkkosivujen-teossa.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/tekoaly-verkkosivujen-teossa.html">
+    <meta name="twitter:title" content="Tekoäly verkkosivujen teossa: mihin se auttaa, ja miksi sivun ei tarvitse näyttää siltä">
+    <meta name="twitter:description" content="Tekoäly nopeuttaa verkkosivun tekoa, mutta oletusasetuksilla lopputulos näyttää samalta kuin kaikki muutkin. Näin vältät geneerisen AI-sivun.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/tekoaly-verkkosivujen-teossa.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tekoäly verkkosivujen teossa: mihin se auttaa, ja miksi sivun ei tarvitse näyttää siltä",
+  "description": "Tekoäly nopeuttaa verkkosivun tekoa, mutta oletusasetuksilla lopputulos näyttää samalta kuin kaikki muutkin. Näin vältät geneerisen AI-sivun.",
+  "image": "https://valoverstas.fi/img/tekoaly-verkkosivujen-teossa.webp",
+  "datePublished": "2026-09-14",
+  "author": {
+    "@id": "https://valoverstas.fi/#organization"
+  },
+  "publisher": {
+    "@id": "https://valoverstas.fi/#organization"
+  }
+}
+</script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Voiko verkkosivun tehdä kokonaan tekoälyllä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Teknisesti kyllä, ja tulos on nopeasti pystyssä. Sisältö, rakenne ja peruskoodi syntyvät minuuteissa. Ongelma ei ole se, ettei sivu toimisi, vaan se, että oletusasetuksilla se näyttää samalta kuin tuhannet muut samalla tavalla tehdyt sivut, koska malli valitsee tilastollisesti todennäköisimmän ratkaisun, ei erottuvimman."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miksi tekoälyllä tehdyt sivut näyttävät niin usein samalta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Koska malli ei keksi ulkoasua tyhjästä, vaan ennustaa, mikä on todennäköisin valinta miljoonien näkemiensä sivujen perusteella. Todennäköisin valinta on aina keskiarvo, ei erottuva ratkaisu, mikä tuottaa samat fontit, värit ja asettelut kerta toisensa jälkeen, ellei kukaan ohjaa sitä tietoisesti pois niistä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Käyttääkö Valoverstas tekoälyä sivujen teossa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä, tietyissä vaiheissa. Tekoäly nopeuttaa esimerkiksi tekstin ensiluonnosta, toistuvan koodin kirjoittamista ja iterointia. Suunta, typografia, väripaletti ja rakenne tulevat kuitenkin aina harkinnasta, ei mallin oletusvalinnasta, ja jokainen tekoälyn tuottama osa käydään läpi ja muokataan ennen julkaisua."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Milloin AI-sivurakentaja riittää pk-yritykselle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Silloin, kun sivun tehtävä on olla olemassa, ei erottua: nopea väliaikaisratkaisu, sisäinen työkalu tai testisivu ennen isompaa panostusta. Jos sivu on osa asiakkaan ensivaikutelmaa ja kilpailijasi käyttävät samoja työkaluja samoilla oletusasetuksilla, geneerisyydestä tulee kilpailuhaitta, ei etu."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Tekoäly • Design • Verkkosivut • 7 min luku</div>
+            <h1>Tekoäly verkkosivujen teossa: <span class="gradient-text">mihin se auttaa, ja miksi sivun ei tarvitse näyttää siltä</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Verkkosivun saa nyt pystyyn minuuteissa tekoälyllä. Se on aito hyöty, ei markkinointipuhetta. Ongelma on se, mitä tapahtuu, kun kukaan ei ohjaa mallia pois sen oletusvalinnoista: lopputulos näyttää samalta kuin kaikki muutkin tekoälyllä tehdyt sivut. Käydään läpi mihin tekoäly oikeasti auttaa, mistä se geneerinen "AI-look" tulee, ja miten sen välttää.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/tekoaly-verkkosivujen-teossa.webp" alt="Siili muokkaa tekoälyn tuottamaa verkkosivupohjaa omannäköisekseen työpöydän ääressä - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#mihin-auttaa">1. Mihin tekoäly oikeasti auttaa verkkosivun teossa</a></li>
+                    <li><a href="#ai-slop">2. Miksi niin moni tekoälyllä tehty sivu näyttää samalta</a></li>
+                    <li><a href="#miksi-haittaa">3. Miksi tämä on liiketoimintaongelma, ei vain makuasia</a></li>
+                    <li><a href="#mista-tulee">4. Mistä geneerisyys tulee: malli valitsee todennäköisimmän, ei erottuvimman</a></li>
+                    <li><a href="#miten-valoverstas">5. Miten Valoverstas käyttää tekoälyä</a></li>
+                    <li><a href="#tarkistuslista">6. Tarkistuslista: näyttääkö sivusi tekoälyn tekemältä?</a></li>
+                    <li><a href="#milloin-riittaa">7. Milloin AI-sivurakentaja riittää, ja milloin ei</a></li>
+                    <li><a href="#ukk">8. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <p>Kysymys ei ole enää "kannattaako tekoälyä käyttää verkkosivun teossa", vaan "miten sitä käytetään niin, ettei lopputulos näytä siltä, että kuka tahansa olisi voinut tehdä saman". Ensimmäinen on jo ratkaistu: tekoäly nopeuttaa oikeasti useita sivun teon vaiheita. Jälkimmäinen on se, missä useimmat epäonnistuvat.</p>
+
+            <h2 id="mihin-auttaa">1. Mihin tekoäly oikeasti auttaa verkkosivun teossa</h2>
+            <p>Näissä tekoäly on aidosti hyödyllinen työkalu, ei vain hype:</p>
+            <ul>
+                <li><strong>Sisällön ensiluonnos.</strong> Rakenteen ja raakatekstin saa nopeasti pystyyn, kun lähtökohtana on tyhjä sivu. Luonnos pitää silti aina muokata omalla äänellä, kuten kävimme läpi artikkelissa <a href="verkkosivun-tekstien-kirjoittaminen-itse.html">Verkkosivun tekstien kirjoittaminen itse</a>.</li>
+                <li><strong>Toistuva koodi.</strong> Lomakkeet, komponenttien peruslogiikka ja tekniset rutiinit syntyvät murto-osassa ajasta verrattuna käsin kirjoittamiseen.</li>
+                <li><strong>Nopea iterointi.</strong> Vaihtoehtoisten asettelujen ja tekstivaihtoehtojen kokeilu käy nopeasti, kun ei tarvitse rakentaa jokaista versiota käsin.</li>
+                <li><strong>Ensimmäinen tekninen runko.</strong> Kun lähtökohta ei ole tyhjä editori vaan toimiva pohja, pääsee nopeammin siihen vaiheeseen, jossa oikeat päätökset tehdään.</li>
+            </ul>
+
+            <p>Kaikki nämä säästävät aikaa siinä, missä tekoäly on hyvä: toistossa ja ensimmäisen version tuottamisessa. Yksikään niistä ei vielä tarkoita, että lopputulos on hyvä sivu.</p>
+
+            <h2 id="ai-slop">2. Miksi niin moni tekoälyllä tehty sivu näyttää samalta</h2>
+            <p>Ilmiölle on jo vakiintunut nimitys, "AI slop": tunnistettava, geneerinen jälki, joka syntyy kun tekoälyn oletusvalinnat päätyvät julkaistulle sivulle sellaisenaan. Samat piirteet toistuvat sivustolta toiselle riippumatta toimialasta:</p>
+
+            <ul>
+                <li>Kermanvärinen tausta, serif-otsikkofontti ja terrakotta-aksentti, tai vaihtoehtoisesti tumma tausta yhdellä neon-syaanilla korostusvärillä</li>
+                <li>Violetista siniseen liukuva liukuväri-hero valkoisella pohjalla</li>
+                <li>Inter tai Space Grotesk fonttina, koska ne ovat mallille "turvallinen" oletusvalinta</li>
+                <li>Emoji osioiden otsikkomerkkeinä</li>
+                <li>Kaikki sisältö keskitettynä, riippumatta siitä palveleeko se luettavuutta</li>
+                <li>Pyöristetyt kortit, joissa on värillinen aksenttipalkki toisella reunalla</li>
+                <li>Hehkuvat, värilliset varjot korteissa ja painikkeissa</li>
+            </ul>
+
+            <p>Nämä eivät ole huonoja valintoja yksittäin. Ongelma on, että ne toistuvat identtisinä tuhansilla eri toimialojen sivustoilla, jolloin kävijä tunnistaa jäljen alitajuisesti, vaikkei osaisi nimetä miksi sivu tuntuu tutulta.</p>
+
+            <h2 id="miksi-haittaa">3. Miksi tämä on liiketoimintaongelma, ei vain makuasia</h2>
+            <p>Nielsen Norman Groupin tammikuussa 2026 julkaisema "State of UX"-katsaus muotoilee kehityksen suoraan: kun tekoälytyökalut kehittyvät, kuka tahansa pystyy tekemään edes etäisyydeltä siedettävän näköisen käyttöliittymän, jolloin pintapuolinen ulkoasu ei enää itsessään riitä erottumaan. Raportin mukaan juuri harkinta, käyttäjäymmärrys ja tietoinen suunnittelupäätös ovat niitä asioita, joita automaatio ei vielä korvaa.<sup>1</sup></p>
+
+            <p>Tällä on myös mitattu hintalappu. McKinseyn laaja, viiden vuoden aineistoon perustuva Design Index -tutkimus havaitsi, että suunnittelussa parhaiten pärjänneiden yritysten liikevaihto kasvoi 32 prosenttiyksikköä nopeammin kuin toimialan muilla yrityksillä samalla ajanjaksolla.<sup>2</sup> Tutkimus on tehty ennen nykyisiä tekoälytyökaluja, mutta johtopäätös pätee edelleen: harkittu, erottuva ulkoasu näkyy tuloksessa, ei vain palautteessa.</p>
+
+            <div class="highlight-box">
+                Kävijä ei ehkä osaa sanoa "tämä on tekoälyn tekemä sivu", mutta hän reagoi siihen silti: geneerinen sivu ei erotu kilpailijoista, ei jää mieleen, eikä rakenna sitä luottamusta, jonka varaan B2B-ostopäätös usein nojaa.
+            </div>
+
+            <h2 id="mista-tulee">4. Mistä geneerisyys tulee: malli valitsee todennäköisimmän, ei erottuvimman</h2>
+            <p>Kielimalli ei keksi ulkoasua tyhjästä. Se ennustaa, mikä on todennäköisin seuraava valinta miljoonien näkemiensä esimerkkien perusteella. Todennäköisin valinta on aina jonkinlainen keskiarvo, ei erottuva ratkaisu. Kun miljoonat sivut käyttävät samaa liukuväriä ja samaa fonttia, siitä tulee mallille "oikea" vastaus, ja sama toistuu joka kerta, ellei sitä erikseen ohjata pois.</p>
+
+            <p>Tämä ei ole tekoälyn vika sinänsä, vaan seuraus siitä, miten se toimii. Sama tekoäly, jota ohjataan tietoisesti pois oletusvalinnoistaan, oikealla viitemateriaalilla ja rajatulla suunnalla, tuottaa aivan erilaisen lopputuloksen kuin sama työkalu ilman ohjausta.</p>
+
+            <h2 id="miten-valoverstas">5. Miten Valoverstas käyttää tekoälyä</h2>
+            <p>Käytämme tekoälyä siellä, missä se aidosti nopeuttaa työtä: sisällön ensiluonnoksissa, toistuvan koodin kirjoittamisessa ja nopeassa iteroinnissa. Emme käytä sitä korvaamaan suunnittelupäätöksiä. Väripaletti, typografia, sivun rakenne ja se, mikä yksityiskohta saa huomion, ovat aina harkinnan tulos, ei mallin oletusehdotus.</p>
+
+            <p>Käytännössä tämä tarkoittaa, että jokainen tekoälyn tuottama osa, oli kyse tekstistä tai koodista, käydään läpi ja muokataan ennen kuin se päätyy julkaistulle sivulle. Sama pätee visuaaliseen suuntaan: lähtökohtana on aina asiakkaan toimiala ja tavoite, ei se, mitä malli ehdottaa ensimmäisenä. Tekoälyn rooli suunnitteluprosessissa laajemmin, ei vain sivun teossa vaan koko käyttöliittymäajattelussa, on aihe jota käsittelimme myös artikkelissa <a href="tekoalyohjattu-ux-suunnittelu-2026.html">Tekoälyohjattu UX-suunnittelu</a>.</p>
+
+            <h2 id="tarkistuslista">6. Tarkistuslista: näyttääkö sivusi tekoälyn tekemältä?</h2>
+            <p>Käy oma tai toimittajan tekemä sivu läpi näillä kysymyksillä:</p>
+            <ul>
+                <li>Onko hero-osio keskitetty otsikko, liukuväritausta ja yksi painike, joka näyttäisi samalta millä tahansa toimialalla?</li>
+                <li>Onko fonttina oletusarvoinen, tunnistamaton groteski, jota et osaisi nimetä ilman kehittäjätyökaluja?</li>
+                <li>Onko jokaisella kortilla sama pyöristys ja sama aksenttireuna, riippumatta sisällöstä?</li>
+                <li>Voisiko sivun logon ja tekstit vaihtaa kilpailijan vastaaviin ilman, että mikään muu muuttuisi?</li>
+                <li>Onko kuvitus geneeristä stock-kuvaa tai tekoälyn tuottamaa kuvitusta ilman yhteyttä yrityksen omaan visuaaliseen maailmaan?</li>
+            </ul>
+            <p>Jos vastasit kyllä useampaan kuin yhteen, sivu on todennäköisesti kiinni tekoälyn oletusasetuksissa. Sama tarkistus kannattaa tehdä myös ennen sivu-uudistusta, mihin liittyviä merkkejä käsittelimme artikkelissa <a href="verkkosivutoimiston-valinta.html">Verkkosivutoimiston valinta</a>.</p>
+
+            <h2 id="milloin-riittaa">7. Milloin AI-sivurakentaja riittää, ja milloin ei</h2>
+            <p>AI-sivurakentaja tai itse tekoälyllä koottu nopea versio riittää hyvin, kun sivun tehtävä on olla olemassa nopeasti eikä erottua: väliaikainen laskeutumissivu, sisäinen työkalu, testiversio ennen isompaa investointia tai tapahtumasivu, joka elää muutaman viikon.</p>
+
+            <p>Kun sivu on osa yrityksen pysyvää ensivaikutelmaa, tilanne on toinen. Jos kilpailijasi käyttävät samoja työkaluja samoilla oletusasetuksilla, geneerisyys ei ole enää neutraali valinta, vaan kilpailuhaitta: sivu sulautuu joukkoon juuri silloin, kun tavoitteena olisi erottua. Tällöin tekoäly kannattaa pitää työkaluna prosessin sisällä, ei lopputuloksen määrittäjänä.</p>
+
+            <h2 id="ukk">8. Usein kysyttyä</h2>
+
+            <p class="faq-question">Voiko verkkosivun tehdä kokonaan tekoälyllä?</p>
+            <p>Teknisesti kyllä, ja tulos on nopeasti pystyssä. Sisältö, rakenne ja peruskoodi syntyvät minuuteissa. Ongelma ei ole se, ettei sivu toimisi, vaan se, että oletusasetuksilla se näyttää samalta kuin tuhannet muut samalla tavalla tehdyt sivut, koska malli valitsee tilastollisesti todennäköisimmän ratkaisun, ei erottuvimman.</p>
+
+            <p class="faq-question">Miksi tekoälyllä tehdyt sivut näyttävät niin usein samalta?</p>
+            <p>Koska malli ei keksi ulkoasua tyhjästä, vaan ennustaa, mikä on todennäköisin valinta miljoonien näkemiensä sivujen perusteella. Todennäköisin valinta on aina keskiarvo, ei erottuva ratkaisu, mikä tuottaa samat fontit, värit ja asettelut kerta toisensa jälkeen, ellei kukaan ohjaa sitä tietoisesti pois niistä.</p>
+
+            <p class="faq-question">Käyttääkö Valoverstas tekoälyä sivujen teossa?</p>
+            <p>Kyllä, tietyissä vaiheissa. Tekoäly nopeuttaa esimerkiksi tekstin ensiluonnosta, toistuvan koodin kirjoittamista ja iterointia. Suunta, typografia, väripaletti ja rakenne tulevat kuitenkin aina harkinnasta, ei mallin oletusvalinnasta, ja jokainen tekoälyn tuottama osa käydään läpi ja muokataan ennen julkaisua.</p>
+
+            <p class="faq-question">Milloin AI-sivurakentaja riittää pk-yritykselle?</p>
+            <p>Silloin, kun sivun tehtävä on olla olemassa, ei erottua: nopea väliaikaisratkaisu, sisäinen työkalu tai testisivu ennen isompaa panostusta. Jos sivu on osa asiakkaan ensivaikutelmaa ja kilpailijasi käyttävät samoja työkaluja samoilla oletusasetuksilla, geneerisyydestä tulee kilpailuhaitta, ei etu.</p>
+
+            <div class="article-cta">
+                <h3>Näyttääkö sivustonne siltä, että kuka tahansa olisi voinut tehdä sen?</h3>
+                <p>Käymme sivustonne läpi ja kerromme rehellisesti, onko kyse omannäköisestä ratkaisusta vai oletusasetuksista, ja mitä sille kannattaa tehdä.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/articles/state-of-ux-2026/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "State of UX 2026: Design Deeper to Differentiate"</a> (16.1.2026)</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-business-value-of-design" target="_blank" style="color: var(--accent); text-decoration: underline;">McKinsey: "The Business Value of Design"</a>, McKinsey Design Index -tutkimus 300 pörssiyhtiöstä viiden vuoden ajalta.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" style="color: var(--accent); text-decoration: underline;">McKinsey: "The State of AI: Global Survey 2026"</a>, tausta tekoälyn yleistymisestä yritysten työkaluvalikoimassa.</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
