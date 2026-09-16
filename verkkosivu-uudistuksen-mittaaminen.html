@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miten tiedät, että verkkosivu-uudistus onnistui? | Valoverstas</title>
+    <meta name="description"
+        content="Uudistus näyttää paremmalta, mutta toimiiko se? Mitä mitata ennen ja jälkeen julkaisun, ja miksi tulosta ei kannata tulkita liian aikaisin.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkosivu-uudistuksen-mittaaminen.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkosivu-uudistuksen-mittaaminen.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkosivu-uudistuksen-mittaaminen.html">
+    <meta name="twitter:title" content="Miten tiedät, että verkkosivu-uudistus onnistui? Mittaaminen julkaisun jälkeen">
+    <meta name="twitter:description" content="Uudistus näyttää paremmalta, mutta toimiiko se? Mitä mitata ennen ja jälkeen julkaisun, ja miksi tulosta ei kannata tulkita liian aikaisin.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkosivu-uudistuksen-mittaaminen.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Miten tiedät, että verkkosivu-uudistus onnistui? Mittaaminen julkaisun jälkeen",
+  "description": "Uudistus näyttää paremmalta, mutta toimiiko se? Mitä mitata ennen ja jälkeen julkaisun, ja miksi tulosta ei kannata tulkita liian aikaisin.",
+  "image": "https://valoverstas.fi/img/verkkosivu-uudistuksen-mittaaminen.webp",
+  "datePublished": "2026-09-16",
+  "author": {
+    "@id": "https://valoverstas.fi/#organization"
+  },
+  "publisher": {
+    "@id": "https://valoverstas.fi/#organization"
+  }
+}
+</script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mistä tiedän, onnistuiko verkkosivu-uudistus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vertaamalla samoja liiketoimintamittareita ennen ja jälkeen julkaisun: konversioprosenttia, orgaanista liikennettä ja sivun latausnopeutta. Vertailu vaatii dokumentoidun lähtötason ennen uudistusta, koska ilman sitä ei ole mitään, mihin uutta lukua verrataan. Ulkoasun paraneminen ei yksin kerro, onko sivu alkanut tuottaa enemmän liidejä tai myyntiä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuinka pian julkaisun jälkeen tuloksia voi tulkita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei ensimmäisten päivien tai edes ensimmäisten kahden viikon aikana. Hakukoneiden uudelleenindeksointi ja kävijöiden tottuminen uuteen rakenteeseen vievät aikaa, ja liian aikainen johtopäätös tarttuu helposti kohinaan, ei todelliseen muutokseen. Pienemmissä uudistuksissa suunta näkyy noin kuukaudessa, isommissa, joissa osoitteet tai rakenne muuttuvat laajasti, luotettava kuva voi vaatia useita kuukausia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onko lyhytaikainen liikenteen lasku normaalia uudistuksen jälkeen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä, tietyissä rajoissa. Kun sivujen osoitteet, rakenne tai sisältö muuttuvat laajasti, hakukoneiden on indeksoitava sivusto uudelleen, mikä näkyy tilapäisenä notkahduksena liikenteessä. Tämä on eri asia kuin jatkuva, korjaantumaton lasku, joka kertoo yleensä teknisestä ongelmasta, kuten puuttuvista uudelleenohjauksista."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Riittääkö Google Analytics tulosten mittaamiseen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perusmittareihin kyllä, mutta se ei yksin kerro miksi luku muuttui. Analytiikka näyttää, että konversio laski, muttei sitä, että lomake siirtyi vaikeammin löydettävään paikkaan. Määrällinen data kertoo mitä tapahtui, ja se kannattaa yhdistää laadulliseen tarkasteluun, kuten käyttäjätestaukseen tai istuntotallenteisiin, joka kertoo miksi."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-content .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: var(--glass);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .article-content .comparison-table th,
+        .article-content .comparison-table td {
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .article-content .comparison-table th {
+            background: rgba(179, 59, 36, 0.12);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .article-content .table-scroll {
+            overflow-x: auto;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        // Default consent levels for GDPR compliance (Consent Mode v2)
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Mittaaminen • Konversio • Verkkosivut • 8 min luku</div>
+            <h1>Miten tiedät, että verkkosivu-uudistus <span class="gradient-text">onnistui?</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Uusi sivusto näyttää paremmalta, latautuu nopeammin ja tuntuu selkeämmältä. Se ei vielä kerro, tuoko se enemmän liidejä tai myyntiä. Onnistumisen ainoa luotettava mittari on liiketoimintamittarien vertailu ennen ja jälkeen julkaisun, ei se miltä sivu näyttää. Käydään läpi mitä mitata, milloin tulosta voi luottaa, ja mitkä sudenkuopat vievät harhaan.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkosivu-uudistuksen-mittaaminen.webp" alt="Siili vertailee suurennuslasilla kahta painettua tulosraporttia työpöydän ääressä - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#nayttaa-paremmalta">1. Miksi "näyttää paremmalta" ei ole mittari</a></li>
+                    <li><a href="#lahtotaso">2. Lähtötaso on mitattava ennen julkaisua, ei sen jälkeen</a></li>
+                    <li><a href="#liian-aikaisin">3. Miksi tulosta ei kannata tulkita ensimmäisellä viikolla</a></li>
+                    <li><a href="#mita-mitata">4. Mitä mitata: viisi mittaria uudistuksen jälkeen</a></li>
+                    <li><a href="#ab-vs-ennen-jalkeen">5. A/B-testi vai ennen/jälkeen-vertailu: kumpi sopii teille</a></li>
+                    <li><a href="#sudenkuopat">6. Sudenkuopat, jotka syövät konversion huomaamatta</a></li>
+                    <li><a href="#kysymykset">7. Seitsemän kysymystä, jotka kannattaa sopia ennen uudistusta</a></li>
+                    <li><a href="#ukk">8. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <p>Uudistusprojekti päättyy yleensä samalla tavalla: sivusto julkaistaan, se näyttää hyvältä, ja seuraavaksi kysytään palautetta, ei lukuja. "Näyttää tosi hyvältä" on aito ja arvokas reaktio, mutta se ei kerro, tuoko sivu enemmän yhteydenottoja kuin vanha versio teki. Tämä artikkeli käsittelee sitä, mitä tapahtuu julkaisun jälkeen: miten mitataan, onko uudistus oikeasti toiminut, ei sitä, miten uudistus suunnitellaan tai budjetoidaan, minkä kävimme läpi artikkelissa <a href="verkkosivu-uudistus-aikataulu-budjetti.html">Verkkosivu-uudistuksen aikataulu ja budjetti</a>.</p>
+
+            <h2 id="nayttaa-paremmalta">1. Miksi "näyttää paremmalta" ei ole mittari</h2>
+
+            <div class="highlight-box">
+                Uusi sivu on suunniteltu näyttämään paremmalta. Se ei ole sama asia kuin se, että se toimii paremmin.
+            </div>
+
+            <p>Ulkoasun parantuminen on helppo huomata heti: värit ovat harkitumpia, typografia selkeämpää, sivu latautuu nopeammin silmämääräisesti. Se, tuottaako sivu enemmän liidejä tai myyntiä, ei näy silmällä lainkaan. Kaksi sivua voi näyttää yhtä hyvältä ja silti erota konversiossa moninkertaisesti, koska konversio riippuu asioista, joita esteettinen arvio ei tavoita: mihin kohtaan lomake sijoittuu, kuinka monta askelta ostopäätökseen tarvitaan, ja mitä kävijä ajattelee juuri ennen klikkausta.</p>
+
+            <p>Tähän liittyy myös se, mitä ilman mittaamista ei koskaan saa selville: onko uudistus tuottanut sen hyödyn, jota sillä tavoiteltiin, ja onko jokin osa siitä vahingossa heikentänyt tulosta, jonka vanha sivu vielä tuotti. Nielsen Norman Groupin laajassa UX-mittareiden ja liiketoiminta-arvon yhteyttä käsittelevässä raportissa käydään läpi 44 tositapausta, joissa nimenomaan mitattu, ei arvioitu, muutos avainmittareissa on yhdistetty suoraan liiketoiminnan tulokseen.<sup>1</sup> Sama pätee toiseen suuntaan: ilman mittaamista et huomaa, jos uudistus vahingossa heikensi jotain, joka ennen toimi.</p>
+
+            <h2 id="lahtotaso">2. Lähtötaso on mitattava ennen julkaisua, ei sen jälkeen</h2>
+
+            <p>Yleisin virhe ei tapahdu julkaisun jälkeen, vaan ennen sitä: kukaan ei dokumentoinut, mitä vanha sivu teki. Ilman lähtötasoa ei ole mitään, mihin uutta lukua verrata, ja "tuntuu paremmalta kuin ennen" jää mielikuvaksi.</p>
+
+            <p>Nielsen Norman Group kuvaa tätä parannuspisteen (improvement score) laskutavalla: kun mittari on sellainen, jossa suurempi luku on parempi, kuten konversioprosentti, parannus lasketaan kaavalla uusi arvo jaettuna vanhalla arvolla, miinus yksi.<sup>2</sup> Jos konversio nousee kahdesta prosentista viiteen prosenttiin, parannuspiste on 150 prosenttia. Kaava on yksinkertainen, mutta se toimii vain, jos "vanha arvo" on olemassa dokumentoituna, ei muistinvaraisena arviona siitä miltä asiat tuntuivat ennen.</p>
+
+            <p>Käytännössä tämä tarkoittaa, että ennen julkaisua kirjataan ylös vähintään: konversioprosentti viimeisen 2 ja 3 kuukauden ajalta, orgaanisen liikenteen määrä ja tärkeimpien hakusanojen sijoitukset, sekä sivun latausnopeus keskeisillä sivuilla. Nämä luvut otetaan talteen ennen kuin uusi sivu julkaistaan, ei jälkikäteen muistista.</p>
+
+            <h2 id="liian-aikaisin">3. Miksi tulosta ei kannata tulkita ensimmäisellä viikolla</h2>
+
+            <p>Kaksi asiaa tekevät ensimmäisistä viikoista epäluotettavia tulkinnalle, ja molemmat vaikuttavat samaan suuntaan: houkutus tehdä johtopäätös liian aikaisin.</p>
+
+            <p>Ensimmäinen on hakukoneiden uudelleenindeksointi. Kun sivujen rakenne tai osoitteet muuttuvat, Google indeksoi sivuston uudelleen, mikä näkyy tilapäisenä liikenteen notkahduksena, joka ei kerro mitään uudistuksen onnistumisesta. Search Engine Landin kattavan sivustomigraatio-oppaan mukaan pienemmät uudistukset, joissa muutamia sivuja tai osoitteita muuttuu, palautuvat tyypillisesti kuukaudessa tai kolmessa, kun taas laajemmat muutokset, joissa koko osoiterakenne tai verkkotunnus vaihtuu, voivat viedä palautumiseen jopa vuoden.<sup>3</sup> Opas nostaa esiin Wise-nimeä käyttäneen TransferWisen uudistuksen: liikenne notkahti aluksi selvästi, mutta kasvoi lopulta moninkertaiseksi lähtötasoon verrattuna, kun palautuminen oli tehty oikein.</p>
+
+            <p>Toinen syy on tilastollinen: liian aikaisin tehty vertailu poimii herkästi kohinaa, ei todellista muutosta. Tästä on olemassa poikkeuksellisen konkreettinen mittaustulos. Optimizelyn ja Stanfordin tutkijoiden KDD 2017 -konferenssissa julkaisema tutkimus analysoi, mitä tapahtuu, kun A/B-testin tulosta tarkastellaan toistuvasti kesken testin ja testi lopetetaan heti, kun tulos näyttää tilastollisesti merkitsevältä. Tämä tapa, jota kutsutaan "kurkkimiseksi" (peeking), nosti virheellisten "voittajien" osuuden Optimizelyn omalla alustalla yli 20 prosenttiin ennen korjausta, vaikka jokainen yksittäinen testi oli teknisesti suunniteltu tavanomaisella 95 prosentin luottamustasolla. Korjatun, jatkuvaan seurantaan soveltuvan menetelmän käyttöönoton jälkeen virheellisten voittajien osuus laski alle viiteen prosenttiin.<sup>4</sup> Sama riski koskee ennen/jälkeen-vertailua yhtä lailla: mitä aikaisemmin katsot, sitä suurempi on riski, että tulkitset kohinan trendiksi.</p>
+
+            <p>Käytännön sääntö: pienemmässä uudistuksessa suunta alkaa näkyä noin kuukaudessa, mutta luotettava kuva vaatii yleensä 2 ja 3 kuukautta. Laajemmassa uudistuksessa, jossa osoitteet tai rakenne muuttuvat kokonaan, odotusaika on pidempi.</p>
+
+            <h2 id="mita-mitata">4. Mitä mitata: viisi mittaria uudistuksen jälkeen</h2>
+
+            <div class="table-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Mittari</th>
+                            <th>Mitä se kertoo</th>
+                            <th>Mistä se löytyy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Konversioprosentti</td>
+                            <td>Tekevätkö kävijät sen, mitä sivun on tarkoitus saada aikaan (yhteydenotto, tilaus, lataus).</td>
+                            <td>Analytiikkatyökalu, tavoiteseuranta.</td>
+                        </tr>
+                        <tr>
+                            <td>Orgaaninen liikenne ja sijoitukset</td>
+                            <td>Löytyykö sivu edelleen hausta yhtä hyvin kuin ennen uudistusta.</td>
+                            <td>Google Search Console.</td>
+                        </tr>
+                        <tr>
+                            <td>Sivun latausnopeus</td>
+                            <td>Vaikuttaa suoraan siihen, kuinka moni kävijä pysyy sivulla asti.</td>
+                            <td>PageSpeed Insights, Core Web Vitals -raportti.</td>
+                        </tr>
+                        <tr>
+                            <td>Poistumisprosentti avainsivuilla</td>
+                            <td>Löytääkö kävijä etsimänsä, vai poistuuko hän hämmentyneenä.</td>
+                            <td>Analytiikkatyökalu, sivukohtainen raportti.</td>
+                        </tr>
+                        <tr>
+                            <td>Laadullinen käyttäytyminen</td>
+                            <td>Miksi luvut muuttuivat, ei vain että ne muuttuivat.</td>
+                            <td>Istuntotallenteet, lämpökartat, lyhyt käyttäjätestaus.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Viimeinen rivi on se, jonka useimmat jättävät tekemättä, vaikka se selittää neljä ensimmäistä. Määrällinen data kertoo, että konversio laski kolme prosenttiyksikköä. Se ei kerro, että syynä oli lomake, joka siirtyi uudistuksessa vähemmän näkyvään paikkaan. Sivun latausnopeuden merkitys tähän ei ole pieni yksityiskohta: Googlen laajassa mobiilisivustojen nopeusanalyysissä sivun pomppausprosentti kasvoi 32 prosenttia, kun latausaika kasvoi yhdestä sekunnista kolmeen, ja 123 prosenttia, kun latausaika kasvoi yhdestä sekunnista kymmeneen.<sup>5</sup> Jos uudistus paransi ulkoasua mutta hidasti sivua, osa hyödystä katoaa juuri tähän.</p>
+
+            <h2 id="ab-vs-ennen-jalkeen">5. A/B-testi vai ennen/jälkeen-vertailu: kumpi sopii teille</h2>
+
+            <p>Useimmalle pk-yrityksen verkkosivu-uudistukselle ainoa realistinen vaihtoehto on ennen/jälkeen-vertailu, ei A/B-testi, koska koko sivusto vaihtuu kerralla eikä rinnalla aja vanhaa versiota. Tämä ei ole kompromissi, se on oikea työkalu tähän tilanteeseen, kunhan lähtötaso on dokumentoitu kohdan 2 mukaisesti.</p>
+
+            <p>A/B-testi sopii paremmin yksittäisen elementin, kuten lomakkeen sijainnin tai otsikon, jatkuvaan hienosäätöön julkaisun jälkeen. Jos tähän ryhdytään, kannattaa tuntea kaksi käytännön rajaa. CXL:n konversio-optimointioppaiden mukaan luotettavaan tulokseen tarvitaan tyypillisesti 250 ja 400 konversiota per testattava versio, 95 prosentin luottamustaso ja testin ajaminen kokonaisina viikkoina, vähintään kahdesta neljään viikkoon, jotta viikonpäivien ja maksupäivien vaihtelu ei vääristä tulosta.<sup>6</sup> Pk-yrityksen sivulla, jolla on vähän kävijöitä, tämä kynnys saavutetaan hitaasti, mikä tekee ennen/jälkeen-vertailusta usein realistisemman lähtökohdan kuin jatkuvan A/B-testauksen.</p>
+
+            <h2 id="sudenkuopat">6. Sudenkuopat, jotka syövät konversion huomaamatta</h2>
+
+            <p>Nämä eivät näy suunnitteluvaiheessa, koska ne liittyvät siihen, miten kävijä käyttäytyy, ei siihen miltä sivu näyttää:</p>
+
+            <ul>
+                <li><strong>Yhteydenottolomake siirtyy vähemmän näkyvään paikkaan.</strong> Uudessa asettelussa lomake voi hukkua muun sisällön sekaan, vaikka se olisi visuaalisesti kauniimpi kuin ennen.</li>
+                <li><strong>Vanhat, hyvin sijoittuneet sivut katoavat tai vaihtavat osoitetta ilman uudelleenohjausta.</strong> Tämä on suorin tapa menettää orgaanista liikennettä, ja se on myös helpoin välttää etukäteen tehdyllä osoitekartalla.</li>
+                <li><strong>Ostopolku pitenee askeleella, jota kukaan ei huomannut lisätä.</strong> Yksikin ylimääräinen klikkaus ennen yhteydenottoa laskee konversiota, vaikka jokainen yksittäinen sivu näyttäisi hyvältä.</li>
+                <li><strong>Uusi sivu latautuu hitaammin kuin vanha,</strong> koska kuvat tai lisäosat ovat raskaampia, minkä vaikutus näkyy suoraan kohdan 4 nopeusluvuissa. Kävimme sivun nopeuden mittarit yksityiskohtaisemmin läpi artikkelissa <a href="core-web-vitals-selitettyna.html">Core Web Vitals selitettynä</a>.</li>
+            </ul>
+
+            <p>Yhteinen piirre kaikissa neljässä: ne eivät näy katsomalla sivua, vaan ainoastaan mittaamalla, mitä kävijä sillä oikeasti tekee.</p>
+
+            <h2 id="kysymykset">7. Seitsemän kysymystä, jotka kannattaa sopia ennen uudistusta</h2>
+
+            <p>Nämä kannattaa käydä läpi toimittajan kanssa jo ennen kuin projekti alkaa, ei vasta julkaisun jälkeen. Osa niistä liittyy suoraan siihen, miten toimittaja valitaan ylipäätään, mitä käsittelimme artikkelissa <a href="verkkosivutoimiston-valinta.html">Verkkosivutoimiston valinta</a>.</p>
+
+            <ol>
+                <li>Mikä on nykyisen sivun konversioprosentti, ja kuka dokumentoi sen ennen julkaisua?</li>
+                <li>Onko vanhoille, hyvin sijoittuneille sivuille tehty osoitekartta ja uudelleenohjaukset?</li>
+                <li>Milloin tulosta tarkastellaan ensimmäisen kerran, ja miksi juuri silloin?</li>
+                <li>Kuka seuraa Google Search Consolea julkaisun jälkeisinä viikkoina?</li>
+                <li>Mitataanko uuden sivun latausnopeutta ennen julkaisua, vai selviää se vasta jälkikäteen?</li>
+                <li>Onko lomakkeen tai muun konversiopisteen sijainti testattu, vai perustuuko se pelkkään visuaaliseen harkintaan?</li>
+                <li>Mitä tehdään, jos luvut laskevat julkaisun jälkeen: onko palautussuunnitelma olemassa?</li>
+            </ol>
+
+            <h2 id="ukk">8. Usein kysyttyä</h2>
+
+            <p class="faq-question">Mistä tiedän, onnistuiko verkkosivu-uudistus?</p>
+            <p>Vertaamalla samoja liiketoimintamittareita ennen ja jälkeen julkaisun: konversioprosenttia, orgaanista liikennettä ja sivun latausnopeutta. Vertailu vaatii dokumentoidun lähtötason ennen uudistusta, koska ilman sitä ei ole mitään, mihin uutta lukua verrataan. Ulkoasun paraneminen ei yksin kerro, onko sivu alkanut tuottaa enemmän liidejä tai myyntiä.</p>
+
+            <p class="faq-question">Kuinka pian julkaisun jälkeen tuloksia voi tulkita?</p>
+            <p>Ei ensimmäisten päivien tai edes ensimmäisten kahden viikon aikana. Hakukoneiden uudelleenindeksointi ja kävijöiden tottuminen uuteen rakenteeseen vievät aikaa, ja liian aikainen johtopäätös tarttuu helposti kohinaan, ei todelliseen muutokseen. Pienemmissä uudistuksissa suunta näkyy noin kuukaudessa, isommissa, joissa osoitteet tai rakenne muuttuvat laajasti, luotettava kuva voi vaatia useita kuukausia.</p>
+
+            <p class="faq-question">Onko lyhytaikainen liikenteen lasku normaalia uudistuksen jälkeen?</p>
+            <p>Kyllä, tietyissä rajoissa. Kun sivujen osoitteet, rakenne tai sisältö muuttuvat laajasti, hakukoneiden on indeksoitava sivusto uudelleen, mikä näkyy tilapäisenä notkahduksena liikenteessä. Tämä on eri asia kuin jatkuva, korjaantumaton lasku, joka kertoo yleensä teknisestä ongelmasta, kuten puuttuvista uudelleenohjauksista.</p>
+
+            <p class="faq-question">Riittääkö Google Analytics tulosten mittaamiseen?</p>
+            <p>Perusmittareihin kyllä, mutta se ei yksin kerro miksi luku muuttui. Analytiikka näyttää, että konversio laski, muttei sitä, että lomake siirtyi vaikeammin löydettävään paikkaan. Määrällinen data kertoo mitä tapahtui, ja se kannattaa yhdistää laadulliseen tarkasteluun, kuten käyttäjätestaukseen tai istuntotallenteisiin, joka kertoo miksi.</p>
+
+            <div class="article-cta">
+                <h3>Tiedättekö, mitä vanha sivunne mittasi ennen uudistusta?</h3>
+                <p>Käymme kanssanne läpi, mitä kannattaa dokumentoida ennen julkaisua ja miten tulosta seurataan sen jälkeen, jotta uudistus on muutakin kuin arvaus.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/reports/ux-metrics-roi/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "UX Metrics & ROI"</a>, 44 tositapausta UX-mittareiden yhteydestä liiketoiminta-arvoon.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.nngroup.com/articles/improvement-score/" target="_blank" style="color: var(--accent); text-decoration: underline;">Nielsen Norman Group: "Improvement Score Due to a Redesign"</a>, laskukaava uudistuksen vaikutuksen mittaamiseen.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://searchengineland.com/guide/ultimate-site-migration-seo-checklist" target="_blank" style="color: var(--accent); text-decoration: underline;">Search Engine Land: "Ultimate Site Migration SEO Checklist"</a>, palautumisajat ja TransferWise/Wise-esimerkki.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://dl.acm.org/doi/10.1145/3097983.3097992" target="_blank" style="color: var(--accent); text-decoration: underline;">Johari, Koomen, Pekelis, Walsh: "Peeking at A/B Tests: Why It Matters, and What To Do About It"</a>, KDD 2017, Optimizely ja Stanford. Virheellisten testitulosten osuus yli 20 prosentista alle 5 prosenttiin korjatulla menetelmällä.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.thinkwithgoogle.com/intl/en-emea/marketing-strategies/app-and-mobile/find-out-how-you-stack-new-industry-benchmarks-mobile-page-speed/" target="_blank" style="color: var(--accent); text-decoration: underline;">Google / Think with Google: "New Industry Benchmarks for Mobile Page Speed"</a>, latausajan vaikutus pomppausprosenttiin.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://cxl.com/blog/statistical-power/" target="_blank" style="color: var(--accent); text-decoration: underline;">CXL: "Statistical Power: What It Is and How To Calculate It in A/B Testing"</a>, otoskoko ja luottamustaso käytännössä.</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

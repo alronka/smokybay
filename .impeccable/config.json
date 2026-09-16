@@ -68,6 +68,15 @@
         ],
         "createdAt": "2026-09-14T08:46:19.099Z",
         "reason": "established Valoverstas blog template: .highlight-box left accent border is site-wide across all posts (identical in tarvitseeko-yrityksesi-sivusto-llms-txt.html, verkkosivun-tekstien-kirjoittaminen-itse.html)"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "verkkosivu-uudistuksen-mittaaminen.html"
+        ],
+        "createdAt": "2026-09-16T10:41:11.893Z",
+        "reason": "matches existing site-wide .highlight-box template used in every other Valoverstas post (e.g. tekoaly-verkkosivujen-teossa.html) — established design system, not new"
       }
     ]
   }
