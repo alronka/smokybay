@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ymmärtääkö kone, mitä sivullasi lukee? | Valoverstas</title>
+    <meta name="description"
+        content="Rakenteinen data (schema.org) ei ole vain Googlen rich resulteja varten. Se on kieli, jolla myös tekoälyhaku lukee sivusi. Näin se toteutetaan käytännössä.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/schema-org-rakenteinen-data-geo-seo.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/schema-org-rakenteinen-data-geo-seo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/schema-org-rakenteinen-data-geo-seo.html">
+    <meta name="twitter:title" content="Ymmärtääkö kone, mitä sivullasi lukee? Rakenteinen data selitettynä">
+    <meta name="twitter:description" content="Rakenteinen data (schema.org) ei ole vain Googlen rich resulteja varten. Se on kieli, jolla myös tekoälyhaku lukee sivusi. Näin se toteutetaan käytännössä.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/schema-org-rakenteinen-data-geo-seo.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Ymmärtääkö kone, mitä sivullasi lukee? Rakenteinen data selitettynä",
+  "description": "Rakenteinen data (schema.org) ei ole vain Googlen rich resulteja varten. Se on kieli, jolla myös tekoälyhaku lukee sivusi. Näin se toteutetaan käytännössä.",
+  "image": "https://valoverstas.fi/img/schema-org-rakenteinen-data-geo-seo.webp",
+  "datePublished": "2026-09-20",
+  "author": {
+    "@id": "https://valoverstas.fi/#organization"
+  },
+  "publisher": {
+    "@id": "https://valoverstas.fi/#organization"
+  }
+}
+</script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Onko rakenteinen data (schema.org) sama asia kuin metatiedot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei täysin. Metatiedot, kuten meta description, kuvaavat sivua yleisellä tasolla hakutulosta varten. Rakenteinen data kuvaa yksittäisiä sisällön osia tarkasti schema.org-sanastolla merkittynä, jotta kone tietää täsmälleen, mikä osa sisällöstä on esimerkiksi hinta, päivämäärä tai kirjoittaja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kannattaako FAQ-skeemaa vielä käyttää, kun rich result poistui?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Skeeman käyttö ei riko mitään, ja jäsennelty kysymys-vastaus-muoto voi yhä auttaa tekoälyavusteisia lukijoita hahmottamaan sisällön rakenteen, vaikka Google ei enää näytä siitä omaa hakutuloslaatikkoa. Prioriteetti kannattaa kuitenkin siirtää skeematyyppeihin, jotka yhä tuottavat näkyvän hyödyn, kuten Article ja LocalBusiness."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Voiko rakenteisen datan lisätä itse ilman kehittäjää?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yksinkertaisimmat skeematyypit, kuten Organization, voi lisätä ilman ohjelmointitaustaa valmiiden generaattoreiden avulla. Monimutkaisemmat, sisältöön dynaamisesti sidotut skeemat, esimerkiksi automaattisesti päivittyvät Product-hinnat, vaativat yleensä kehittäjän, jotta merkintä pysyy synkassa näkyvän sisällön kanssa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Rankaiseeko Google väärästä rakenteisesta datasta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä, jos merkintä on harhaanjohtavaa tai kuvaa sisältöä, jota sivulla ei näy. Tämä voi johtaa manuaaliseen toimenpiteeseen ja rich resultin menettämiseen. Virheellinen mutta rehellinen merkintä, esimerkiksi tekninen virhe, yleensä vain jättää sivun rich result -oikeuden ulkopuolelle, kunnes se korjataan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vaikuttaako rakenteinen data suoraan hakusijoitukseen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei suoraan. Google on toistuvasti sanonut, ettei rakenteinen data ole suora sijoitustekijä. Sen vaikutus tulee epäsuorasti: paremman ymmärryksen kautta sisällöstä, korkeamman klikkausprosentin kautta rich resulteista, ja yhä useammin sen kautta, että tekoälyjärjestelmät käyttävät sitä yksiselitteisenä kontekstina."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-content .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: var(--glass);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .article-content .comparison-table th,
+        .article-content .comparison-table td {
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .article-content .comparison-table th {
+            background: rgba(179, 59, 36, 0.12);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .article-content .table-scroll {
+            overflow-x: auto;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Rakenteinen data • Schema.org • GEO ja SEO • 8 min luku</div>
+            <h1>Ymmärtääkö kone, mitä sivullasi <span class="gradient-text">lukee?</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Google osaa lukea sivusi tekstin, mutta se ei automaattisesti tiedä, mikä teksti on hinta, mikä on julkaisupäivä ja mikä on yrityksen nimi, ellei sitä kerrota erikseen. Rakenteinen data on tapa merkitä nämä asiat koneelle yksiselitteisesti, ja sama merkintä palvelee nyt sekä hakukoneita että tekoälyavusteisia vastausmoottoreita.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/schema-org-rakenteinen-data-geo-seo.webp" alt="Siili kiinnittää pieniä merkintälappuja verkkosivun asettelupiirrokseen työpöydällä - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#ei-vain-seo">1. Rakenteinen data ei ole enää pelkkää SEO:ta</a></li>
+                    <li><a href="#mita-schema-on">2. Mitä schema.org oikeasti on</a></li>
+                    <li><a href="#faq-kuolema">3. FAQ-skeeman kuolema on opetus koko schema-ajattelulle</a></li>
+                    <li><a href="#tutkimus">4. Mitä tutkimus sanoo: rakenne vaikuttaa siihen, siteeraako tekoäly sivuasi</a></li>
+                    <li><a href="#skeematyypit">5. Yleisimmät schema-tyypit pk-yrityksen sivulla</a></li>
+                    <li><a href="#toteutus">6. Näin rakenteinen data toteutetaan oikein</a></li>
+                    <li><a href="#aloitus">7. Mistä pk-yrityksen kannattaa aloittaa</a></li>
+                    <li><a href="#ukk">8. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <h2 id="ei-vain-seo">1. Rakenteinen data ei ole enää pelkkää SEO:ta</h2>
+
+            <p>Googlen oma dokumentaatio kertoo suoraan, miksi rakenteisella datalla on merkitystä: se auttaa Googlea ymmärtämään sivun sisällön ja näyttämään sen hausta rikkaampana tuloksena. Tämä ei ole pelkkää teoriaa. Google on julkaissut useita asiakastapauksia, joissa vaikutus on mitattu suoraan: Rotten Tomatoes sai 25 prosenttia korkeamman klikkausprosentin sivuilla, joilla oli rakenteinen data, verrattuna sivuihin ilman sitä. Food Network mittasi 35 prosentin kasvun kävijämäärässä muutettuaan 80 prosenttia sivuistaan. Nestlé raportoi 82 prosenttia korkeamman klikkausprosentin rich result -sivuilla verrattuna tavallisiin tuloksiin.<sup>1</sup></p>
+
+            <p>Tämä on kuitenkin vain puolet kuvasta vuonna 2026. Sama merkintä, joka kertoo Googlelle "tämä on artikkelin julkaisupäivä" tai "tämä on tuotteen hinta", antaa yksiselitteisen, koneluettavan kontekstin myös muille sivua lukeville järjestelmille, tekoälyavusteiset hakukoneet ja vastausmoottorit mukaan lukien. Tämä ei tarkoita, että schema-merkintä olisi oikotie tekoälyvastauksiin, siihen palataan kohdassa 4, mutta se on osoitus siitä, ettei rakenteinen data ole enää pelkkä yhden hakukoneominaisuuden temppu.</p>
+
+            <h2 id="mita-schema-on">2. Mitä schema.org oikeasti on</h2>
+
+            <p>Schema.org ei ole Googlen oma keksintö, vaikka sitä usein luullaan sellaiseksi. Google, Bing ja Yahoo perustivat sen yhdessä 2.6.2011 yhteiseksi sanastoksi, jolla mikä tahansa hakukone voi tulkita sivun sisältöä samalla tavalla. Yandex liittyi mukaan myöhemmin samana vuonna.<sup>2</sup> Sanasto on nykyään laaja: yli 800 tyyppiä ja yli 1500 ominaisuutta, jotka kattavat kaiken organisaatioista ja tuotteista tapahtumiin ja artikkeleihin.<sup>2</sup></p>
+
+            <p>Itse merkintätapa, jota Google suosittelee, on JSON-LD. Se on maailman web-konsortion (W3C) vahvistama standardi, ei minkään yksittäisen hakukoneyhtiön oma formaatti.<sup>3</sup> JSON-LD:n etu muihin tapoihin (microdata, RDFa) verrattuna on se, että merkintä on erillinen omassa koodilohkossaan sivun <code>&lt;head&gt;</code>-osiossa, eikä sekoitu näkyvään HTML-sisältöön. Tämä tekee siitä helpompaa toteuttaa ja ylläpitää ilman, että näkyvän sivun ulkoasu muuttuu.</p>
+
+            <h2 id="faq-kuolema">3. FAQ-skeeman kuolema on opetus koko schema-ajattelulle</h2>
+
+            <p>Tässä on hyvä konkreettinen esimerkki siitä, miksi rakenteista dataa ei kannata rakentaa yhden hakukoneominaisuuden varaan. Google rajoitti FAQ-skeeman rich resultit vuonna 2023 koskemaan vain tunnettuja viranomais- ja terveyssivustoja. 7.5.2026 Google lopetti FAQ rich resultit kokonaan Google-haussa: skeema itsessään on yhä validi eikä sen käyttö riko mitään, mutta se ei enää tuota näkyvää tulosta Google-hakuun.<sup>4</sup></p>
+
+            <div class="highlight-box">
+                <p style="margin-bottom: 0;">Rakenteisen datan arvo ei koskaan ollut yhdessä hakutuloksen visuaalisessa laatikossa. Se on siinä, että sivun sisältö on merkitty niin selkeästi, että mikä tahansa järjestelmä, joka lukee sivua, ymmärtää sen oikein.</p>
+            </div>
+
+            <p>Kun yksi kuluttaja (Googlen rich result -laatikko) lakkaa käyttämästä merkintää, itse merkintä ei muutu turhaksi, koska lukijoita on muitakin: tavallinen Google-haku käyttää edelleen samaa dataa sisällön ymmärtämiseen, ja tekoälyavusteiset vastausmoottorit käyttävät sitä yhä useammin yksiselitteisenä kontekstina. FAQ-skeeman kohtalo on siis muistutus, ei syy luopua rakenteisesta datasta.</p>
+
+            <h2 id="tutkimus">4. Mitä tutkimus sanoo: rakenne vaikuttaa siihen, siteeraako tekoäly sivuasi</h2>
+
+            <p>Tässä on syytä olla tarkka kahden eri asian välillä, koska ne menevät helposti sekaisin. Kävimme aiemmin läpi, <a href="sisallon-siteerattavuus-tekoalyhaussa.html">mistä ChatGPT, Perplexity ja Google AI poimivat lähteensä</a>, ja totesimme silloin Googlen oman ohjeistuksen mukaisesti, ettei tekoälyominaisuuksiin pääsemiseksi tarvita erillistä "tekoäly-schemaa": schema.org-merkintä ei ole edellytys eikä oikotie tekoälyvastauksiin. Tämä pätee edelleen, eikä tässä artikkelissa väitetä toisin.</p>
+
+            <p>Mistä tutkimus sen sijaan puhuu, on sisällön rakenne laajemmassa mielessä, eli miten teksti on jäsennelty otsikoin, kappalein ja korostuksin, ei schema.org-merkintä. Aggarwal ym. osoittivat alkuperäisessä GEO-tutkimuksessaan (Generative Engine Optimization), että selkeä, jäsennelty kirjoitustapa yhdistettynä tilastoihin ja lähdeviittauksiin voi nostaa sivuston näkyvyyttä generatiivisten hakukoneiden vastauksissa jopa 40 prosenttia.<sup>5</sup> Yu, Yang, Ding ja Sato mittasivat maaliskuussa 2026 julkaistussa tutkimuksessaan tarkemmin, miten dokumentin jäsentely, tiedon paloittelu ja visuaalinen korostus vaikuttavat siteerausasteeseen kuudessa eri generatiivisessa hakukoneessa: pelkkä rakenteen parantaminen nosti siteerausastetta 17,3 prosenttia ja koettua laatua 18,5 prosenttia.<sup>6</sup> Tutkimus on esijulkaisu, ei vielä lopullisesti vertaisarvioitu.</p>
+
+            <p>Johtopäätös: rakenteinen data (schema.org) ja rakenteinen sisältö (kirjoitustapa) ovat kaksi eri, toisiaan täydentävää asiaa. Kumpikaan ei korvaa toista, eikä kumpikaan yksin ole oikotie tekoälynäkyvyyteen. Schema.org antaa koneelle yksiselitteiset faktat, rakenteinen kirjoitustapa antaa koneelle ymmärrettävän kokonaisuuden. Molemmat kannattaa tehdä, mutta niitä ei pidä myydä samana asiana.</p>
+
+            <h2 id="skeematyypit">5. Yleisimmät schema-tyypit pk-yrityksen sivulla</h2>
+
+            <div class="table-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Skeema</th>
+                            <th>Mihin sopii</th>
+                            <th>Näkyykö enää rich resultissa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Organization</td>
+                            <td>Yrityksen perustiedot: nimi, logo, yhteystiedot, sosiaalisen median profiilit. Kannattaa olla jokaisella sivulla.</td>
+                            <td>Ei suoraan omana laatikkonaan, mutta vaikuttaa siihen, miten Google ja tekoäly tunnistavat yrityksen ylipäätään.</td>
+                        </tr>
+                        <tr>
+                            <td>Article / BlogPosting</td>
+                            <td>Blogitekstit ja uutiset: otsikko, julkaisupäivä, kirjoittaja, kuva.</td>
+                            <td>Kyllä, vaikuttaa muun muassa siihen, näkyykö artikkeli Google-uutisissa ja karusellinäkymissä.</td>
+                        </tr>
+                        <tr>
+                            <td>LocalBusiness</td>
+                            <td>Fyysinen toimipiste: osoite, aukioloajat, sijainti kartalla.</td>
+                            <td>Kyllä, näkyy paikallisissa hakutuloksissa ja Google-kartalla.</td>
+                        </tr>
+                        <tr>
+                            <td>Product / Offer</td>
+                            <td>Verkkokaupan tuotteet: hinta, saatavuus, arvostelut.</td>
+                            <td>Kyllä, yksi vahvimmista rich result -tyypeistä edelleen.</td>
+                        </tr>
+                        <tr>
+                            <td>BreadcrumbList</td>
+                            <td>Sivun sijainti sivuston rakenteessa (esim. Etusivu &gt; Blogi &gt; Artikkeli).</td>
+                            <td>Kyllä, näkyy hakutuloksen URL-rivin sijaan murupolkuna.</td>
+                        </tr>
+                        <tr>
+                            <td>FAQPage</td>
+                            <td>Kysymys-vastaus-sisältö.</td>
+                            <td>Ei enää (poistettu 7.5.2026), mutta yhä validi merkintä joka voi auttaa sisällön jäsentelyssä tekoälylukijoille.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="toteutus">6. Näin rakenteinen data toteutetaan oikein</h2>
+
+            <p>Googlen omat yleiset ohjeet rakenteiselle datalle ovat tiukemmat kuin moni ajattelee, ja niiden rikkominen voi johtaa manuaaliseen toimenpiteeseen.<sup>7</sup> Kolme sääntöä kannattaa pitää mielessä ennen kuin merkintää lähtee rakentamaan:</p>
+
+            <ol>
+                <li><strong>Merkitse vain sitä, mikä näkyy sivulla.</strong> Jos JSON-LD kuvaa esimerkiksi arvostelun tai hinnan, saman tiedon pitää löytyä myös sivun näkyvästä sisällöstä. Merkintä, joka väittää jotain mitä käyttäjä ei näe, on Googlen sääntöjen vastaista.</li>
+                <li><strong>Käytä JSON-LD:tä, älä microdataa tai RDFa:ta.</strong> Google suosittelee sitä nimenomaan siksi, että se pysyy omassa koodilohkossaan eikä sotke näkyvää HTML:ää, mikä tekee ylläpidosta huomattavasti yksinkertaisempaa.</li>
+                <li><strong>Testaa aina ennen julkaisua.</strong> Googlen Rich Results Test -työkalu näyttää, tunnistaako Google merkinnän ja mihin rich result -tyyppeihin sivu on oikeutettu juuri nyt, koska oikeutus muuttuu, kuten FAQ-esimerkki osoitti.</li>
+            </ol>
+
+            <p>Käytännössä tämä tarkoittaa, että jokaiselle sivutyypille rakennetaan oma, sisältöä vastaava JSON-LD-lohko: etusivulle ja jokaiselle sivulle Organization, blogiartikkeleille Article, tuotesivuille Product. Näitä ei kirjoiteta käsin kertaluvulla, vaan ne pidetään ajan tasalla samalla, kun sisältöä päivitetään.</p>
+
+            <h2 id="aloitus">7. Mistä pk-yrityksen kannattaa aloittaa</h2>
+
+            <p>Rakenteisen datan rakentamista ei kannata aloittaa kaikista mahdollisista skeematyypeistä kerralla. Järkevä järjestys useimmalle pk-yritykselle:</p>
+
+            <ol>
+                <li>Lisää Organization-skeema jokaiselle sivulle. Tämä on pienin yksittäinen investointi ja hyödyttää sekä hakukoneita että tekoälyjärjestelmiä siinä, että ne tunnistavat yrityksen oikein.</li>
+                <li>Lisää Article-skeema jokaiseen blogitekstiin, jos sivustolla on blogi: kone tunnistaa julkaisupäivän ja kirjoittajan sen sijaan, että arvaa ne tekstistä.</li>
+                <li>Lisää LocalBusiness, jos yrityksellä on fyysinen toimipiste, ja Product/Offer, jos sivustolla myydään suoraan.</li>
+                <li>Testaa jokainen sivutyyppi Rich Results Testillä ennen julkaisua ja aina, kun sisältöä muutetaan merkittävästi.</li>
+            </ol>
+
+            <p>Tämä liittyy suoraan laajempaan kysymykseen siitä, <a href="geo-optimointi-verkkosivu-uudistus.html">miten verkkosivu-uudistus kannattaa tehdä GEO huomioiden</a>: rakenteinen data on yksi konkreettisimmista, mitattavimmista asioista, jotka voidaan tehdä kerralla oikein uudistuksen yhteydessä sen sijaan, että se jää myöhemmin korjattavaksi.</p>
+
+            <h2 id="ukk">8. Usein kysyttyä</h2>
+
+            <p class="faq-question">Onko rakenteinen data (schema.org) sama asia kuin metatiedot?</p>
+            <p>Ei täysin. Metatiedot, kuten meta description, kuvaavat sivua yleisellä tasolla hakutulosta varten. Rakenteinen data kuvaa yksittäisiä sisällön osia tarkasti schema.org-sanastolla merkittynä, jotta kone tietää täsmälleen, mikä osa sisällöstä on esimerkiksi hinta, päivämäärä tai kirjoittaja.</p>
+
+            <p class="faq-question">Kannattaako FAQ-skeemaa vielä käyttää, kun rich result poistui?</p>
+            <p>Skeeman käyttö ei riko mitään, ja jäsennelty kysymys-vastaus-muoto voi yhä auttaa tekoälyavusteisia lukijoita hahmottamaan sisällön rakenteen, vaikka Google ei enää näytä siitä omaa hakutuloslaatikkoa. Prioriteetti kannattaa kuitenkin siirtää skeematyyppeihin, jotka yhä tuottavat näkyvän hyödyn, kuten Article ja LocalBusiness.</p>
+
+            <p class="faq-question">Voiko rakenteisen datan lisätä itse ilman kehittäjää?</p>
+            <p>Yksinkertaisimmat skeematyypit, kuten Organization, voi lisätä ilman ohjelmointitaustaa valmiiden generaattoreiden avulla. Monimutkaisemmat, sisältöön dynaamisesti sidotut skeemat, esimerkiksi automaattisesti päivittyvät Product-hinnat, vaativat yleensä kehittäjän, jotta merkintä pysyy synkassa näkyvän sisällön kanssa.</p>
+
+            <p class="faq-question">Rankaiseeko Google väärästä rakenteisesta datasta?</p>
+            <p>Kyllä, jos merkintä on harhaanjohtavaa tai kuvaa sisältöä, jota sivulla ei näy. Tämä voi johtaa manuaaliseen toimenpiteeseen ja rich resultin menettämiseen. Virheellinen mutta rehellinen merkintä, esimerkiksi tekninen virhe, yleensä vain jättää sivun rich result -oikeuden ulkopuolelle, kunnes se korjataan.</p>
+
+            <p class="faq-question">Vaikuttaako rakenteinen data suoraan hakusijoitukseen?</p>
+            <p>Ei suoraan. Google on toistuvasti sanonut, ettei rakenteinen data ole suora sijoitustekijä. Sen vaikutus tulee epäsuorasti: paremman ymmärryksen kautta sisällöstä, korkeamman klikkausprosentin kautta rich resulteista, ja yhä useammin sen kautta, että tekoälyjärjestelmät käyttävät sitä yksiselitteisenä kontekstina.</p>
+
+            <div class="article-cta">
+                <h3>Onko sivustollasi rakenteinen data kunnossa?</h3>
+                <p>Käymme läpi, mitä schema-merkintää sivustollasi jo on, mikä puuttuu, ja mikä kannattaisi tehdä ensin. Ilmainen, ei sitoumuksia.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" style="color: var(--accent); text-decoration: underline;">Google Search Central: "Introduction to structured data markup in Google Search"</a>, sisältää Rotten Tomatoes-, Food Network-, Rakuten- ja Nestlé-tapaustutkimukset.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://schema.org/docs/about.html" target="_blank" style="color: var(--accent); text-decoration: underline;">Schema.org: "About Schema.org"</a>, perustettu 2.6.2011 Googlen, Bingin ja Yahoon toimesta, Yandex liittyi mukaan myöhemmin samana vuonna.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.w3.org/news/2020/json-ld-1-1-specifications-are-w3c-recommendations/" target="_blank" style="color: var(--accent); text-decoration: underline;">W3C: "JSON-LD 1.1 Specifications are W3C Recommendations"</a> (2020).</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.searchenginejournal.com/google-drops-faq-rich-results-from-search/574429/" target="_blank" style="color: var(--accent); text-decoration: underline;">Search Engine Journal: "Google Drops FAQ Rich Results From Search"</a>, FAQ rich resultit poistuivat Google-hausta 7.5.2026.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://arxiv.org/abs/2311.09735" target="_blank" style="color: var(--accent); text-decoration: underline;">Aggarwal, Murahari, Rajpurohit, Kalyan, Narasimhan, Deshpande: "GEO: Generative Engine Optimization"</a>, arXiv:2311.09735.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://arxiv.org/abs/2603.29979" target="_blank" style="color: var(--accent); text-decoration: underline;">Yu, Yang, Ding, Sato: "Structural Feature Engineering for Generative Engine Optimization: How Content Structure Shapes Citation Behavior"</a>, arXiv:2603.29979 (31.3.2026). Esijulkaisu.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies" target="_blank" style="color: var(--accent); text-decoration: underline;">Google Search Central: "General Structured Data Guidelines"</a>.</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
