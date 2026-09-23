@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Näkyykö yrityksesi tekoälyvastauksissa? | Valoverstas</title>
+    <meta name="description"
+        content="AI-näkyvyys on eri mittari kuin Google-sijoitus. Näin PK-yritys tarkistaa ja seuraa, mainitseeko ChatGPT, Perplexity tai Gemini sitä vastauksissaan.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/nakyyko-yrityksesi-tekoalyvastauksissa.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/nakyyko-yrityksesi-tekoalyvastauksissa.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/nakyyko-yrityksesi-tekoalyvastauksissa.html">
+    <meta name="twitter:title" content="Näkyykö yrityksesi tekoälyvastauksissa?">
+    <meta name="twitter:description" content="AI-näkyvyys on eri mittari kuin Google-sijoitus. Näin PK-yritys tarkistaa ja seuraa, mainitseeko ChatGPT, Perplexity tai Gemini sitä vastauksissaan.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/nakyyko-yrityksesi-tekoalyvastauksissa.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Näkyykö yrityksesi tekoälyvastauksissa?",
+  "description": "AI-näkyvyys on eri mittari kuin Google-sijoitus. Näin PK-yritys tarkistaa ja seuraa, mainitseeko ChatGPT, Perplexity tai Gemini sitä vastauksissaan.",
+  "image": "https://valoverstas.fi/img/nakyyko-yrityksesi-tekoalyvastauksissa.webp",
+  "datePublished": "2026-09-23",
+  "author": {
+    "@id": "https://valoverstas.fi/#organization"
+  },
+  "publisher": {
+    "@id": "https://valoverstas.fi/#organization"
+  }
+}
+</script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Mitä eroa on Google-sijoituksella ja AI-näkyvyydellä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google-sijoitus kertoo, missä kohtaa hakutulossivua sivusi näkyy tietylle hakusanalle. AI-näkyvyys kertoo, mainitseeko tai suositteleeko tekoälyvastausmoottori, kuten ChatGPT tai Perplexity, yritystäsi, kun käyttäjä kysyy siihen liittyvän kysymyksen. Sama sivusto voi sijoittua Googlessa hyvin mutta jäädä silti kokonaan pois tekoälyn vastauksesta, koska kyse on kahdesta eri mittarista."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Voiko AI-näkyvyyttä seurata ilmaiseksi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä, pienessä mittakaavassa. Kirjoita 5-10 aitoa ostajan kysymystä ja kysy ne suoraan ChatGPT:ltä, Perplexitylta ja Geminiltä muutaman viikon välein, kirjaten mainitaanko yritys, missä kohtaa vastausta ja mitä lähteitä malli siteeraa. Tämä ei anna tilastollisesti kattavaa kuvaa, mutta paljastaa nopeasti, onko yritys ylipäätään näkyvissä."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuinka usein AI-näkyvyyttä kannattaa tarkistaa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kerran kuukaudessa riittää useimmalle pk-yritykselle, koska tekoälymallien vastaukset ja niiden käyttämät lähteet muuttuvat mallipäivitysten myötä eivätkä ole vakaita viikkotasolla. Tiheämpi seuranta kannattaa vasta, kun yritys on tehnyt konkreettisia muutoksia sisältöön ja haluaa nähdä, vaikuttivatko ne."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Miksi yritystäni ei mainita, vaikka sivusto on hyvä?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Googlen oman ohjeistuksen mukaan tekoälyominaisuudet käyttävät samaa hakemistoa ja samoja sijoitusjärjestelmiä kuin tavallinen haku, joten pohja on sama. Yleisimmät syyt puuttuvaan mainintaan ovat, ettei sivustolla ole riittävän suoraa, lainattavaa vastausta kysymykseen, ettei sisältö ole tarpeeksi ajantasaista tai rakenteista, tai ettei sivu yksinkertaisesti nouse tarpeeksi korkealle tavallisessa haussa täyttääkseen AI Overviewsin teknisiä vaatimuksia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kannattaako pienen yrityksen ostaa AI-seurantatyökalu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei yleensä heti. Manuaalinen pistotesti riittää sen selvittämiseen, onko yritys ylipäätään näkyvissä ja mistä isoimmat aukot löytyvät. Maksullinen seurantatyökalu alkaa kannattaa vasta, kun yritys seuraa kymmeniä kysymyksiä säännöllisesti useilla alustoilla, tai kun tekoälynäkyvyydestä on tullut mitattava osa markkinoinnin tuloksia."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-content .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: var(--glass);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .article-content .comparison-table th,
+        .article-content .comparison-table td {
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .article-content .comparison-table th {
+            background: rgba(179, 59, 36, 0.12);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .article-content .table-scroll {
+            overflow-x: auto;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">AI-näkyvyys • GEO • Seuranta • 8 min luku</div>
+            <h1>Näkyykö yrityksesi <span class="gradient-text">tekoälyvastauksissa?</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">Sivusto voi sijoittua Googlessa hyvin ja jäädä silti kokonaan pois, kun asiakas kysyy saman asian ChatGPT:ltä tai Perplexitylta. AI-näkyvyys on eri mittari kuin hakusijoitus, eikä sitä näe kertaakaan, ellei sitä erikseen tarkista. Näin pk-yritys selvittää tilanteensa tänään, ja mitä sen jälkeen kannattaa seurata.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/nakyyko-yrityksesi-tekoalyvastauksissa.webp" alt="Siili suurennuslasin kanssa ilmoitustaulun edessä, johon on kiinnitetty merkintälappuja ja lankaa - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#eri-mittari">1. Miksi AI-näkyvyys on eri mittari kuin Google-sijoitus</a></li>
+                    <li><a href="#pistotesti">2. Yksinkertainen pistotesti: näin tarkistat tilanteen tänään</a></li>
+                    <li><a href="#tutkimus">3. Mitä 126 miljoonan kehotteen tutkimus paljasti</a></li>
+                    <li><a href="#nelja-asiaa">4. Neljä asiaa, joita kannattaa seurata</a></li>
+                    <li><a href="#tyokalu-vai-ei">5. Manuaalinen pistotesti vai maksullinen seurantatyökalu</a></li>
+                    <li><a href="#mita-tehda">6. Mitä tehdä, jos yritystäsi ei mainita</a></li>
+                    <li><a href="#aloitusohje">7. Käytännön aloitusohje</a></li>
+                    <li><a href="#ukk">8. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <h2 id="eri-mittari">1. Miksi AI-näkyvyys on eri mittari kuin Google-sijoitus</h2>
+
+            <p>Gartner ennusti helmikuussa 2024, että perinteisen hakukoneen käyttömäärä laskee 25 prosenttia vuoteen 2026 mennessä, kun tekoälychatbotit ja muut virtuaaliagentit korvaavat osan hauista.<sup>1</sup> Ennuste on syytä lukea rehellisesti: Search Engine Landin huhtikuun 2026 analyysi totesi, ettei ennuste toteutunut kirjaimellisesti, sillä Google hallitsee yhä yli 90 prosenttia hakumarkkinasta eikä perinteinen hakuvolyymi ole romahtanut.<sup>2</sup> Se, mikä ennusteesta osui oikeaan, on suunta: yhä useampi kysymys, joka ennen olisi kirjoitettu Googleen, esitetään nyt suoraan ChatGPT:lle, Perplexitylle tai Geminille, ja se vastaus voi olla ainoa, jonka käyttäjä koskaan näkee.</p>
+
+            <p>Tämä tekee AI-näkyvyydestä oman, erillisen mittarinsa. Google-sijoitus kertoo, missä kohtaa hakutulossivua sivusi näkyy. AI-näkyvyys kertoo, mainitseeko tai suositteleeko tekoälyvastausmoottori yritystäsi silloin, kun käyttäjä kysyy siihen liittyvän kysymyksen suoraan. Näiden kahden välillä ei ole automaattista yhteyttä: sivusto voi olla Googlessa ensimmäisellä sivulla ja silti jäädä täysin pois tekoälyn vastauksesta, koska kukaan ei ole koskaan tarkistanut asiaa toisinpäin.</p>
+
+            <h2 id="pistotesti">2. Yksinkertainen pistotesti: näin tarkistat tilanteen tänään</h2>
+
+            <div class="highlight-box">
+                <p style="margin-bottom: 0;">Et tiedä, näkyykö yrityksesi tekoälyvastauksissa, ennen kuin kysyt sitä itse samalla tavalla kuin asiakkaasi kysyisi.</p>
+            </div>
+
+            <p>Menetelmä ei vaadi työkaluja eikä maksullista tilausta, ainoastaan kymmenen minuuttia ja rehellisiä kysymyksiä. Kirjoita 5-10 aitoa kysymystä, jotka asiakas voisi kysyä ennen ostopäätöstä, esimerkiksi "kuka tekee verkkosivuja Jyväskylässä" tai "mikä on hyvä yritys X-alalla Suomessa". Esitä sama kysymys ChatGPT:lle, Perplexitylle ja Geminille, ja kirjaa jokaisesta vastauksesta kolme asiaa: mainitaanko yritys lainkaan, missä kohtaa vastausta se mainitaan, ja siteeraako malli yritystä lähteenä linkin kanssa vai mainitseeko se nimen ilman lähdeviittausta.</p>
+
+            <p>Toista sama kysymyssarja muutaman kerran, koska vastaukset vaihtelevat kysymyskerrasta toiseen eivätkä ole yhtä vakaita kuin hakutulossijoitus. Yhden kysymyskerran tulos ei kerro luotettavaa kuvaa, mutta toistettuna muutaman viikon välein se paljastaa nopeasti, onko yritys ylipäätään näkyvissä ja mihin suuntaan tilanne on menossa.</p>
+
+            <h2 id="tutkimus">3. Mitä 126 miljoonan kehotteen tutkimus paljasti</h2>
+
+            <p>Semrush julkaisi 2026 AI Visibility Index -tutkimuksensa laajennetun version, joka analysoi 126 miljoonaa yhdysvaltalaista tekoälyhakukehotetta tammi-huhtikuulta 2026 ChatGPT:ssä, Geminissä, Google AI Modessa ja AI Overviewsissa.<sup>3</sup> Tulokset osoittavat, ettei mainitsemis- ja siteerauskäytäntö ole yhtenäistä eri alustojen välillä: ChatGPT siteeraa keskimäärin 15 lähdettä vastausta kohden, kun taas Gemini siteeraa keskimäärin vain kolme. Geminillä mainitun brändin ja siteeratun lähteen päällekkäisyys voi olla niinkin alhainen kuin 30 prosenttia, mikä tarkoittaa, että yritys voidaan mainita nimeltä ilman, että sitä koskaan siteerataan lähteenä linkin kanssa.</p>
+
+            <p>Vielä osuvampi luku koko tämän artikkelin aiheeseen on tämä: tutkimuksen mukaan 45 prosenttia markkinointijohtajista ei pysty mittaamaan tarkasti, näkyykö heidän brändinsä tekoälyn tuottamissa vastauksissa, ja vain 9 prosentilla on työkalut seurata kaikkia olennaisia mittareita kaikilla alustoilla.<sup>3</sup> Tämä ei ole ongelma vain suurille yrityksille. Pk-yrityksellä on tässä itse asiassa etu: kun kilpailijakaan ei todennäköisesti seuraa tilannetta, jo pelkkä säännöllinen pistotesti riittää tuomaan tietoa, jota suurin osa alalla ei vielä ole.</p>
+
+            <p>Samassa tutkimuksessa vain 36 brändiä ("Universal 36") säilytti näkyvyytensä kaikilla seuratuilla alustoilla koko tutkimusjakson ajan, ja yritykset, jotka yhdistivät perinteisen SEO:n ja tekoälynäkyvyyden yhdeksi strategiaksi, raportoivat 81-prosenttisesti lisääntynyttä liikennettä tai liidejä tekoälyalustoilta, kun erikseen johdetuilla strategioilla luku oli vain 36 prosenttia.<sup>3</sup></p>
+
+            <h2 id="nelja-asiaa">4. Neljä asiaa, joita kannattaa seurata</h2>
+
+            <div class="table-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Mitä seurataan</th>
+                            <th>Miksi se on tärkeää</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maininta</td>
+                            <td>Mainitaanko yritys vastauksessa lainkaan, kun kysytään aiheeseen liittyvä kysymys. Tämä on perustaso, jota ilman muuta ei kannata edes mitata.</td>
+                        </tr>
+                        <tr>
+                            <td>Sijainti vastauksessa</td>
+                            <td>Mainitaanko yritys ensimmäisenä vaihtoehtona vai listan lopussa yhtenä monista. Sijainti vaikuttaa siihen, kuinka moni käyttäjä ehtii nähdä maininnan lainkaan.</td>
+                        </tr>
+                        <tr>
+                            <td>Lähdeviittaus</td>
+                            <td>Siteeraako malli yritystä linkin kanssa, vai mainitseeko se vain nimen ilman lähdettä. Kuten Semrushin tutkimus osoitti, näiden kahden ero voi olla suuri, ja vain lähdeviittaus tuo sivustolle liikennettä.</td>
+                        </tr>
+                        <tr>
+                            <td>Kilpailijat vastauksessa</td>
+                            <td>Ketkä muut mainitaan samassa vastauksessa. Tämä paljastaa, keitä tekoäly pitää todellisina vaihtoehtoina, mikä ei aina vastaa sitä, keitä yritys itse pitää kilpailijoinaan.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 id="tyokalu-vai-ei">5. Manuaalinen pistotesti vai maksullinen seurantatyökalu</h2>
+
+            <p>Useimman pk-yrityksen ei kannata hankkia maksullista seurantatyökalua ensimmäisenä askeleena. Manuaalinen pistotesti riittää selvittämään, onko yritys ylipäätään näkyvissä ja mistä isoimmat aukot löytyvät, eikä se maksa mitään. Maksullinen työkalu alkaa olla perusteltu vasta, kun seurattavia kysymyksiä on kymmeniä, alustoja useita, ja seuranta halutaan toistaa automaattisesti viikoittain, sen sijaan että joku muistaa tehdä sen käsin.</p>
+
+            <p>Kynnys ostaa työkalu kannattaa asettaa konkreettisen tarpeen mukaan: kun pistotestillä kerätty tieto alkaa olla osa säännöllistä markkinointiraportointia, tai kun yritys tekee muutoksia sisältöön nimenomaan AI-näkyvyyden parantamiseksi ja tarvitsee luotettavamman tavan mitata, vaikuttivatko muutokset. Ennen sitä pistetestillä pääsee pitkälle.</p>
+
+            <h2 id="mita-tehda">6. Mitä tehdä, jos yritystäsi ei mainita</h2>
+
+            <p>Googlen oma dokumentaatio on tässä yksiselitteinen: tekoälyominaisuuksilla, kuten AI Overviewsilla, ei ole erillistä hakemistoa eikä erillistä sijoitusalgoritmia, vaan ne käyttävät samaa hakemistoa ja samoja sijoitusjärjestelmiä kuin tavallinen Google-haku.<sup>4</sup> Tämä tarkoittaa, ettei tekoälynäkyvyyttä rakenneta erillisellä temppulistalla, vaan samalla perustalla, jolla sivusto muutenkin pärjää haussa.</p>
+
+            <p>Kolme konkreettisinta korjattavaa asiaa useimmalla pk-yrityksen sivustolla ovat samat, jotka olemme käsitelleet aiemmin: onko sisältö kirjoitettu niin, että se antaa suoran, lainattavan vastauksen kysymykseen (kävimme läpi, <a href="sisallon-siteerattavuus-tekoalyhaussa.html">mistä ChatGPT, Perplexity ja Google AI poimivat lähteensä</a>), onko sivuston tekninen puoli sellainen, että tekoälyjärjestelmät ylipäätään pääsevät lukemaan sen esteettä (katso <a href="tarvitseeko-yrityksesi-sivusto-llms-txt.html">tarvitseeko sivustosi llms.txt-tiedoston</a>), ja onko sisältö merkitty niin, että kone tunnistaa yksiselitteisesti, mikä osa siitä on mitä (kävimme läpi <a href="schema-org-rakenteinen-data-geo-seo.html">rakenteisen datan toteuttamisen käytännössä</a>). Näistä kannattaa aloittaa ennen kuin panostaa seurantaan enempää.</p>
+
+            <h2 id="aloitusohje">7. Käytännön aloitusohje</h2>
+
+            <ol>
+                <li>Kirjoita 5-10 aitoa ostajan kysymystä, joita asiakas voisi kysyä ennen ostopäätöstä.</li>
+                <li>Esitä ne ChatGPT:lle, Perplexitylle ja Geminille, ja kirjaa jokaisesta vastauksesta maininta, sijainti ja lähdeviittaus.</li>
+                <li>Toista sama sarja muutaman viikon kuluttua ja vertaa tulosta ensimmäiseen kierrokseen.</li>
+                <li>Jos yritystä ei mainita lainkaan, käy läpi sisällön siteerattavuus, tekninen saavutettavuus ja rakenteinen data ennen mitään muuta.</li>
+                <li>Harkitse maksullista seurantatyökalua vasta, kun seurattavia kysymyksiä ja alustoja on niin paljon, ettei käsin toistaminen ole enää järkevää.</li>
+            </ol>
+
+            <h2 id="ukk">8. Usein kysyttyä</h2>
+
+            <p class="faq-question">Mitä eroa on Google-sijoituksella ja AI-näkyvyydellä?</p>
+            <p>Google-sijoitus kertoo, missä kohtaa hakutulossivua sivusi näkyy tietylle hakusanalle. AI-näkyvyys kertoo, mainitseeko tai suositteleeko tekoälyvastausmoottori, kuten ChatGPT tai Perplexity, yritystäsi, kun käyttäjä kysyy siihen liittyvän kysymyksen. Sama sivusto voi sijoittua Googlessa hyvin mutta jäädä silti kokonaan pois tekoälyn vastauksesta, koska kyse on kahdesta eri mittarista.</p>
+
+            <p class="faq-question">Voiko AI-näkyvyyttä seurata ilmaiseksi?</p>
+            <p>Kyllä, pienessä mittakaavassa. Kirjoita 5-10 aitoa ostajan kysymystä ja kysy ne suoraan ChatGPT:ltä, Perplexitylta ja Geminiltä muutaman viikon välein, kirjaten mainitaanko yritys, missä kohtaa vastausta ja mitä lähteitä malli siteeraa. Tämä ei anna tilastollisesti kattavaa kuvaa, mutta paljastaa nopeasti, onko yritys ylipäätään näkyvissä.</p>
+
+            <p class="faq-question">Kuinka usein AI-näkyvyyttä kannattaa tarkistaa?</p>
+            <p>Kerran kuukaudessa riittää useimmalle pk-yritykselle, koska tekoälymallien vastaukset ja niiden käyttämät lähteet muuttuvat mallipäivitysten myötä eivätkä ole vakaita viikkotasolla. Tiheämpi seuranta kannattaa vasta, kun yritys on tehnyt konkreettisia muutoksia sisältöön ja haluaa nähdä, vaikuttivatko ne.</p>
+
+            <p class="faq-question">Miksi yritystäni ei mainita, vaikka sivusto on hyvä?</p>
+            <p>Googlen oman ohjeistuksen mukaan tekoälyominaisuudet käyttävät samaa hakemistoa ja samoja sijoitusjärjestelmiä kuin tavallinen haku, joten pohja on sama. Yleisimmät syyt puuttuvaan mainintaan ovat, ettei sivustolla ole riittävän suoraa, lainattavaa vastausta kysymykseen, ettei sisältö ole tarpeeksi ajantasaista tai rakenteista, tai ettei sivu yksinkertaisesti nouse tarpeeksi korkealle tavallisessa haussa täyttääkseen AI Overviewsin teknisiä vaatimuksia.</p>
+
+            <p class="faq-question">Kannattaako pienen yrityksen ostaa AI-seurantatyökalu?</p>
+            <p>Ei yleensä heti. Manuaalinen pistotesti riittää sen selvittämiseen, onko yritys ylipäätään näkyvissä ja mistä isoimmat aukot löytyvät. Maksullinen seurantatyökalu alkaa kannattaa vasta, kun yritys seuraa kymmeniä kysymyksiä säännöllisesti useilla alustoilla, tai kun tekoälynäkyvyydestä on tullut mitattava osa markkinoinnin tuloksia.</p>
+
+            <div class="article-cta">
+                <h3>Tiedätkö, näkyykö yrityksesi tekoälyvastauksissa juuri nyt?</h3>
+                <p>Teemme pistotestin sivustollesi ja käymme läpi, mistä isoimmat aukot löytyvät. Ilmainen, ei sitoumuksia.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://www.gartner.com/en/newsroom/press-releases/2024-02-19-gartner-predicts-search-engine-volume-will-drop-25-percent-by-2026-due-to-ai-chatbots-and-other-virtual-agents" target="_blank" style="color: var(--accent); text-decoration: underline;">Gartner: "Gartner Predicts Search Engine Volume Will Drop 25% by 2026, Due to AI Chatbots and Other Virtual Agents"</a> (19.2.2024).</li>
+            <li style="margin-bottom: 8px;">• <a href="https://searchengineland.com/search-engine-traffic-2026-prediction-437650" target="_blank" style="color: var(--accent); text-decoration: underline;">Search Engine Land: "Will traffic from search engines fall 25% by 2026?"</a>, huhtikuu 2026 -tilannekatsaus Gartnerin ennusteeseen.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.semrush.com/news/463141-semrush-releases-expanded-2026-ai-visibility-index-analyzing-126-million-ai-search-prompts/" target="_blank" style="color: var(--accent); text-decoration: underline;">Semrush: "Semrush Releases Expanded 2026 AI Visibility Index, Analyzing 126 Million AI Search Prompts"</a>.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" style="color: var(--accent); text-decoration: underline;">Google Search Central: "AI features and your website"</a>.</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
