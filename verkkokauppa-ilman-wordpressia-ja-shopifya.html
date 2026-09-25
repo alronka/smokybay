@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <script>
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkokauppa ilman WordPressia tai Shopifya: näin se rakennetaan | Valoverstas</title>
+    <meta name="description"
+        content="WordPress ja Shopify eivät ole ainoat vaihtoehdot. Näin moderni, tekoälyavusteinen verkkokauppa rakennetaan ilman niitä vuonna 2026.">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ink-world.css">
+    <link rel=icon type=image/png sizes=32x32 href=img/favicon-32x32.png>
+    <link rel=apple-touch-icon sizes=180x180 href=img/favicon-180x180.png>
+
+    <link rel="canonical" href="https://valoverstas.fi/verkkokauppa-ilman-wordpressia-ja-shopifya.html">
+
+    <meta property="og:image" content="https://valoverstas.fi/img/verkkokauppa-ilman-wordpressia-ja-shopifya.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://valoverstas.fi/verkkokauppa-ilman-wordpressia-ja-shopifya.html">
+    <meta name="twitter:title" content="Verkkokauppa ilman WordPressia tai Shopifya: näin se rakennetaan">
+    <meta name="twitter:description" content="WordPress ja Shopify eivät ole ainoat vaihtoehdot. Näin moderni, tekoälyavusteinen verkkokauppa rakennetaan ilman niitä vuonna 2026.">
+    <meta name="twitter:image" content="https://valoverstas.fi/img/verkkokauppa-ilman-wordpressia-ja-shopifya.webp">
+
+    <!-- Article structured data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Verkkokauppa ilman WordPressia tai Shopifya: näin se rakennetaan",
+  "description": "WordPress ja Shopify eivät ole ainoat vaihtoehdot. Näin moderni, tekoälyavusteinen verkkokauppa rakennetaan ilman niitä vuonna 2026.",
+  "image": "https://valoverstas.fi/img/verkkokauppa-ilman-wordpressia-ja-shopifya.webp",
+  "datePublished": "2026-09-26",
+  "author": {
+    "@id": "https://valoverstas.fi/#organization"
+  },
+  "publisher": {
+    "@id": "https://valoverstas.fi/#organization"
+  }
+}
+</script>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Onko verkkokauppa ilman WordPressia tai Shopifya turvallisempi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yleensä kyllä, koska hyökkäyspinta on pienempi. WordPress-ekosysteemissä löytyi vuonna 2025 yli 11 300 uutta haavoittuvuutta, ja 91 % niistä oli lisäosissa, ei itse WordPress-ytimessä. Kun kauppa ei nojaa kymmeniin kolmannen osapuolen lisäosiin, joita kukaan ei ehdi pitää ajan tasalla, koko tämä riskiluokka jää kokonaan pois. Turvallisuus ei silti ole automaattinen, se riippuu siitä, miten maksut, käyttäjätiedot ja rajapinnat on toteutettu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Paljonko tällaisen verkkokaupan rakentaminen maksaa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kertaluontoinen kehitystyö on yleensä suurempi kuin valmiin teeman pystyttäminen WordPressiin tai Shopifyyn, mutta jatkuvat kulut ovat pienemmät: ei kuukausittaista alustamaksua eikä prosenttiosuutta jokaisesta myynnistä. Stripe veloittaa vain tavallisen korttimaksujen käsittelymaksun ilman erillistä alustaveroa. Kokonaiskustannus tasoittuu tyypillisesti 1-2 vuoden aikana, minkä jälkeen ratkaisu on edullisempi, jos myynti kasvaa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Voiko tekoäly rakentaa koko verkkokaupan itsekseen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ei vielä luotettavasti ilman ihmisen tarkistusta. Stack Overflow'n vuoden 2025 kehittäjäkyselyn mukaan 84 % kehittäjistä käyttää tai aikoo käyttää tekoälytyökaluja, mutta vain 33 % luottaa niiden tuottaman koodin oikeellisuuteen, kun 46 % suhtautuu siihen suoraan epäluuloisesti. Tekoäly nopeuttaa rakentamista merkittävästi, mutta maksupolku, verolaskenta ja tietosuoja on aina testattava ja tarkistettava itse ennen julkaisua."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kuka päivittää kauppaa julkaisun jälkeen, jos sivu ei ole WordPress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Riippuu valitusta kaupan moottorista. Kevyt, valmiiseen palveluun perustuva ratkaisu antaa yrittäjälle oman hallintapaneelin tuotteiden ja tilausten hoitoon aivan kuten WooCommerce tai Shopify, ilman, että sivuston koodiin tarvitsee koskea. Itse hostattu, avoimen lähdekoodin kaupan moottori taas vaatii kehittäjän silloin, kun halutaan muuttaa toiminnallisuutta, mutta ei päivittäisessä tuotteiden ja tilausten hoidossa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sopiiko tämä pienelle, muutaman tuotteen kaupalle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kyllä, usein juuri sille tämä sopii parhaiten. Kun tuotteita on kourallinen eikä tarvita monimutkaista varianttien tai varaston hallintaa, kevyt kaupan moottori liitettynä muutoin staattiseen sivustoon on sekä halvempi että nopeampi kuin täyden WordPress- tai Shopify-alustan pystyttäminen. Laaja, jatkuvasti muuttuva tuotekatalogi tai monen myyjän markkinapaikka on tilanne, jossa valmis alusta voi silti olla perustellumpi valinta."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .article-header {
+            min-height: auto !important;
+            padding: 160px 24px 24px;
+            text-align: center;
+            background: radial-gradient(circle at top, var(--accent-glow) 0%, transparent 70%);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .article-image {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 500px;
+        }
+
+        .article-content {
+            max-width: 760px;
+            margin: 0 auto 120px;
+            padding: 0 24px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .article-content p { margin-bottom: 24px; }
+
+        .article-content h2,
+        .article-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            color: var(--text);
+            line-height: 1.3;
+        }
+
+        .article-content .toc-box {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            margin: 40px 0;
+            border-radius: var(--radius-sm);
+        }
+
+        .article-content .toc-box ul { margin-bottom: 0; }
+
+        .article-content .faq-question {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text);
+        }
+
+        .article-content .highlight-box {
+            background: var(--glass);
+            border-left: 4px solid var(--accent);
+            padding: 24px 32px;
+            margin: 40px 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 1.05rem;
+            color: var(--text);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .article-content ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+        }
+
+        .article-content a:not(.btn) {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(179, 59, 36, 0.35);
+            text-underline-offset: 4px;
+            transition: var(--transition);
+        }
+
+        .article-content a:not(.btn):hover {
+            color: var(--accent-light);
+            text-decoration-color: var(--accent-light);
+        }
+
+        .article-content code {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-size: 0.9em;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        .article-content .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 32px 0;
+            background: var(--glass);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .article-content .comparison-table th,
+        .article-content .comparison-table td {
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .article-content .comparison-table th {
+            background: rgba(179, 59, 36, 0.12);
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .article-content .table-scroll {
+            overflow-x: auto;
+        }
+
+        .article-cta {
+            margin-top: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--glass), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--accent-glow);
+            border-radius: var(--radius);
+            text-align: center;
+        }
+    </style>
+
+    <!-- Google Consent Mode v2 & Google tags -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GT-KT922FNZ"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18004526990"></script>
+    <script>
+        gtag('config', 'G-MZZTLKDN25');
+        gtag('config', 'GT-KT922FNZ');
+        gtag('config', 'AW-18004526990');
+    </script>
+</head>
+
+<body class="ink-world">
+    <canvas id="particles"></canvas>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img">
+                <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/#prosessi">Prosessi</a>
+                <a href="blogi.html">Blogi</a>
+                <a href="/#yhteystiedot" class="nav-cta">Ota yhteyttä</a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">Verkkokauppa • Tekoäly • Jamstack • 9 min luku</div>
+            <h1>Verkkokauppa ilman WordPressia tai Shopifya: <span class="gradient-text">näin se rakennetaan</span></h1>
+            <p class="hero-sub" style="margin: 0 auto;">WordPress ja Shopify ovat useimmiten ensimmäinen ajatus verkkokauppaa suunniteltaessa, mutta ne eivät ole enää ainoat tavat rakentaa toimiva kauppa. Kevyt kaupan moottori, staattinen etusivu ja tekoälyavusteinen kehitys ovat tuoneet saman rakennuspalikoihin perustuvan lähestymistavan, joka oli ennen vain suuryritysten ulottuvilla, myös pienen yrityksen saataville. Näin se tehdään käytännössä: mistä neljästä palasta kauppa koostuu (etusivu, kaupan moottori, maksut, julkaisu), mihin tekoäly siinä oikeasti auttaa, mitä se maksaa verrattuna WordPressiin ja Shopifyyn, ja kenelle se sopii.</p>
+        </header>
+
+        <div class="article-image" data-animate>
+            <img src="img/verkkokauppa-ilman-wordpressia-ja-shopifya.webp" alt="Siili rakentaa pienoismyyntikojua puisista rakennuspalikoista työpajan pöydällä - Valoverstas" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px;">
+        </div>
+
+        <div class="article-content">
+            <div class="toc-box">
+                <strong>Sisällys</strong>
+                <ul>
+                    <li><a href="#miksi-etsia">1. Miksi moni PK-yritys etsii vaihtoehtoa WordPressille ja Shopifylle</a></li>
+                    <li><a href="#mita-tarkoittaa">2. Mitä "verkkokauppa ilman alustaa" oikeasti tarkoittaa</a></li>
+                    <li><a href="#nelja-palaa">3. Neljä palaa, joista moderni verkkokauppa rakennetaan</a></li>
+                    <li><a href="#tekoalyn-rooli">4. Tekoälyn rooli rakentamisessa: mihin se auttaa ja mihin ei</a></li>
+                    <li><a href="#kustannukset">5. Kustannus- ja ylläpitovertailu</a></li>
+                    <li><a href="#kenelle-sopii">6. Kenelle tämä sopii ja kenelle ei</a></li>
+                    <li><a href="#aloitusohje">7. Käytännön aloitusohje</a></li>
+                    <li><a href="#ukk">8. Usein kysyttyä</a></li>
+                </ul>
+            </div>
+
+            <h2 id="miksi-etsia">1. Miksi moni PK-yritys etsii vaihtoehtoa WordPressille ja Shopifylle</h2>
+
+            <p>WooCommerce ja Shopify ovat suosittuja hyvästä syystä: molemmilla pääsee kauppaan kiinni nopeasti ilman koodaustaitoa. Hinta näkyy vasta myöhemmin. WooCommerce-kauppa nojaa tyypillisesti kymmeniin kolmannen osapuolen lisäosiin, jotka hoitavat maksuja, varastoa, verolaskentaa ja markkinointia, ja jokainen niistä on oma ylläpitovastuunsa. Patchstackin tietoturvakatsauksen mukaan WordPress-ekosysteemissä löytyi vuonna 2025 yli 11 300 uutta haavoittuvuutta, 42 prosenttia enemmän kuin vuotta aiemmin, ja 91 prosenttia niistä oli nimenomaan lisäosissa, ei WordPressin ydinohjelmistossa.<sup>1</sup> Jokainen asennettu lisäosa on siis oma, jatkuvasti kasvava riskinsä, eikä kukaan pieni yritys ehdi seurata niitä kaikkia.</p>
+
+            <p>Shopify taas ratkaisee ylläpitotaakan ostamalla sen pois, mikä näkyy suoraan katteessa: kuukausimaksun päälle tulee prosenttiosuus jokaisesta myynnistä, ellei käytä juuri Shopifyn omaa maksujenvälitystä, ja teemat sekä sovellukset lukitsevat kaupan yhä syvemmälle yhteen alustaan. Kolmas tie on syntynyt tämän välimaastoon: kaupan eri osat, kuten ulkoasu, tuotekatalogi, ostoskori ja maksut, rakennetaan erillisinä, toisiinsa rajapinnan kautta kytkeytyvinä palasina. Tämä on saman staattisen, nopean Jamstack-pohjan sovellus kauppaan, josta kirjoitimme aiemmin, kun <a href="staattiset-verkkosivut-vs-wordpress.html">vertailimme staattisia verkkosivuja ja WordPressia</a>. Sitä on perinteisesti kutsuttu vain suuryritysten leikiksi, mutta tekoälyavusteinen kehitys on madaltanut kynnystä merkittävästi myös pienemmälle yritykselle.</p>
+
+            <h2 id="mita-tarkoittaa">2. Mitä "verkkokauppa ilman alustaa" oikeasti tarkoittaa</h2>
+
+            <div class="highlight-box">
+                <p style="margin-bottom: 0;">Kaupan ulkoasu ja kaupan moottori ovat kaksi eri asiaa, vaikka WordPress ja Shopify totuttavat ajattelemaan niitä yhtenä pakettina.</p>
+            </div>
+
+            <p>Termi tälle on headless- tai composable-kauppa: etusivu, joka näkyy asiakkaalle, on erotettu taustalla toimivasta kaupan moottorista, joka hoitaa tuotteet, ostoskorin, varaston ja tilaukset. Nämä kaksi puhuvat toisilleen rajapinnan (API) kautta, mikä tarkoittaa, että ulkoasun voi rakentaa juuri sellaiseksi kuin halutaan, valmiin teeman rajoitteiden sijaan, ja kaupan moottorin voi vaihtaa tai päivittää koskematta ulkoasuun. Analyysiyhtiö Gartner arvioi 2026 Hype Cycle -katsauksessaan, että moduulipohjainen, rajapintapohjainen kaupankäynti kasvattaa suosiotaan erityisesti, kun yritysten pitää palvella yhä useampaa kanavaa, verkkosivua, mobiilia ja nyt myös tekoälyagentteja, joille monoliittinen kaupan alusta ei taivu yhtä nopeasti.<sup>2</sup></p>
+
+            <p>On rehellistä sanoa, että Gartnerin ja Forresterin puhe composable-kaupasta koskee ensisijaisesti suuria, yli miljardin liikevaihdon organisaatioita, eikä pienen pk-yrityksen kannata rakentaa itselleen täyttä enterprise-tason arkkitehtuuria. Sama perusidea, kevyt kaupan moottori kytkettynä nopeaan, itse suunniteltuun etusivuun, toimii kuitenkin aivan yhtä hyvin pienessä mittakaavassa, ja nykyiset työkalut on tehty juuri tätä varten.</p>
+
+            <h2 id="nelja-palaa">3. Neljä palaa, joista moderni verkkokauppa rakennetaan</h2>
+
+            <div class="table-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Osa</th>
+                            <th>Mitä se tekee</th>
+                            <th>Esimerkki</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Etusivu</td>
+                            <td>Se, mitä asiakas näkee ja mitä hakukoneet ja tekoälyhaut lukevat. Rakennetaan samalla nopealla, staattisella pohjalla kuin mikä tahansa moderni verkkosivu.</td>
+                            <td>Astro, Next.js tai vastaava</td>
+                        </tr>
+                        <tr>
+                            <td>Kaupan moottori</td>
+                            <td>Tuotteet, ostoskori, varasto ja tilaukset. Kevyt vaihtoehto liittyy valmiiksi mihin tahansa sivuun muutamalla koodirivillä, raskaampi itse hostattava vaihtoehto sopii, kun tarvitaan enemmän räätälöintiä.</td>
+                            <td>Kevyt: Snipcart. Itse hostattava: Medusa<sup>3</sup></td>
+                        </tr>
+                        <tr>
+                            <td>Maksut</td>
+                            <td>Korttimaksujen, verolaskennan ja kuittien hoito. Ei vaadi omaa alustaa, vain tavallinen maksunvälittäjän rajapinta.</td>
+                            <td>Stripe</td>
+                        </tr>
+                        <tr>
+                            <td>Julkaisu</td>
+                            <td>Sivuston tarjoilu käyttäjälle, sama pohja kuin muillakin nopeilla sivustoilla.</td>
+                            <td>Vercel, Netlify tai Cloudflare Pages</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Maksupuolella konkreettinen esimerkki hinnoittelun eroista on Stripen Payment Links -ominaisuus: siinä ei ole kuukausimaksua, tuotekohtaista maksua eikä erillistä alustaveroa, vaan ainoastaan tavallinen korttimaksujen käsittelymaksu, joka maksettaisiin joka tapauksessa. Stripe otti alkuvuonna 2026 käyttöön yhden klikkauksen maksamisen (Link) oletuksena jokaisella maksulinkillä, mikä pudotti kassalta poistumisen testatuilla kauppiailla noin 30 prosenttia.<sup>4</sup> Kaupan moottorin puolella esimerkki avoimen lähdekoodin vaihtoehdosta on Medusa, joka kuvailee itseään GitHubin suosituimmaksi avoimen lähdekoodin kaupankäyntialustaksi ja on suunniteltu nimenomaan kehittäjien ja tekoälyn muokattavaksi.<sup>3</sup></p>
+
+            <h2 id="tekoalyn-rooli">4. Tekoälyn rooli rakentamisessa: mihin se auttaa ja mihin ei</h2>
+
+            <p>Tekoäly nopeuttaa tätä kaikkea aidosti. Tuotelistauksen komponentit, ostoskorin käyttöliittymä, rajapintakutsujen liimakoodi ja ensimmäiset versiot tuotekuvauksista syntyvät murto-osassa siitä ajasta, joka niihin olisi mennyt käsin kirjoittaen. Kävimme aiemmin läpi tarkemmin, <a href="tekoaly-verkkosivujen-teossa.html">mihin tekoäly oikeasti auttaa verkkosivun teossa ja miksi lopputuloksen ei tarvitse näyttää geneeriseltä</a>, ja sama pätee suoraan verkkokaupan rakentamiseen: tekoäly on hyvä työkalu, ei suunnittelija.</p>
+
+            <p>Luottamus rajaa käyttöä. Stack Overflow'n vuoden 2025 kehittäjäkyselyssä 84 prosenttia vastaajista kertoi käyttävänsä tai aikovansa käyttää tekoälytyökaluja, ja 51 prosenttia ammattikehittäjistä käyttää niitä päivittäin.<sup>5</sup> Samassa kyselyssä vain 33 prosenttia vastaajista luotti tekoälyn tuottaman koodin oikeellisuuteen, kun 46 prosenttia suhtautui siihen suoraan epäluuloisesti.<sup>5</sup> Tämä ei ole ristiriita, vaan realistinen kuva: tekoäly kirjoittaa ensimmäisen version nopeasti, mutta maksupolku, verolaskenta, virhetilanteet ja tietosuoja pitää aina testata ja tarkistaa itse ennen kuin oikeaa rahaa alkaa liikkua sivuston läpi.</p>
+
+            <h2 id="kustannukset">5. Kustannus- ja ylläpitovertailu</h2>
+
+            <div class="table-scroll">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>WooCommerce (WordPress)</th>
+                            <th>Shopify</th>
+                            <th>Headless + tekoälyavusteinen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alkuinvestointi</td>
+                            <td>Pieni, teeman ja lisäosien pystytys</td>
+                            <td>Pieni, valmis teema riittää usein</td>
+                            <td>Suurempi, vaatii kertaluontoisen kehitystyön</td>
+                        </tr>
+                        <tr>
+                            <td>Jatkuva kuukausikulu</td>
+                            <td>Hosting + lisäosien lisenssit</td>
+                            <td>Kuukausimaksu + prosenttiosuus myynnistä</td>
+                            <td>Hosting (usein ilmainen pienelle sivustolle) + maksujenvälitysmaksu</td>
+                        </tr>
+                        <tr>
+                            <td>Ylläpitovastuu</td>
+                            <td>Jatkuvat lisäosapäivitykset ja tietoturvaseuranta</td>
+                            <td>Alustan omistaja hoitaa taustan</td>
+                            <td>Vähemmän liikkuvia osia, mutta kehittäjää tarvitaan isompiin muutoksiin</td>
+                        </tr>
+                        <tr>
+                            <td>Suurin rajoitus</td>
+                            <td>Lisäosien haavoittuvuudet ja hitaus ajan myötä</td>
+                            <td>Kuukausimaksu ja transaktiomaksu syövät katetta myynnin kasvaessa</td>
+                            <td>Ei sovi suurelle, monimutkaiselle tuotekatalogille ilman lisätyötä</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Kokonaiskustannus tasoittuu yleensä 1-2 vuoden käytön aikana. Sen jälkeen headless-ratkaisu on tyypillisesti edullisempi, koska kulut eivät kasva myynnin mukana samalla tavalla kuin Shopifyn transaktiomaksuissa, eikä sivustolla ole samaa jatkuvaa lisäosariskiä kuin WooCommercessa.</p>
+
+            <h2 id="kenelle-sopii">6. Kenelle tämä sopii ja kenelle ei</h2>
+
+            <p>Tämä lähestymistapa sopii parhaiten silloin, kun tuotekatalogi on pieni tai kohtuullinen, esimerkiksi muutamasta kymmenestä muutamaan sataan tuotteeseen, eikä tarvita monimutkaista varianttien tai eri varastopaikkojen hallintaa. Se sopii myös yritykselle, joka arvostaa nopeutta ja omaa hallintaa eikä halua maksaa kuukausittaista alustamaksua tai prosenttiosuutta myynnistä. Kävimme aiemmin läpi laajemmin, <a href="esittelysivu-vai-verkkokauppa.html">miten PK-yritys valitsee esittelysivun ja verkkokaupan väliltä</a> ylipäätään; tämä artikkeli olettaa, että verkkokauppa on jo päätetty tarpeeksi.</p>
+
+            <p>Tämä ei sovi sellaisenaan valtavalle, jatkuvasti muuttuvalle tuotekatalogille tai monen myyjän markkinapaikalle, joissa valmiin alustan sisäänrakennettu monimutkaisuus alkaa olla etu, ei haitta. Se ei myöskään sovi yritykselle, joka haluaa muokata kauppaa päivittäin ilman minkäänlaista kehittäjäkontaktia, ellei kaupan moottoriksi valita nimenomaan sellaista, jossa on oma, selkeä hallintapaneeli tuotteiden ja tilausten hoitoon.</p>
+
+            <h2 id="aloitusohje">7. Käytännön aloitusohje</h2>
+
+            <ol>
+                <li>Määritä tuotekatalogin koko ja monimutkaisuus: kuinka monta tuotetta, tarvitaanko variantteja tai monen varaston hallintaa.</li>
+                <li>Valitse kaupan moottori sen mukaan: kevyt, valmiiseen palveluun perustuva ratkaisu pienelle kataloglle, itse hostattava avoimen lähdekoodin moottori suuremmalle tai erityistarpeille.</li>
+                <li>Rakenna etusivu tekoälyavusteisesti mutta suunnittele visuaalinen ilme itse, samalla periaatteella kuin missä tahansa muussakin tekoälyavusteisessa verkkosivuprojektissa.</li>
+                <li>Liitä maksut Stripen kautta ja testaa koko ostopolku itse oikealla kortilla ennen julkaisua.</li>
+                <li>Tarkista verolaskenta, kuitit ja tietosuoja käsin, älä luota siihen, että tekoäly on hoitanut ne oikein ilman tarkistusta.</li>
+            </ol>
+
+            <h2 id="ukk">8. Usein kysyttyä</h2>
+
+            <p class="faq-question">Onko verkkokauppa ilman WordPressia tai Shopifya turvallisempi?</p>
+            <p>Yleensä kyllä, koska hyökkäyspinta on pienempi. WordPress-ekosysteemissä löytyi vuonna 2025 yli 11 300 uutta haavoittuvuutta, ja 91 % niistä oli lisäosissa, ei itse WordPress-ytimessä. Kun kauppa ei nojaa kymmeniin kolmannen osapuolen lisäosiin, joita kukaan ei ehdi pitää ajan tasalla, koko tämä riskiluokka jää kokonaan pois. Turvallisuus ei silti ole automaattinen, se riippuu siitä, miten maksut, käyttäjätiedot ja rajapinnat on toteutettu.</p>
+
+            <p class="faq-question">Paljonko tällaisen verkkokaupan rakentaminen maksaa?</p>
+            <p>Kertaluontoinen kehitystyö on yleensä suurempi kuin valmiin teeman pystyttäminen WordPressiin tai Shopifyyn, mutta jatkuvat kulut ovat pienemmät: ei kuukausittaista alustamaksua eikä prosenttiosuutta jokaisesta myynnistä. Stripe veloittaa vain tavallisen korttimaksujen käsittelymaksun ilman erillistä alustaveroa. Kokonaiskustannus tasoittuu tyypillisesti 1-2 vuoden aikana, minkä jälkeen ratkaisu on edullisempi, jos myynti kasvaa.</p>
+
+            <p class="faq-question">Voiko tekoäly rakentaa koko verkkokaupan itsekseen?</p>
+            <p>Ei vielä luotettavasti ilman ihmisen tarkistusta. Stack Overflow'n vuoden 2025 kehittäjäkyselyn mukaan 84 % kehittäjistä käyttää tai aikoo käyttää tekoälytyökaluja, mutta vain 33 % luottaa niiden tuottaman koodin oikeellisuuteen, kun 46 % suhtautuu siihen suoraan epäluuloisesti. Tekoäly nopeuttaa rakentamista merkittävästi, mutta maksupolku, verolaskenta ja tietosuoja on aina testattava ja tarkistettava itse ennen julkaisua.</p>
+
+            <p class="faq-question">Kuka päivittää kauppaa julkaisun jälkeen, jos sivu ei ole WordPress?</p>
+            <p>Riippuu valitusta kaupan moottorista. Kevyt, valmiiseen palveluun perustuva ratkaisu antaa yrittäjälle oman hallintapaneelin tuotteiden ja tilausten hoitoon aivan kuten WooCommerce tai Shopify, ilman, että sivuston koodiin tarvitsee koskea. Itse hostattu, avoimen lähdekoodin kaupan moottori taas vaatii kehittäjän silloin, kun halutaan muuttaa toiminnallisuutta, mutta ei päivittäisessä tuotteiden ja tilausten hoidossa.</p>
+
+            <p class="faq-question">Sopiiko tämä pienelle, muutaman tuotteen kaupalle?</p>
+            <p>Kyllä, usein juuri sille tämä sopii parhaiten. Kun tuotteita on kourallinen eikä tarvita monimutkaista varianttien tai varaston hallintaa, kevyt kaupan moottori liitettynä muutoin staattiseen sivustoon on sekä halvempi että nopeampi kuin täyden WordPress- tai Shopify-alustan pystyttäminen. Laaja, jatkuvasti muuttuva tuotekatalogi tai monen myyjän markkinapaikka on tilanne, jossa valmis alusta voi silti olla perustellumpi valinta.</p>
+
+            <div class="article-cta">
+                <h3>Harkitsetko verkkokauppaa ilman WordPressia tai Shopifya?</h3>
+                <p>Käymme läpi tuotekatalogisi ja tarpeesi, ja kerromme suoraan, kannattaako headless-ratkaisu juuri teidän tapauksessanne. Ilmainen, ei sitoumuksia.</p>
+                <a href="/#yhteystiedot" class="btn btn-primary" style="margin-top: 16px; text-decoration: none;">Varaa maksuton myyntisparraus</a>
+            </div>
+        </div>
+    </article>
+
+    <div class="footer-ink-strip" aria-hidden="true"></div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col footer-brand">
+                <div class="logo">
+                    <img srcset="img/valoverstas-mobile.webp 800w, img/valoverstas.webp 1600w" sizes="(max-width: 800px) 100vw, 1600px" src="img/valoverstas.webp" alt="valoverstas" class="logo-img logo-img-footer">
+                    <span class="logo-text">valoverstas<span class="logo-dot">.</span></span>
+                </div>
+                <p>Ensiluokkaista verkkosivukehitystä ja digitaalista muotoilua.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Palvelut</h4>
+                <ul>
+                    <li><a href="/#palvelut">Tuikku</a></li>
+                    <li><a href="/#palvelut">Lamppu</a></li>
+                    <li><a href="/#palvelut">Majakka</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Linkit</h4>
+                <ul>
+                    <li><a href="/">Etusivu</a></li>
+                    <li><a href="blogi.html">Blogi</a></li>
+                    <li><a href="/#yhteystiedot">Ota yhteyttä</a></li>
+                    <li><a href="tietosuoja.html">Tietosuoja</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yhteystiedot</h4>
+                <ul>
+                    <li>aleksanteri@valoverstas.fi</li>
+                    <li>Jyväskylä, Finland</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Valoverstas. Kaikki oikeudet pidätetään. · <a href="#" id="cookieSettingsLink">Evästeasetukset</a>
+        </div>
+    </footer>
+
+    <div style="max-width: 760px; margin: -80px auto 120px; padding: 0 24px; font-size: 0.9rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px;">
+        <h4 style="color: var(--text); margin-bottom: 12px;">Lähteet:</h4>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 8px;">• <a href="https://patchstack.com/whitepaper/state-of-wordpress-security-in-2026/" target="_blank" style="color: var(--accent); text-decoration: underline;">Patchstack: "State of WordPress Security in 2026"</a>.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://www.gartner.com/en/documents/5946207" target="_blank" style="color: var(--accent); text-decoration: underline;">Gartner: "Quick Answer: Is Your Organization Ready for Composable Commerce?"</a>.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://medusajs.com/" target="_blank" style="color: var(--accent); text-decoration: underline;">Medusa: avoimen lähdekoodin kaupankäyntialusta</a>.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://stripe.com/payments/payment-links" target="_blank" style="color: var(--accent); text-decoration: underline;">Stripe: "Payment Links"</a>.</li>
+            <li style="margin-bottom: 8px;">• <a href="https://survey.stackoverflow.co/2025/ai" target="_blank" style="color: var(--accent); text-decoration: underline;">Stack Overflow: "2025 Developer Survey, AI"</a>.</li>
+        </ul>
+    </div>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <h5>Yksityisyytesi on meille tärkeää</h5>
+        <p>Käytämme sivustolla vain välttämättömiä toimintoja varmistaaksemme parhaan mahdollisen käyttökokemuksen. Emme
+            käytä kolmannen osapuolen markkinointievästeitä ilman suostumustasi.</p>
+        <div class="cookie-btn-group">
+            <button id="acceptCookies" class="btn btn-primary">Hyväksy kaikki</button>
+            <button id="rejectCookies" class="btn btn-ghost">Hylkää</button>
+            <a href="tietosuoja.html" class="btn btn-ghost">Lue lisää</a>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

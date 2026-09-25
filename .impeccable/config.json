@@ -77,6 +77,15 @@
         ],
         "createdAt": "2026-09-16T10:41:11.893Z",
         "reason": "matches existing site-wide .highlight-box template used in every other Valoverstas post (e.g. tekoaly-verkkosivujen-teossa.html) — established design system, not new"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "verkkokauppa-ilman-wordpressia-ja-shopifya.html"
+        ],
+        "createdAt": "2026-09-25T22:37:53.814Z",
+        "reason": "pre-existing Valoverstas blog template: .highlight-box border-left 4px accent is the standard convention copied identically across every published post (e.g. nakyyko-yrityksesi-tekoalyvastauksissa.html, used as this post's exact template), not a new pattern introduced here"
       }
     ]
   }
