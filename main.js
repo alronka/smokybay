@@ -6,9 +6,17 @@
 (function initParticles() {
     const canvas = document.getElementById('particles');
     if (!canvas) return;
+
+    // Skip entirely for reduced-motion visitors; also sidesteps the main-thread
+    // cost of an always-on rAF loop for anyone who doesn't want the animation.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const ctx = canvas.getContext('2d');
     let particles = [];
     let mouse = { x: null, y: null };
+    let rafId = null;
+    let lastFrameTime = 0;
+    const frameInterval = 1000 / 30; // throttled to ~30fps; slow-drifting particles don't need 60fps+
 
     function resize() {
         canvas.width = window.innerWidth;
@@ -38,12 +46,11 @@
             this.x += this.speedX;
             this.y += this.speedY;
 
-            // Mouse interaction
+            // Mouse interaction (squared-distance check avoids a sqrt call per particle per frame)
             if (mouse.x !== null) {
                 const dx = mouse.x - this.x;
                 const dy = mouse.y - this.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 120) {
+                if (dx * dx + dy * dy < 14400) { // 120px
                     this.x -= dx * 0.01;
                     this.y -= dy * 0.01;
                 }
@@ -61,20 +68,27 @@
         }
     }
 
-    // Create particles
-    const count = Math.min(80, Math.floor(window.innerWidth / 15));
+    // Create particles. Count capped lower than before: the O(n^2) connection
+    // check below dominates main-thread cost, so this matters far more than
+    // the particle count did visually (measured: 39.7s of main-thread "Other"
+    // time on a PageSpeed Insights run, traced to this always-on loop).
+    const count = Math.min(50, Math.floor(window.innerWidth / 20));
     for (let i = 0; i < count; i++) {
         particles.push(new Particle());
     }
 
     function connectParticles() {
+        const maxDist = 150;
+        const maxDistSq = maxDist * maxDist;
         for (let i = 0; i < particles.length; i++) {
             for (let j = i + 1; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < 150) {
-                    const opacity = (1 - dist / 150) * 0.15;
+                const distSq = dx * dx + dy * dy;
+                // Squared-distance compare first; sqrt only runs for pairs actually
+                // close enough to draw, not for every pair checked.
+                if (distSq < maxDistSq) {
+                    const opacity = (1 - Math.sqrt(distSq) / maxDist) * 0.15;
                     ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
@@ -86,16 +100,32 @@
         }
     }
 
-    function animate() {
+    function animate(timestamp) {
+        rafId = requestAnimationFrame(animate);
+        if (timestamp - lastFrameTime < frameInterval) return;
+        lastFrameTime = timestamp;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(p => {
             p.update();
             p.draw();
         });
         connectParticles();
-        requestAnimationFrame(animate);
     }
-    animate();
+
+    // Free the main thread entirely while the tab isn't visible, instead of
+    // animating an unseen canvas forever.
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            if (rafId !== null) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
+        } else if (rafId === null) {
+            rafId = requestAnimationFrame(animate);
+        }
+    });
+
+    rafId = requestAnimationFrame(animate);
 })();
 
 // ---- NAVBAR SCROLL ----
